@@ -147,6 +147,9 @@
         font: inherit;
       }
       .segBtn[aria-pressed="true"] { color: var(--fg); border-color: color-mix(in srgb, var(--border) 60%, var(--fg)); }
+
+      .langBlock { display: none; }
+      .langBlock.is-active { display: block; }
     </style>
   </head>
   <body>
@@ -201,117 +204,197 @@
             <strong>ติดต่อ (Contact):</strong> <a href="mailto:support@buddycal.app">support@buddycal.app</a>
           </p>
 
-          <ol>
-            <li>
-              <h2>การยอมรับข้อกำหนด</h2>
-              <p>
-                การดาวน์โหลด เข้าถึง หรือใช้งานแอป BuddyCal (“แอป” หรือ “บริการ”) ถือว่าคุณยอมรับข้อกำหนดและเงื่อนไขนี้
-                หากคุณไม่ยอมรับ กรุณาหยุดใช้งานแอป
-              </p>
-            </li>
-            <li>
-              <h2>คุณสมบัติผู้ใช้และอายุขั้นต่ำ</h2>
-              <p>คุณต้องมีอายุอย่างน้อย 13 ปี จึงจะใช้บริการได้</p>
-              <p>
-                หากคุณอายุระหว่าง 13–17 ปี คุณรับรองว่ามีความยินยอมจากผู้ปกครอง/ผู้แทนโดยชอบธรรมตามที่กฎหมายที่เกี่ยวข้องกำหนด
-              </p>
-              <p>เราอาจระงับ/ยุติการให้บริการหากพบว่ามีการใช้งานโดยผู้ที่ไม่ผ่านเกณฑ์อายุ</p>
-            </li>
-            <li>
-              <h2>ขอบเขตบริการและคำเตือนด้านสุขภาพ (ไม่ใช่คำแนะนำทางการแพทย์)</h2>
-              <p>
-                BuddyCal ให้บริการเกี่ยวกับการนับแคลอรี แผนอาหาร และข้อมูลด้านโภชนาการ เพื่อวัตถุประสงค์ด้านข้อมูลทั่วไปเท่านั้น
-              </p>
-              <p>บริการไม่ใช่การวินิจฉัย การรักษา คำแนะนำทางการแพทย์ หรือการดูแลโดยผู้ประกอบวิชาชีพ</p>
-              <p>
-                คุณควรปรึกษาแพทย์/ผู้เชี่ยวชาญก่อนเริ่มเปลี่ยนแปลงอาหาร/การออกกำลังกาย โดยเฉพาะหากคุณมีโรคประจำตัว ตั้งครรภ์ ให้นมบุตร
-                หรือมีภาวะสุขภาพที่ต้องเฝ้าระวัง
-              </p>
-              <p>หากมีเหตุฉุกเฉินด้านสุขภาพ ให้ติดต่อหน่วยแพทย์ฉุกเฉินทันที</p>
-            </li>
-            <li>
-              <h2>บัญชีผู้ใช้และความปลอดภัย</h2>
-              <p>คุณอาจต้องสร้างบัญชีเพื่อใช้งานบางส่วนของบริการ</p>
-              <p>คุณรับผิดชอบต่อความถูกต้องของข้อมูลบัญชี และการรักษาความลับของข้อมูลเข้าสู่ระบบ</p>
-              <p>คุณต้องแจ้งเราทันทีหากสงสัยว่าบัญชีถูกเข้าถึงโดยไม่ได้รับอนุญาต</p>
-            </li>
-            <li>
-              <h2>ข้อมูลส่วนบุคคลและความเป็นส่วนตัว</h2>
-              <p>การประมวลผลข้อมูลส่วนบุคคลของคุณอยู่ภายใต้นโยบายความเป็นส่วนตัวของเรา (“Privacy Policy”)</p>
-              <p>
-                โดยทั่วไป เราอาจเก็บและประมวลผลข้อมูล เช่น อีเมล รูปภาพ อายุ น้ำหนัก และข้อมูลด้านสุขภาพ/โภชนาการ เพื่อให้บริการและปรับปรุงบริการ
-              </p>
-              <p>เราใช้ผู้ให้บริการโครงสร้างพื้นฐาน/ฐานข้อมูล และเครื่องมือ analytics เพื่อวิเคราะห์การใช้งานและปรับปรุงประสบการณ์ผู้ใช้</p>
-            </li>
-            <li>
-              <h2>พฤติกรรมต้องห้าม</h2>
-              <p>คุณตกลงว่าจะไม่:</p>
-              <ul>
-                <li>ใช้งานบริการเพื่อวัตถุประสงค์ที่ผิดกฎหมาย หรือฝ่าฝืนข้อกำหนดนี้</li>
-                <li>พยายามเจาะระบบ รบกวนบริการ ทำ reverse engineering หรือหลีกเลี่ยงมาตรการความปลอดภัย</li>
-                <li>ใช้งานในลักษณะที่ก่อให้เกิดความเสียหายต่อเรา ผู้ใช้รายอื่น หรือบุคคลภายนอก</li>
-              </ul>
-            </li>
-            <li>
-              <h2>ค่าบริการ</h2>
-              <p>ปัจจุบันบริการไม่มีค่าใช้จ่าย อย่างไรก็ตาม เราอาจเพิ่มฟีเจอร์แบบคิดค่าบริการในอนาคต โดยจะแจ้งให้ทราบตามสมควร</p>
-            </li>
-            <li>
-              <h2>ทรัพย์สินทางปัญญา</h2>
-              <p>
-                แอป ซอฟต์แวร์ เนื้อหา การออกแบบ เครื่องหมายการค้า และองค์ประกอบต่าง ๆ ของบริการเป็นทรัพย์สินของเรา (หรือผู้อนุญาตให้เราใช้)
-                คุณได้รับสิทธิใช้งานแบบส่วนบุคคล จำกัด เพิกถอนได้ และไม่โอนสิทธิ เพื่อใช้บริการตามข้อกำหนดนี้เท่านั้น
-              </p>
-            </li>
-            <li>
-              <h2>บริการของบุคคลที่สาม</h2>
-              <p>
-                บริการอาจพึ่งพาหรือเชื่อมโยงกับบริการของบุคคลที่สาม การใช้งานของคุณอาจอยู่ภายใต้เงื่อนไข/นโยบายของบุคคลที่สามนั้น ๆ ด้วย
-                เราไม่รับผิดชอบต่อบริการของบุคคลที่สามในส่วนที่อยู่นอกเหนือการควบคุมของเรา
-              </p>
-            </li>
-            <li>
-              <h2>การปฏิเสธความรับผิด (Disclaimer)</h2>
-              <p>
-                บริการจัดให้ “ตามสภาพ” และ “ตามที่มี” เราไม่รับประกันว่าบริการจะถูกต้องสมบูรณ์ ปลอดข้อผิดพลาด หรือพร้อมใช้งานตลอดเวลา
-              </p>
-              <p>ผลลัพธ์จากการนับแคลอรี/แผนอาหาร/ข้อมูลโภชนาการอาจแตกต่างกันตามแต่ละบุคคล และขึ้นกับข้อมูลที่คุณให้</p>
-            </li>
-            <li>
-              <h2>การจำกัดความรับผิด (Limitation of Liability)</h2>
-              <p>ในขอบเขตสูงสุดที่กฎหมายอนุญาต:</p>
-              <ul>
-                <li>
-                  เราจะไม่รับผิดต่อความเสียหายทางอ้อม พิเศษ เป็นผลสืบเนื่อง หรือความเสียหายเชิงลงโทษ รวมถึงการสูญเสียกำไร ข้อมูล หรือชื่อเสียงทางธุรกิจ
-                  อันเกิดจากหรือเกี่ยวข้องกับการใช้บริการ
-                </li>
-                <li>
-                  ความรับผิดรวมทั้งหมดของเราที่เกิดจากหรือเกี่ยวข้องกับบริการ จะไม่เกินจำนวนที่คุณชำระให้เราในช่วง 12 เดือนก่อนเกิดเหตุ หรือ 100 ดอลลาร์สหรัฐ (USD 100)
-                  แล้วแต่จำนวนใดจะน้อยกว่า
-                </li>
-                <li>
-                  ข้อยกเว้น: ไม่มีส่วนใดในข้อกำหนดนี้ที่มีเจตนาจำกัดความรับผิดในกรณีที่กฎหมายห้ามจำกัด
-                </li>
-              </ul>
-            </li>
-            <li>
-              <h2>การระงับและการยุติ</h2>
-              <p>
-                เราอาจระงับหรือยุติการเข้าถึงบริการของคุณ หากเราพิจารณาอย่างสมเหตุสมผลว่าคุณฝ่าฝืนข้อกำหนดนี้ หรือมีความเสี่ยงต่อความปลอดภัยของบริการ
-              </p>
-            </li>
-            <li>
-              <h2>การเปลี่ยนแปลงข้อกำหนด</h2>
-              <p>
-                เราอาจปรับปรุงข้อกำหนดนี้เป็นครั้งคราว โดยจะแจ้งให้ทราบผ่านแอปหรือช่องทางที่เหมาะสม การใช้งานต่อหลังวันที่มีผลบังคับใช้ของฉบับแก้ไข
-                ถือว่าคุณยอมรับข้อกำหนดที่แก้ไขแล้ว
-              </p>
-            </li>
-            <li>
-              <h2>กฎหมายที่ใช้บังคับและเขตอำนาจ</h2>
-              <p>ข้อกำหนดนี้อยู่ภายใต้กฎหมายของประเทศไทย และให้ศาลไทยมีเขตอำนาจ เว้นแต่กฎหมายที่ใช้บังคับกำหนดเป็นอย่างอื่น</p>
-            </li>
-          </ol>
+          <section class="langBlock lang-th is-active">
+            <ol>
+              <li>
+                <h2>การยอมรับข้อกำหนด</h2>
+                <p>
+                  การดาวน์โหลด เข้าถึง หรือใช้งานแอป BuddyCal (“แอป” หรือ “บริการ”) ถือว่าคุณยอมรับข้อกำหนดและเงื่อนไขนี้
+                  หากคุณไม่ยอมรับ กรุณาหยุดใช้งานแอป
+                </p>
+              </li>
+              <li>
+                <h2>คุณสมบัติผู้ใช้และอายุขั้นต่ำ</h2>
+                <p>คุณต้องมีอายุอย่างน้อย 13 ปี จึงจะใช้บริการได้</p>
+                <p>
+                  หากคุณอายุระหว่าง 13–17 ปี คุณรับรองว่ามีความยินยอมจากผู้ปกครอง/ผู้แทนโดยชอบธรรมตามที่กฎหมายที่เกี่ยวข้องกำหนด
+                </p>
+                <p>เราอาจระงับ/ยุติการให้บริการหากพบว่ามีการใช้งานโดยผู้ที่ไม่ผ่านเกณฑ์อายุ</p>
+              </li>
+              <li>
+                <h2>ขอบเขตบริการและคำเตือนด้านสุขภาพ (ไม่ใช่คำแนะนำทางการแพทย์)</h2>
+                <p>
+                  BuddyCal ให้บริการเกี่ยวกับการนับแคลอรี แผนอาหาร และข้อมูลด้านโภชนาการ เพื่อวัตถุประสงค์ด้านข้อมูลทั่วไปเท่านั้น
+                </p>
+                <p>บริการไม่ใช่การวินิจฉัย การรักษา คำแนะนำทางการแพทย์ หรือการดูแลโดยผู้ประกอบวิชาชีพ</p>
+                <p>
+                  คุณควรปรึกษาแพทย์/ผู้เชี่ยวชาญก่อนเริ่มเปลี่ยนแปลงอาหาร/การออกกำลังกาย โดยเฉพาะหากคุณมีโรคประจำตัว ตั้งครรภ์ ให้นมบุตร
+                  หรือมีภาวะสุขภาพที่ต้องเฝ้าระวัง
+                </p>
+                <p>หากมีเหตุฉุกเฉินด้านสุขภาพ ให้ติดต่อหน่วยแพทย์ฉุกเฉินทันที</p>
+              </li>
+              <li>
+                <h2>บัญชีผู้ใช้และความปลอดภัย</h2>
+                <p>คุณอาจต้องสร้างบัญชีเพื่อใช้งานบางส่วนของบริการ</p>
+                <p>คุณรับผิดชอบต่อความถูกต้องของข้อมูลบัญชี และการรักษาความลับของข้อมูลเข้าสู่ระบบ</p>
+                <p>คุณต้องแจ้งเราทันทีหากสงสัยว่าบัญชีถูกเข้าถึงโดยไม่ได้รับอนุญาต</p>
+              </li>
+              <li>
+                <h2>ข้อมูลส่วนบุคคลและความเป็นส่วนตัว</h2>
+                <p>การประมวลผลข้อมูลส่วนบุคคลของคุณอยู่ภายใต้นโยบายความเป็นส่วนตัวของเรา (“Privacy Policy”)</p>
+                <p>
+                  โดยทั่วไป เราอาจเก็บและประมวลผลข้อมูล เช่น อีเมล รูปภาพ อายุ น้ำหนัก และข้อมูลด้านสุขภาพ/โภชนาการ เพื่อให้บริการและปรับปรุงบริการ
+                </p>
+                <p>เราใช้ผู้ให้บริการโครงสร้างพื้นฐาน/ฐานข้อมูล และเครื่องมือ analytics เพื่อวิเคราะห์การใช้งานและปรับปรุงประสบการณ์ผู้ใช้</p>
+              </li>
+              <li>
+                <h2>พฤติกรรมต้องห้าม</h2>
+                <p>คุณตกลงว่าจะไม่:</p>
+                <ul>
+                  <li>ใช้งานบริการเพื่อวัตถุประสงค์ที่ผิดกฎหมาย หรือฝ่าฝืนข้อกำหนดนี้</li>
+                  <li>พยายามเจาะระบบ รบกวนบริการ ทำ reverse engineering หรือหลีกเลี่ยงมาตรการความปลอดภัย</li>
+                  <li>ใช้งานในลักษณะที่ก่อให้เกิดความเสียหายต่อเรา ผู้ใช้รายอื่น หรือบุคคลภายนอก</li>
+                </ul>
+              </li>
+              <li>
+                <h2>ค่าบริการ</h2>
+                <p>ปัจจุบันบริการไม่มีค่าใช้จ่าย อย่างไรก็ตาม เราอาจเพิ่มฟีเจอร์แบบคิดค่าบริการในอนาคต โดยจะแจ้งให้ทราบตามสมควร</p>
+              </li>
+              <li>
+                <h2>ทรัพย์สินทางปัญญา</h2>
+                <p>
+                  แอป ซอฟต์แวร์ เนื้อหา การออกแบบ เครื่องหมายการค้า และองค์ประกอบต่าง ๆ ของบริการเป็นทรัพย์สินของเรา (หรือผู้อนุญาตให้เราใช้)
+                  คุณได้รับสิทธิใช้งานแบบส่วนบุคคล จำกัด เพิกถอนได้ และไม่โอนสิทธิ เพื่อใช้บริการตามข้อกำหนดนี้เท่านั้น
+                </p>
+              </li>
+              <li>
+                <h2>บริการของบุคคลที่สาม</h2>
+                <p>
+                  บริการอาจพึ่งพาหรือเชื่อมโยงกับบริการของบุคคลที่สาม การใช้งานของคุณอาจอยู่ภายใต้เงื่อนไข/นโยบายของบุคคลที่สามนั้น ๆ ด้วย
+                  เราไม่รับผิดชอบต่อบริการของบุคคลที่สามในส่วนที่อยู่นอกเหนือการควบคุมของเรา
+                </p>
+              </li>
+              <li>
+                <h2>การปฏิเสธความรับผิด (Disclaimer)</h2>
+                <p>
+                  บริการจัดให้ “ตามสภาพ” และ “ตามที่มี” เราไม่รับประกันว่าบริการจะถูกต้องสมบูรณ์ ปลอดข้อผิดพลาด หรือพร้อมใช้งานตลอดเวลา
+                </p>
+                <p>ผลลัพธ์จากการนับแคลอรี/แผนอาหาร/ข้อมูลโภชนาการอาจแตกต่างกันตามแต่ละบุคคล และขึ้นกับข้อมูลที่คุณให้</p>
+              </li>
+              <li>
+                <h2>การจำกัดความรับผิด (Limitation of Liability)</h2>
+                <p>ในขอบเขตสูงสุดที่กฎหมายอนุญาต:</p>
+                <ul>
+                  <li>
+                    เราจะไม่รับผิดต่อความเสียหายทางอ้อม พิเศษ เป็นผลสืบเนื่อง หรือความเสียหายเชิงลงโทษ รวมถึงการสูญเสียกำไร ข้อมูล หรือชื่อเสียงทางธุรกิจ
+                    อันเกิดจากหรือเกี่ยวข้องกับการใช้บริการ
+                  </li>
+                  <li>
+                    ความรับผิดรวมทั้งหมดของเราที่เกิดจากหรือเกี่ยวข้องกับบริการ จะไม่เกินจำนวนที่คุณชำระให้เราในช่วง 12 เดือนก่อนเกิดเหตุ หรือ 100 ดอลลาร์สหรัฐ (USD 100)
+                    แล้วแต่จำนวนใดจะน้อยกว่า
+                  </li>
+                  <li>ข้อยกเว้น: ไม่มีส่วนใดในข้อกำหนดนี้ที่มีเจตนาจำกัดความรับผิดในกรณีที่กฎหมายห้ามจำกัด</li>
+                </ul>
+              </li>
+              <li>
+                <h2>การระงับและการยุติ</h2>
+                <p>
+                  เราอาจระงับหรือยุติการเข้าถึงบริการของคุณ หากเราพิจารณาอย่างสมเหตุสมผลว่าคุณฝ่าฝืนข้อกำหนดนี้ หรือมีความเสี่ยงต่อความปลอดภัยของบริการ
+                </p>
+              </li>
+              <li>
+                <h2>การเปลี่ยนแปลงข้อกำหนด</h2>
+                <p>
+                  เราอาจปรับปรุงข้อกำหนดนี้เป็นครั้งคราว โดยจะแจ้งให้ทราบผ่านแอปหรือช่องทางที่เหมาะสม การใช้งานต่อหลังวันที่มีผลบังคับใช้ของฉบับแก้ไข
+                  ถือว่าคุณยอมรับข้อกำหนดที่แก้ไขแล้ว
+                </p>
+              </li>
+              <li>
+                <h2>กฎหมายที่ใช้บังคับและเขตอำนาจ</h2>
+                <p>ข้อกำหนดนี้อยู่ภายใต้กฎหมายของประเทศไทย และให้ศาลไทยมีเขตอำนาจ เว้นแต่กฎหมายที่ใช้บังคับกำหนดเป็นอย่างอื่น</p>
+              </li>
+            </ol>
+          </section>
+
+          <section class="langBlock lang-en" lang="en">
+            <h2>Terms &amp; Conditions – BuddyCal (EN)</h2>
+            <p>
+              By downloading, accessing, or using the BuddyCal app (the “App” or “Service”), you agree to these Terms &amp; Conditions. If you do not agree, please stop using the App.
+            </p>
+
+            <ol>
+              <li>
+                <h2>Acceptance of Terms</h2>
+                <p>
+                  By using the Service, you agree to these Terms. If you do not agree, do not use the Service.
+                </p>
+              </li>
+              <li>
+                <h2>Eligibility and Minimum Age</h2>
+                <p>You must be at least 13 years old to use the Service.</p>
+                <p>If you are between 13–17 years old, you represent that you have consent from a parent/legal guardian as required by applicable law.</p>
+                <p>We may suspend or terminate access if we learn that a user does not meet the age requirement.</p>
+              </li>
+              <li>
+                <h2>Scope of Service and Health Disclaimer (Not Medical Advice)</h2>
+                <p>BuddyCal provides calorie tracking, meal planning, and nutrition-related information for general informational purposes only.</p>
+                <p>The Service is not medical diagnosis, treatment, or professional medical advice.</p>
+                <p>Consult a qualified professional before changing diet/exercise plans, especially with underlying conditions, pregnancy, or other risk factors.</p>
+              </li>
+              <li>
+                <h2>Account and Security</h2>
+                <p>You may need to create an account to access parts of the Service.</p>
+                <p>You are responsible for keeping your account information accurate and maintaining the confidentiality of your login credentials.</p>
+                <p>Notify us promptly if you suspect unauthorized access to your account.</p>
+              </li>
+              <li>
+                <h2>Personal Data and Privacy</h2>
+                <p>Our processing of your personal data is governed by our Privacy Policy.</p>
+                <p>We may collect and process data such as email, photos, age, weight, and health/nutrition-related information to provide and improve the Service.</p>
+              </li>
+              <li>
+                <h2>Prohibited Conduct</h2>
+                <p>You agree not to:</p>
+                <ul>
+                  <li>Use the Service for unlawful purposes or in violation of these Terms.</li>
+                  <li>Attempt to hack, disrupt, reverse engineer, or bypass security measures.</li>
+                  <li>Use the Service in a way that harms us, other users, or third parties.</li>
+                </ul>
+              </li>
+              <li>
+                <h2>Fees</h2>
+                <p>The Service is currently free of charge. We may introduce paid features in the future and will provide notice as appropriate.</p>
+              </li>
+              <li>
+                <h2>Intellectual Property</h2>
+                <p>The App, software, content, design, trademarks, and all elements of the Service are owned by us (or our licensors). You are granted a limited, revocable, non-transferable license to use the Service in accordance with these Terms.</p>
+              </li>
+              <li>
+                <h2>Third-Party Services</h2>
+                <p>The Service may rely on or link to third-party services. Your use may also be subject to those third parties’ terms/policies. We are not responsible for third-party services outside our control.</p>
+              </li>
+              <li>
+                <h2>Disclaimer</h2>
+                <p>The Service is provided “as is” and “as available”. We do not warrant that the Service will be accurate, complete, error-free, or uninterrupted.</p>
+              </li>
+              <li>
+                <h2>Limitation of Liability</h2>
+                <p>To the maximum extent permitted by law, we will not be liable for indirect, special, consequential, or punitive damages arising out of or related to your use of the Service.</p>
+              </li>
+              <li>
+                <h2>Suspension and Termination</h2>
+                <p>We may suspend or terminate your access if we reasonably determine that you violated these Terms or your use poses a risk to the security of the Service.</p>
+              </li>
+              <li>
+                <h2>Changes to These Terms</h2>
+                <p>We may update these Terms from time to time. Continued use after the effective date constitutes acceptance of the updated Terms.</p>
+              </li>
+              <li>
+                <h2>Governing Law and Jurisdiction</h2>
+                <p>These Terms are governed by the laws of Thailand, and Thai courts will have jurisdiction unless applicable law provides otherwise.</p>
+              </li>
+            </ol>
+          </section>
         </article>
       </div>
     </main>
@@ -376,6 +459,13 @@
           if (String(s[key]).includes("<")) el.innerHTML = s[key];
           else el.textContent = s[key];
         });
+        const thBlock = document.querySelector(".lang-th");
+        const enBlock = document.querySelector(".lang-en");
+        if (thBlock && enBlock) {
+          const isTH = lang === "th";
+          thBlock.classList.toggle("is-active", isTH);
+          enBlock.classList.toggle("is-active", !isTH);
+        }
         langTH.setAttribute("aria-pressed", String(lang === "th"));
         langEN.setAttribute("aria-pressed", String(lang === "en"));
         localStorage.setItem(STORAGE_KEY, lang);

@@ -147,6 +147,9 @@
         font: inherit;
       }
       .segBtn[aria-pressed="true"] { color: var(--fg); border-color: color-mix(in srgb, var(--border) 60%, var(--fg)); }
+
+      .langBlock { display: none; }
+      .langBlock.is-active { display: block; }
     </style>
   </head>
   <body>
@@ -201,217 +204,221 @@
             <strong>ติดต่อ (Contact):</strong> <a href="mailto:support@buddycal.app">support@buddycal.app</a>
           </p>
 
-          <h2>นโยบายความเป็นส่วนตัว (Privacy Policy) – BuddyCal (TH)</h2>
-          <p>
-            นโยบายนี้อธิบายวิธีที่ BuddyCal (“เรา”) เก็บ ใช้ เปิดเผย และคุ้มครองข้อมูลส่วนบุคคลของคุณเมื่อคุณใช้แอปและบริการของเรา (“บริการ”)
-          </p>
+          <section class="langBlock lang-th is-active">
+            <h2>นโยบายความเป็นส่วนตัว (Privacy Policy) – BuddyCal (TH)</h2>
+            <p>
+              นโยบายนี้อธิบายวิธีที่ BuddyCal (“เรา”) เก็บ ใช้ เปิดเผย และคุ้มครองข้อมูลส่วนบุคคลของคุณเมื่อคุณใช้แอปและบริการของเรา (“บริการ”)
+            </p>
 
-          <h2>1) ข้อมูลที่เราเก็บรวบรวม</h2>
-          <p>เราอาจเก็บข้อมูลประเภทต่อไปนี้ (ขึ้นกับการใช้งานของคุณ):</p>
-          <ul>
-            <li>
-              <strong>ข้อมูลบัญชีและการติดต่อ</strong>
-              <ul>
-                <li>อีเมล</li>
-                <li>ข้อมูลยืนยันตัวตน/ตัวระบุผู้ใช้ (เช่น user ID)</li>
-              </ul>
-            </li>
-            <li>
-              <strong>ข้อมูลโปรไฟล์และเป้าหมายด้านสุขภาพ/โภชนาการ (อาจเป็นข้อมูลอ่อนไหว)</strong>
-              <ul>
-                <li>อายุ/ช่วงอายุ (ตามที่คุณกรอก)</li>
-                <li>น้ำหนัก และเป้าหมายด้านน้ำหนัก</li>
-                <li>ข้อมูลด้านสุขภาพ/โภชนาการที่คุณกรอกหรือใช้ในการคำนวณ/แนะนำ (เช่น เป้าหมายแคลอรี)</li>
-              </ul>
-            </li>
-            <li>
-              <strong>รูปภาพ</strong>
-              <ul>
-                <li>รูปโปรไฟล์ (หากคุณเลือกเพิ่ม)</li>
-              </ul>
-            </li>
-            <li>
-              <strong>ข้อมูลการใช้งานและข้อมูลอุปกรณ์ (ผ่าน analytics/ระบบปฏิบัติการ)</strong>
-              <ul>
-                <li>เหตุการณ์การใช้งานในแอป (เช่น เปิดหน้าจอ/กดปุ่ม/ความถี่การใช้งาน)</li>
-                <li>ข้อมูลอุปกรณ์โดยรวม (เช่น รุ่นอุปกรณ์ เวอร์ชันระบบปฏิบัติการ ภาษา แอปเวอร์ชัน)</li>
-                <li>ที่อยู่ IP โดยทั่วไปอาจถูกบันทึกโดยผู้ให้บริการโครงสร้างพื้นฐานเพื่อความปลอดภัย/ป้องกันการฉ้อโกง</li>
-              </ul>
-            </li>
-          </ul>
-          <p>เราไม่เปิดให้ผู้ใช้โพสต์/อัปโหลดคอนเทนต์สาธารณะภายในแอป แต่ข้อมูลที่คุณกรอกเพื่อใช้งานฟีเจอร์ยังถือเป็นข้อมูลส่วนบุคคล</p>
+            <h2>1) ข้อมูลที่เราเก็บรวบรวม</h2>
+            <p>เราอาจเก็บข้อมูลประเภทต่อไปนี้ (ขึ้นกับการใช้งานของคุณ):</p>
+            <ul>
+              <li>
+                <strong>ข้อมูลบัญชีและการติดต่อ</strong>
+                <ul>
+                  <li>อีเมล</li>
+                  <li>ข้อมูลยืนยันตัวตน/ตัวระบุผู้ใช้ (เช่น user ID)</li>
+                </ul>
+              </li>
+              <li>
+                <strong>ข้อมูลโปรไฟล์และเป้าหมายด้านสุขภาพ/โภชนาการ (อาจเป็นข้อมูลอ่อนไหว)</strong>
+                <ul>
+                  <li>อายุ/ช่วงอายุ (ตามที่คุณกรอก)</li>
+                  <li>น้ำหนัก และเป้าหมายด้านน้ำหนัก</li>
+                  <li>ข้อมูลด้านสุขภาพ/โภชนาการที่คุณกรอกหรือใช้ในการคำนวณ/แนะนำ (เช่น เป้าหมายแคลอรี)</li>
+                </ul>
+              </li>
+              <li>
+                <strong>รูปภาพ</strong>
+                <ul>
+                  <li>รูปโปรไฟล์ (หากคุณเลือกเพิ่ม)</li>
+                </ul>
+              </li>
+              <li>
+                <strong>ข้อมูลการใช้งานและข้อมูลอุปกรณ์ (ผ่าน analytics/ระบบปฏิบัติการ)</strong>
+                <ul>
+                  <li>เหตุการณ์การใช้งานในแอป (เช่น เปิดหน้าจอ/กดปุ่ม/ความถี่การใช้งาน)</li>
+                  <li>ข้อมูลอุปกรณ์โดยรวม (เช่น รุ่นอุปกรณ์ เวอร์ชันระบบปฏิบัติการ ภาษา แอปเวอร์ชัน)</li>
+                  <li>ที่อยู่ IP โดยทั่วไปอาจถูกบันทึกโดยผู้ให้บริการโครงสร้างพื้นฐานเพื่อความปลอดภัย/ป้องกันการฉ้อโกง</li>
+                </ul>
+              </li>
+            </ul>
+            <p>เราไม่เปิดให้ผู้ใช้โพสต์/อัปโหลดคอนเทนต์สาธารณะภายในแอป แต่ข้อมูลที่คุณกรอกเพื่อใช้งานฟีเจอร์ยังถือเป็นข้อมูลส่วนบุคคล</p>
 
-          <h2>2) แหล่งที่มาของข้อมูล</h2>
-          <ul>
-            <li>จากคุณโดยตรง เมื่อสมัคร/กรอกข้อมูล/ใช้งานฟีเจอร์</li>
-            <li>จากอุปกรณ์/ระบบอัตโนมัติ ผ่าน analytics และบันทึกระบบเพื่อการทำงานของแอป</li>
-          </ul>
+            <h2>2) แหล่งที่มาของข้อมูล</h2>
+            <ul>
+              <li>จากคุณโดยตรง เมื่อสมัคร/กรอกข้อมูล/ใช้งานฟีเจอร์</li>
+              <li>จากอุปกรณ์/ระบบอัตโนมัติ ผ่าน analytics และบันทึกระบบเพื่อการทำงานของแอป</li>
+            </ul>
 
-          <h2>3) วัตถุประสงค์และฐานทางกฎหมายในการประมวลผลข้อมูล</h2>
-          <p>เราใช้ข้อมูลเพื่อ:</p>
-          <ul>
-            <li>ให้บริการหลักของแอป (เช่น สร้างบัญชี บันทึกโปรไฟล์ คำนวณ/แสดงผลข้อมูลโภชนาการ)</li>
-            <li>ปรับปรุงและพัฒนาบริการ (วิเคราะห์การใช้งาน แก้บั๊ก เพิ่มประสิทธิภาพ)</li>
-            <li>ความปลอดภัยของระบบ (ป้องกันการใช้งานผิดปกติ การโจมตี การฉ้อโกง)</li>
-            <li>การสื่อสารกับคุณ (ตอบคำถาม/การสนับสนุนผู้ใช้/แจ้งการเปลี่ยนแปลงสำคัญ)</li>
-          </ul>
-          <p>
-            ฐานทางกฎหมายอาจรวมถึง: การจำเป็นเพื่อให้บริการตามคำขอของคุณ, ประโยชน์โดยชอบด้วยกฎหมายของเรา (เช่น ความปลอดภัย/การปรับปรุงบริการ),
-            และ/หรือความยินยอม (ในกรณีที่กฎหมายกำหนด)
-          </p>
+            <h2>3) วัตถุประสงค์และฐานทางกฎหมายในการประมวลผลข้อมูล</h2>
+            <p>เราใช้ข้อมูลเพื่อ:</p>
+            <ul>
+              <li>ให้บริการหลักของแอป (เช่น สร้างบัญชี บันทึกโปรไฟล์ คำนวณ/แสดงผลข้อมูลโภชนาการ)</li>
+              <li>ปรับปรุงและพัฒนาบริการ (วิเคราะห์การใช้งาน แก้บั๊ก เพิ่มประสิทธิภาพ)</li>
+              <li>ความปลอดภัยของระบบ (ป้องกันการใช้งานผิดปกติ การโจมตี การฉ้อโกง)</li>
+              <li>การสื่อสารกับคุณ (ตอบคำถาม/การสนับสนุนผู้ใช้/แจ้งการเปลี่ยนแปลงสำคัญ)</li>
+            </ul>
+            <p>
+              ฐานทางกฎหมายอาจรวมถึง: การจำเป็นเพื่อให้บริการตามคำขอของคุณ, ประโยชน์โดยชอบด้วยกฎหมายของเรา (เช่น ความปลอดภัย/การปรับปรุงบริการ),
+              และ/หรือความยินยอม (ในกรณีที่กฎหมายกำหนด)
+            </p>
 
-          <h2>4) ข้อมูลอ่อนไหว (เช่น ข้อมูลสุขภาพ)</h2>
-          <p>
-            ข้อมูลสุขภาพ/โภชนาการบางอย่างอาจถูกมองว่าเป็นข้อมูลอ่อนไหวตามกฎหมายคุ้มครองข้อมูลส่วนบุคคล เราใช้ข้อมูลดังกล่าวเพื่อให้บริการฟีเจอร์ด้านสุขภาพ/โภชนาการเท่านั้น
-            และใช้มาตรการรักษาความปลอดภัยที่เหมาะสม หากกฎหมายกำหนดให้ต้องขอความยินยอมเพิ่มเติม เราจะขอความยินยอมจากคุณผ่านหน้าจอ/ขั้นตอนที่เหมาะสม
-          </p>
+            <h2>4) ข้อมูลอ่อนไหว (เช่น ข้อมูลสุขภาพ)</h2>
+            <p>
+              ข้อมูลสุขภาพ/โภชนาการบางอย่างอาจถูกมองว่าเป็นข้อมูลอ่อนไหวตามกฎหมายคุ้มครองข้อมูลส่วนบุคคล เราใช้ข้อมูลดังกล่าวเพื่อให้บริการฟีเจอร์ด้านสุขภาพ/โภชนาการเท่านั้น
+              และใช้มาตรการรักษาความปลอดภัยที่เหมาะสม หากกฎหมายกำหนดให้ต้องขอความยินยอมเพิ่มเติม เราจะขอความยินยอมจากคุณผ่านหน้าจอ/ขั้นตอนที่เหมาะสม
+            </p>
 
-          <h2>5) การเปิดเผยข้อมูลและผู้ประมวลผลข้อมูล (Third Parties/Processors)</h2>
-          <p>เราอาจเปิดเผยหรือให้ผู้ให้บริการประมวลผลข้อมูลแทนเรา เพื่อวัตถุประสงค์ในนโยบายนี้ เช่น:</p>
-          <ul>
-            <li>Supabase (โฮสต์ฐานข้อมูล/ยืนยันตัวตน/โครงสร้างพื้นฐานที่เกี่ยวข้อง)</li>
-            <li>ผู้ให้บริการ Analytics: [ใส่ชื่อ เช่น Firebase Analytics / PostHog ฯลฯ]</li>
-          </ul>
-          <p>เราไม่ขายข้อมูลส่วนบุคคลของคุณให้บุคคลที่สาม</p>
+            <h2>5) การเปิดเผยข้อมูลและผู้ประมวลผลข้อมูล (Third Parties/Processors)</h2>
+            <p>เราอาจเปิดเผยหรือให้ผู้ให้บริการประมวลผลข้อมูลแทนเรา เพื่อวัตถุประสงค์ในนโยบายนี้ เช่น:</p>
+            <ul>
+              <li>Supabase (โฮสต์ฐานข้อมูล/ยืนยันตัวตน/โครงสร้างพื้นฐานที่เกี่ยวข้อง)</li>
+              <li>ผู้ให้บริการ Analytics: [ใส่ชื่อ เช่น Firebase Analytics / PostHog ฯลฯ]</li>
+            </ul>
+            <p>เราไม่ขายข้อมูลส่วนบุคคลของคุณให้บุคคลที่สาม</p>
 
-          <h2>6) การโอนข้อมูลไปต่างประเทศ</h2>
-          <p>
-            ข้อมูลอาจถูกจัดเก็บหรือประมวลผลบนเซิร์ฟเวอร์ที่อยู่นอกประเทศไทย ขึ้นกับผู้ให้บริการ (เช่น Supabase/analytics) เราจะใช้มาตรการที่เหมาะสมเพื่อให้การโอนข้อมูลเป็นไปตามกฎหมายที่เกี่ยวข้อง
-          </p>
+            <h2>6) การโอนข้อมูลไปต่างประเทศ</h2>
+            <p>
+              ข้อมูลอาจถูกจัดเก็บหรือประมวลผลบนเซิร์ฟเวอร์ที่อยู่นอกประเทศไทย ขึ้นกับผู้ให้บริการ (เช่น Supabase/analytics) เราจะใช้มาตรการที่เหมาะสมเพื่อให้การโอนข้อมูลเป็นไปตามกฎหมายที่เกี่ยวข้อง
+            </p>
 
-          <h2>7) ระยะเวลาในการเก็บรักษาข้อมูล</h2>
-          <p>เราจะเก็บข้อมูลเท่าที่จำเป็นต่อวัตถุประสงค์ที่ระบุไว้ รวมถึงการปฏิบัติตามกฎหมาย การระงับข้อพิพาท และการบังคับใช้ข้อตกลง โดยทั่วไป:</p>
-          <ul>
-            <li>ข้อมูลบัญชี/โปรไฟล์จะเก็บไว้ตราบเท่าที่คุณมีบัญชี หรือจนกว่าคุณจะขอลบ</li>
-            <li>ข้อมูลบันทึกระบบ/analytics อาจถูกเก็บตามรอบเวลามาตรฐานของผู้ให้บริการหรือเท่าที่จำเป็นเพื่อความปลอดภัยและการปรับปรุงบริการ</li>
-          </ul>
+            <h2>7) ระยะเวลาในการเก็บรักษาข้อมูล</h2>
+            <p>เราจะเก็บข้อมูลเท่าที่จำเป็นต่อวัตถุประสงค์ที่ระบุไว้ รวมถึงการปฏิบัติตามกฎหมาย การระงับข้อพิพาท และการบังคับใช้ข้อตกลง โดยทั่วไป:</p>
+            <ul>
+              <li>ข้อมูลบัญชี/โปรไฟล์จะเก็บไว้ตราบเท่าที่คุณมีบัญชี หรือจนกว่าคุณจะขอลบ</li>
+              <li>ข้อมูลบันทึกระบบ/analytics อาจถูกเก็บตามรอบเวลามาตรฐานของผู้ให้บริการหรือเท่าที่จำเป็นเพื่อความปลอดภัยและการปรับปรุงบริการ</li>
+            </ul>
 
-          <h2>8) สิทธิของเจ้าของข้อมูล</h2>
-          <p>ภายใต้กฎหมายที่ใช้บังคับ คุณอาจมีสิทธิ เช่น:</p>
-          <ul>
-            <li>ขอเข้าถึง/รับสำเนาข้อมูล</li>
-            <li>ขอแก้ไขให้ถูกต้อง</li>
-            <li>ขอให้ลบหรือทำลาย</li>
-            <li>ขอให้ระงับการใช้</li>
-            <li>คัดค้านการประมวลผลในบางกรณี</li>
-            <li>ถอนความยินยอม (หากเราอาศัยความยินยอม)</li>
-          </ul>
-          <p>คุณสามารถติดต่อเราได้ที่ <a href="mailto:support@buddycal.app">support@buddycal.app</a></p>
+            <h2>8) สิทธิของเจ้าของข้อมูล</h2>
+            <p>ภายใต้กฎหมายที่ใช้บังคับ คุณอาจมีสิทธิ เช่น:</p>
+            <ul>
+              <li>ขอเข้าถึง/รับสำเนาข้อมูล</li>
+              <li>ขอแก้ไขให้ถูกต้อง</li>
+              <li>ขอให้ลบหรือทำลาย</li>
+              <li>ขอให้ระงับการใช้</li>
+              <li>คัดค้านการประมวลผลในบางกรณี</li>
+              <li>ถอนความยินยอม (หากเราอาศัยความยินยอม)</li>
+            </ul>
+            <p>คุณสามารถติดต่อเราได้ที่ <a href="mailto:support@buddycal.app">support@buddycal.app</a></p>
 
-          <h2>9) ความปลอดภัยของข้อมูล</h2>
-          <p>
-            เราใช้มาตรการรักษาความปลอดภัยที่เหมาะสมตามสมควร เช่น การควบคุมการเข้าถึง การเข้ารหัสระหว่างส่งข้อมูล (ตามที่แพลตฟอร์มรองรับ) และแนวทางปฏิบัติด้านความปลอดภัยของผู้ให้บริการโครงสร้างพื้นฐาน
-            อย่างไรก็ตาม ไม่มีระบบใดปลอดภัย 100% เราไม่สามารถรับประกันความปลอดภัยได้อย่างสมบูรณ์
-          </p>
+            <h2>9) ความปลอดภัยของข้อมูล</h2>
+            <p>
+              เราใช้มาตรการรักษาความปลอดภัยที่เหมาะสมตามสมควร เช่น การควบคุมการเข้าถึง การเข้ารหัสระหว่างส่งข้อมูล (ตามที่แพลตฟอร์มรองรับ) และแนวทางปฏิบัติด้านความปลอดภัยของผู้ให้บริการโครงสร้างพื้นฐาน
+              อย่างไรก็ตาม ไม่มีระบบใดปลอดภัย 100% เราไม่สามารถรับประกันความปลอดภัยได้อย่างสมบูรณ์
+            </p>
 
-          <h2>10) ความเป็นส่วนตัวของเด็ก</h2>
-          <p>
-            บริการนี้กำหนดอายุขั้นต่ำ 13 ปี เราไม่ได้ตั้งใจเก็บข้อมูลจากเด็กอายุต่ำกว่า 13 ปี หากคุณเชื่อว่าเด็กอายุต่ำกว่า 13 ปีได้ให้ข้อมูลกับเรา กรุณาติดต่อเพื่อให้เราดำเนินการลบข้อมูล
-          </p>
+            <h2>10) ความเป็นส่วนตัวของเด็ก</h2>
+            <p>
+              บริการนี้กำหนดอายุขั้นต่ำ 13 ปี เราไม่ได้ตั้งใจเก็บข้อมูลจากเด็กอายุต่ำกว่า 13 ปี หากคุณเชื่อว่าเด็กอายุต่ำกว่า 13 ปีได้ให้ข้อมูลกับเรา กรุณาติดต่อเพื่อให้เราดำเนินการลบข้อมูล
+            </p>
 
-          <h2>11) การเปลี่ยนแปลงนโยบายนี้</h2>
-          <p>เราอาจปรับปรุงนโยบายนี้เป็นครั้งคราว โดยจะแจ้งให้ทราบผ่านแอปหรือช่องทางที่เหมาะสม และจะอัปเดตวันที่มีผลบังคับใช้ด้านบน</p>
+            <h2>11) การเปลี่ยนแปลงนโยบายนี้</h2>
+            <p>เราอาจปรับปรุงนโยบายนี้เป็นครั้งคราว โดยจะแจ้งให้ทราบผ่านแอปหรือช่องทางที่เหมาะสม และจะอัปเดตวันที่มีผลบังคับใช้ด้านบน</p>
+          </section>
 
-          <h2 style="margin-top: 28px">Privacy Policy – BuddyCal (EN)</h2>
-          <p>
-            This Privacy Policy explains how BuddyCal (“we”, “us”, “our”) collects, uses, discloses, and protects your personal data when you use our app and services (the “Services”).
-          </p>
+          <section class="langBlock lang-en" lang="en">
+            <h2>Privacy Policy – BuddyCal (EN)</h2>
+            <p>
+              This Privacy Policy explains how BuddyCal (“we”, “us”, “our”) collects, uses, discloses, and protects your personal data when you use our app and services (the “Services”).
+            </p>
 
-          <h2>1) Data We Collect</h2>
-          <p>Depending on how you use the Services, we may collect:</p>
-          <ul>
-            <li>
-              <strong>Account &amp; contact data</strong>
-              <ul>
-                <li>Email address</li>
-                <li>Identifiers (e.g., user ID)</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Profile and health/nutrition data (may be sensitive)</strong>
-              <ul>
-                <li>Age / age range (as provided)</li>
-                <li>Weight and weight goals</li>
-                <li>Health and nutrition-related information you provide for calculations/recommendations (e.g., calorie targets)</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Photos</strong>
-              <ul>
-                <li>Profile photo (if you choose to add one)</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Usage &amp; device data (via analytics and system logs)</strong>
-              <ul>
-                <li>In-app events (e.g., screens viewed, button taps, frequency of use)</li>
-                <li>Device-level data (e.g., device model, OS version, app version, language)</li>
-                <li>IP address may be logged by infrastructure providers for security and abuse prevention</li>
-              </ul>
-            </li>
-          </ul>
-          <p>We do not provide a public user-generated content posting feature in the App.</p>
+            <h2>1) Data We Collect</h2>
+            <p>Depending on how you use the Services, we may collect:</p>
+            <ul>
+              <li>
+                <strong>Account &amp; contact data</strong>
+                <ul>
+                  <li>Email address</li>
+                  <li>Identifiers (e.g., user ID)</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Profile and health/nutrition data (may be sensitive)</strong>
+                <ul>
+                  <li>Age / age range (as provided)</li>
+                  <li>Weight and weight goals</li>
+                  <li>Health and nutrition-related information you provide for calculations/recommendations (e.g., calorie targets)</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Photos</strong>
+                <ul>
+                  <li>Profile photo (if you choose to add one)</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Usage &amp; device data (via analytics and system logs)</strong>
+                <ul>
+                  <li>In-app events (e.g., screens viewed, button taps, frequency of use)</li>
+                  <li>Device-level data (e.g., device model, OS version, app version, language)</li>
+                  <li>IP address may be logged by infrastructure providers for security and abuse prevention</li>
+                </ul>
+              </li>
+            </ul>
+            <p>We do not provide a public user-generated content posting feature in the App.</p>
 
-          <h2>2) Sources of Data</h2>
-          <ul>
-            <li>From you directly when you sign up, provide profile details, or use features</li>
-            <li>Automatically from your device and our analytics/infrastructure systems</li>
-          </ul>
+            <h2>2) Sources of Data</h2>
+            <ul>
+              <li>From you directly when you sign up, provide profile details, or use features</li>
+              <li>Automatically from your device and our analytics/infrastructure systems</li>
+            </ul>
 
-          <h2>3) How We Use Data (Purposes &amp; Legal Bases)</h2>
-          <p>We use your data to:</p>
-          <ul>
-            <li>Provide core functionality (account creation, saving profiles, nutrition calculations/displays)</li>
-            <li>Improve and maintain the Services (analytics, debugging, performance)</li>
-            <li>Protect security and prevent abuse/fraud</li>
-            <li>Communicate with you for support and important service notices</li>
-          </ul>
-          <p>Legal bases may include necessity to provide the Services you request, our legitimate interests (security/improvement), and/or consent where required.</p>
+            <h2>3) How We Use Data (Purposes &amp; Legal Bases)</h2>
+            <p>We use your data to:</p>
+            <ul>
+              <li>Provide core functionality (account creation, saving profiles, nutrition calculations/displays)</li>
+              <li>Improve and maintain the Services (analytics, debugging, performance)</li>
+              <li>Protect security and prevent abuse/fraud</li>
+              <li>Communicate with you for support and important service notices</li>
+            </ul>
+            <p>Legal bases may include necessity to provide the Services you request, our legitimate interests (security/improvement), and/or consent where required.</p>
 
-          <h2>4) Sensitive Data</h2>
-          <p>
-            Some health/nutrition-related data may be considered sensitive under applicable laws. We process it only to provide the Services and apply appropriate safeguards.
-            Where consent or additional requirements apply, we will request it through appropriate in-app flows.
-          </p>
+            <h2>4) Sensitive Data</h2>
+            <p>
+              Some health/nutrition-related data may be considered sensitive under applicable laws. We process it only to provide the Services and apply appropriate safeguards.
+              Where consent or additional requirements apply, we will request it through appropriate in-app flows.
+            </p>
 
-          <h2>5) Sharing &amp; Processors</h2>
-          <p>We may share data with service providers acting as processors to operate the Services, such as:</p>
-          <ul>
-            <li>Supabase (database, authentication, and related infrastructure)</li>
-            <li>Analytics provider(s): [Insert name, e.g., Firebase Analytics / PostHog]</li>
-          </ul>
-          <p>We do not sell your personal data.</p>
+            <h2>5) Sharing &amp; Processors</h2>
+            <p>We may share data with service providers acting as processors to operate the Services, such as:</p>
+            <ul>
+              <li>Supabase (database, authentication, and related infrastructure)</li>
+              <li>Analytics provider(s): [Insert name, e.g., Firebase Analytics / PostHog]</li>
+            </ul>
+            <p>We do not sell your personal data.</p>
 
-          <h2>6) International Data Transfers</h2>
-          <p>
-            Your data may be stored or processed outside Thailand depending on our providers (e.g., Supabase/analytics). We apply appropriate measures to comply with applicable transfer requirements.
-          </p>
+            <h2>6) International Data Transfers</h2>
+            <p>
+              Your data may be stored or processed outside Thailand depending on our providers (e.g., Supabase/analytics). We apply appropriate measures to comply with applicable transfer requirements.
+            </p>
 
-          <h2>7) Data Retention</h2>
-          <p>We retain data only as long as necessary for the purposes described, including legal compliance, dispute resolution, and enforcement.</p>
-          <ul>
-            <li>Account/profile data: generally retained while your account is active or until you request deletion</li>
-            <li>Logs/analytics: retained based on provider defaults or as needed for security and service improvement</li>
-          </ul>
+            <h2>7) Data Retention</h2>
+            <p>We retain data only as long as necessary for the purposes described, including legal compliance, dispute resolution, and enforcement.</p>
+            <ul>
+              <li>Account/profile data: generally retained while your account is active or until you request deletion</li>
+              <li>Logs/analytics: retained based on provider defaults or as needed for security and service improvement</li>
+            </ul>
 
-          <h2>8) Your Rights</h2>
-          <p>
-            Subject to applicable law, you may have rights to access, correct, delete, restrict, object, and withdraw consent (where applicable). Contact us at
-            <a href="mailto:support@buddycal.app">support@buddycal.app</a>.
-          </p>
+            <h2>8) Your Rights</h2>
+            <p>
+              Subject to applicable law, you may have rights to access, correct, delete, restrict, object, and withdraw consent (where applicable). Contact us at
+              <a href="mailto:support@buddycal.app">support@buddycal.app</a>.
+            </p>
 
-          <h2>9) Security</h2>
-          <p>
-            We implement reasonable technical and organizational measures to protect data (e.g., access controls, encryption in transit where supported). No method of transmission or storage is 100% secure.
-          </p>
+            <h2>9) Security</h2>
+            <p>
+              We implement reasonable technical and organizational measures to protect data (e.g., access controls, encryption in transit where supported). No method of transmission or storage is 100% secure.
+            </p>
 
-          <h2>10) Children’s Privacy</h2>
-          <p>
-            The Services are intended for users aged 13 and above. We do not knowingly collect data from children under 13. If you believe a child under 13 provided data to us, contact us to request deletion.
-          </p>
+            <h2>10) Children’s Privacy</h2>
+            <p>
+              The Services are intended for users aged 13 and above. We do not knowingly collect data from children under 13. If you believe a child under 13 provided data to us, contact us to request deletion.
+            </p>
 
-          <h2>11) Updates to This Policy</h2>
-          <p>We may update this Privacy Policy from time to time. We will notify you via the App or other appropriate means and update the effective date above.</p>
+            <h2>11) Updates to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you via the App or other appropriate means and update the effective date above.</p>
+          </section>
         </article>
       </div>
     </main>
@@ -476,6 +483,13 @@
           if (String(s[key]).includes("<")) el.innerHTML = s[key];
           else el.textContent = s[key];
         });
+        const thBlock = document.querySelector(".lang-th");
+        const enBlock = document.querySelector(".lang-en");
+        if (thBlock && enBlock) {
+          const isTH = lang === "th";
+          thBlock.classList.toggle("is-active", isTH);
+          enBlock.classList.toggle("is-active", !isTH);
+        }
         langTH.setAttribute("aria-pressed", String(lang === "th"));
         langEN.setAttribute("aria-pressed", String(lang === "en"));
         localStorage.setItem(STORAGE_KEY, lang);
