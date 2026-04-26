@@ -489,6 +489,11 @@
           const isTH = lang === "th";
           thBlock.classList.toggle("is-active", isTH);
           enBlock.classList.toggle("is-active", !isTH);
+          // Extra-safe toggling for mobile browsers/caching quirks
+          thBlock.hidden = !isTH;
+          enBlock.hidden = isTH;
+          thBlock.style.display = isTH ? "block" : "none";
+          enBlock.style.display = isTH ? "none" : "block";
         }
         langTH.setAttribute("aria-pressed", String(lang === "th"));
         langEN.setAttribute("aria-pressed", String(lang === "en"));
