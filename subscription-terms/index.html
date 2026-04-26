@@ -133,6 +133,9 @@
         font: inherit;
       }
       .segBtn[aria-pressed="true"] { color: var(--fg); border-color: color-mix(in srgb, var(--border) 60%, var(--fg)); }
+
+      .langBlock { display: none; }
+      .langBlock.is-active { display: block; }
     </style>
   </head>
   <body>
@@ -181,24 +184,44 @@
       <div class="container">
         <article class="card">
           <h1>Subscription Terms</h1>
-          <p class="meta">วันที่มีผลบังคับใช้ (Effective Date): <span id="d"></span></p>
+          <p class="meta"><span data-i18n="meta_effective">วันที่มีผลบังคับใช้ (Effective Date):</span> <span id="d"></span></p>
 
-          <p>
-            หน้านี้ใช้สำหรับข้อกำหนดการสมัครสมาชิก/การชำระเงิน (ถ้ามี) ของ BuddyCal.
-            หากแอปของคุณยังไม่มีระบบสมัครสมาชิก คุณสามารถคงหน้านี้ไว้เป็น “เผื่ออนาคต” ได้
-          </p>
+          <section class="langBlock lang-th is-active">
+            <p>
+              หน้านี้ใช้สำหรับข้อกำหนดการสมัครสมาชิก/การชำระเงิน (ถ้ามี) ของ BuddyCal.
+              หากแอปของคุณยังไม่มีระบบสมัครสมาชิก คุณสามารถคงหน้านี้ไว้เป็น “เผื่ออนาคต” ได้
+            </p>
 
-          <h2>การชำระเงินและการต่ออายุ</h2>
-          <ul>
-            <li>การชำระเงินจะถูกเรียกเก็บผ่าน App Store ตามเงื่อนไขของ Apple</li>
-            <li>การสมัครสมาชิกอาจต่ออายุอัตโนมัติหากไม่ได้ยกเลิกก่อนวันตัดรอบ</li>
-          </ul>
+            <h2>การชำระเงินและการต่ออายุ</h2>
+            <ul>
+              <li>การชำระเงินจะถูกเรียกเก็บผ่าน App Store ตามเงื่อนไขของ Apple</li>
+              <li>การสมัครสมาชิกอาจต่ออายุอัตโนมัติหากไม่ได้ยกเลิกก่อนวันตัดรอบ</li>
+            </ul>
 
-          <h2>การยกเลิก</h2>
-          <p>คุณสามารถยกเลิกการสมัครสมาชิกได้จากการตั้งค่าบัญชี App Store ของคุณ</p>
+            <h2>การยกเลิก</h2>
+            <p>คุณสามารถยกเลิกการสมัครสมาชิกได้จากการตั้งค่าบัญชี App Store ของคุณ</p>
 
-          <h2>ติดต่อเรา</h2>
-          <p>หากมีคำถาม โปรดติดต่อ <a href="mailto:support@buddycal.app">support@buddycal.app</a></p>
+            <h2>ติดต่อเรา</h2>
+            <p>หากมีคำถาม โปรดติดต่อ <a href="mailto:support@buddycal.app">support@buddycal.app</a></p>
+          </section>
+
+          <section class="langBlock lang-en" lang="en">
+            <p>
+              This page describes subscription and payment terms (if applicable) for BuddyCal. If your app does not offer subscriptions yet, you can keep this page as a placeholder for future use.
+            </p>
+
+            <h2>Billing and renewal</h2>
+            <ul>
+              <li>Payments are billed through the App Store, subject to Apple’s terms.</li>
+              <li>Subscriptions may auto-renew unless cancelled before the end of the current period.</li>
+            </ul>
+
+            <h2>Cancellation</h2>
+            <p>You can cancel your subscription in your App Store account settings.</p>
+
+            <h2>Contact</h2>
+            <p>If you have questions, contact <a href="mailto:support@buddycal.app">support@buddycal.app</a></p>
+          </section>
         </article>
       </div>
     </main>
@@ -219,7 +242,8 @@
     <script>
       const now = new Date();
       document.getElementById("y").textContent = now.getFullYear();
-      document.getElementById("d").textContent = now.toLocaleDateString("th-TH", {
+      const currentLang = (localStorage.getItem("buddycal_site_lang") || "").toLowerCase() === "en" ? "en" : "th";
+      document.getElementById("d").textContent = now.toLocaleDateString(currentLang === "th" ? "th-TH" : "en-US", {
         year: "numeric",
         month: "long",
         day: "numeric",
@@ -235,6 +259,7 @@
           footer_copyright: "© <span id=\"y\"></span> BuddyCal All rights reserved.",
           legal_terms: "Terms of Service",
           legal_privacy: "Privacy Policy",
+          meta_effective: "วันที่มีผลบังคับใช้ (Effective Date):",
         },
         en: {
           home: "Home",
@@ -244,6 +269,7 @@
           footer_copyright: "© <span id=\"y\"></span> BuddyCal. All rights reserved.",
           legal_terms: "Terms of Service",
           legal_privacy: "Privacy Policy",
+          meta_effective: "Effective Date:",
         },
       };
 
@@ -263,6 +289,21 @@
           if (String(s[key]).includes("<")) el.innerHTML = s[key];
           else el.textContent = s[key];
         });
+        document.querySelectorAll(".langBlock").forEach((block) => {
+          const isTHBlock = block.classList.contains("lang-th");
+          const show = isTHBlock ? lang === "th" : lang === "en";
+          block.classList.toggle("is-active", show);
+          block.hidden = !show;
+          block.style.display = show ? "block" : "none";
+        });
+        const dateEl = document.getElementById("d");
+        if (dateEl) {
+          dateEl.textContent = now.toLocaleDateString(lang === "th" ? "th-TH" : "en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          });
+        }
         langTH.setAttribute("aria-pressed", String(lang === "th"));
         langEN.setAttribute("aria-pressed", String(lang === "en"));
         localStorage.setItem(STORAGE_KEY, lang);

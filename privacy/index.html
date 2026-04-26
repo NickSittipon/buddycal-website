@@ -439,7 +439,8 @@
     <script>
       const now = new Date();
       document.getElementById("y").textContent = now.getFullYear();
-      document.getElementById("d").textContent = now.toLocaleDateString("th-TH", {
+      const currentLang = (localStorage.getItem("buddycal_site_lang") || "").toLowerCase() === "en" ? "en" : "th";
+      document.getElementById("d").textContent = now.toLocaleDateString(currentLang === "th" ? "th-TH" : "en-US", {
         year: "numeric",
         month: "long",
         day: "numeric",
@@ -491,17 +492,20 @@
           if (String(s[key]).includes("<")) el.innerHTML = s[key];
           else el.textContent = s[key];
         });
-        const thBlock = document.querySelector(".lang-th");
-        const enBlock = document.querySelector(".lang-en");
-        if (thBlock && enBlock) {
-          const isTH = lang === "th";
-          thBlock.classList.toggle("is-active", isTH);
-          enBlock.classList.toggle("is-active", !isTH);
-          // Extra-safe toggling for mobile browsers/caching quirks
-          thBlock.hidden = !isTH;
-          enBlock.hidden = isTH;
-          thBlock.style.display = isTH ? "block" : "none";
-          enBlock.style.display = isTH ? "none" : "block";
+        document.querySelectorAll(".langBlock").forEach((block) => {
+          const isTHBlock = block.classList.contains("lang-th");
+          const show = isTHBlock ? lang === "th" : lang === "en";
+          block.classList.toggle("is-active", show);
+          block.hidden = !show;
+          block.style.display = show ? "block" : "none";
+        });
+        const dateEl = document.getElementById("d");
+        if (dateEl) {
+          dateEl.textContent = now.toLocaleDateString(lang === "th" ? "th-TH" : "en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          });
         }
         langTH.setAttribute("aria-pressed", String(lang === "th"));
         langEN.setAttribute("aria-pressed", String(lang === "en"));
