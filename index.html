@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="BuddyCal — ถ่ายรูปคำนวณแคลอรี่, นับก้าว, ติดตามสุขภาพแบบง่ายๆ" />
+    <title>BuddyCal</title>
+
+    <style>
+      :root {
+        --bg: #0b1220;
+        --card: rgba(255, 255, 255, 0.06);
+        --border: rgba(255, 255, 255, 0.14);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.7);
+        --muted2: rgba(255, 255, 255, 0.55);
+        --accent: #8b5cf6;
+        --accent2: #22c55e;
+        --shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+        --radius: 18px;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        color: var(--text);
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji",
+          "Segoe UI Emoji";
+        background:
+          radial-gradient(1200px 600px at 70% 0%, rgba(139, 92, 246, 0.35), transparent 60%),
+          radial-gradient(900px 550px at 20% 20%, rgba(34, 197, 94, 0.20), transparent 60%),
+          radial-gradient(900px 650px at 80% 80%, rgba(59, 130, 246, 0.22), transparent 60%),
+          var(--bg);
+      }
+
+      a { color: inherit; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      .container { width: min(1100px, calc(100% - 40px)); margin: 0 auto; }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        padding: 8px 12px;
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 13px;
+        letter-spacing: 0.2px;
+        backdrop-filter: blur(10px);
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(11, 18, 32, 0.6);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+        gap: 14px;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        letter-spacing: 0.2px;
+      }
+      .logo {
+        width: 34px;
+        height: 34px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--accent), #3b82f6);
+        box-shadow: 0 10px 25px rgba(139, 92, 246, 0.35);
+      }
+      .menu {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .menu a {
+        color: var(--muted);
+        font-size: 14px;
+        padding: 8px 10px;
+        border-radius: 999px;
+      }
+      .menu a:hover {
+        background: rgba(255, 255, 255, 0.06);
+        text-decoration: none;
+        color: var(--text);
+      }
+
+      main { padding: 56px 0 40px; }
+      section { padding: 52px 0; }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 34px;
+        align-items: center;
+      }
+      h1 {
+        margin: 14px 0 12px;
+        font-size: clamp(36px, 4.2vw, 56px);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+      }
+      .lead {
+        margin: 0 0 22px;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.6;
+      }
+      .ctaRow { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 16px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--text);
+        font-weight: 650;
+        box-shadow: var(--shadow);
+        text-decoration: none !important;
+      }
+      .btnPrimary {
+        border: 1px solid rgba(139, 92, 246, 0.55);
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.95), rgba(59, 130, 246, 0.9));
+      }
+      .btn small { display: block; font-weight: 550; opacity: 0.9; }
+      .btn span { display: block; line-height: 1.1; }
+      .btn:hover { transform: translateY(-1px); }
+      .note { color: var(--muted2); font-size: 13px; }
+
+      .phone {
+        position: relative;
+        border-radius: 34px;
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+        overflow: hidden;
+      }
+      .phone::before {
+        content: "";
+        position: absolute;
+        inset: -60px;
+        background: radial-gradient(circle at 30% 20%, rgba(34, 197, 94, 0.26), transparent 45%),
+          radial-gradient(circle at 70% 70%, rgba(139, 92, 246, 0.30), transparent 55%);
+        filter: blur(6px);
+      }
+      .screen {
+        position: relative;
+        border-radius: 26px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+        padding: 18px;
+      }
+      .mockTop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 14px;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 12px;
+      }
+      .mockCardGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+      .mockCard {
+        border-radius: 16px;
+        padding: 14px 14px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(0, 0, 0, 0.18);
+      }
+      .kpi { font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-bottom: 6px; }
+      .kpiLabel { color: rgba(255, 255, 255, 0.68); font-size: 12px; }
+      .mockBar {
+        margin-top: 12px;
+        height: 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.10);
+      }
+      .mockBar > i {
+        display: block;
+        height: 100%;
+        width: 62%;
+        background: linear-gradient(90deg, rgba(34, 197, 94, 0.9), rgba(139, 92, 246, 0.9));
+      }
+
+      .sectionTitle {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+      h2 { margin: 0; font-size: 24px; letter-spacing: -0.01em; }
+      .sectionDesc { margin: 6px 0 0; color: var(--muted); line-height: 1.6; }
+
+      .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+      .feature {
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: var(--card);
+        padding: 18px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      }
+      .icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        margin-bottom: 12px;
+      }
+      .feature h3 { margin: 0 0 8px; font-size: 16px; }
+      .feature p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
+
+      .supportCard {
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+        padding: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .supportCard .left { min-width: 240px; }
+      .supportCard strong { display: block; font-size: 16px; margin-bottom: 6px; }
+      .supportCard .links { display: flex; gap: 10px; flex-wrap: wrap; }
+      .linkBtn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(0, 0, 0, 0.18);
+        padding: 10px 12px;
+        border-radius: 12px;
+        text-decoration: none !important;
+        color: var(--text);
+        font-weight: 650;
+      }
+      .linkBtn:hover { transform: translateY(-1px); }
+
+      footer {
+        padding: 28px 0 42px;
+        border-top: 1px solid rgba(255, 255, 255, 0.10);
+        color: var(--muted2);
+        font-size: 13px;
+      }
+      .footerRow {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .footerLinks { display: flex; gap: 14px; flex-wrap: wrap; }
+      .footerLinks a { color: var(--muted); }
+      .footerLinks a:hover { color: var(--text); }
+
+      @media (max-width: 920px) {
+        .hero { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 860px) {
+        .grid3 { grid-template-columns: 1fr; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .btn:hover, .linkBtn:hover { transform: none; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <nav class="nav" aria-label="Primary">
+          <a class="brand" href="#top" aria-label="BuddyCal Home">
+            <span class="logo" aria-hidden="true"></span>
+            <span>BuddyCal</span>
+          </a>
+          <div class="menu">
+            <a href="#features">Features</a>
+            <a href="#support">Support</a>
+            <a href="privacy/">Privacy</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <div class="container">
+        <section class="hero" aria-label="Hero">
+          <div>
+            <span class="pill">🌿 Health • 🍽️ Calories • 🚶 Steps</span>
+            <h1>กินพอดี เดินพอดี<br />ดูแลตัวเองให้ชัดเจน</h1>
+            <p class="lead">
+              BuddyCal ช่วยคุณ “ถ่ายรูปแล้วประเมินแคลอรี่” พร้อมติดตาม “จำนวนก้าว” และสรุปความคืบหน้าในแต่ละวันแบบเข้าใจง่าย
+              เพื่อให้การดูแลสุขภาพเป็นเรื่องที่ทำต่อเนื่องได้จริง
+            </p>
+
+            <div class="ctaRow">
+              <a class="btn btnPrimary" href="#" aria-label="Download on the App Store (placeholder)">
+                <span>
+                  <small>Download on the</small>
+                  <span>App Store</span>
+                </span>
+              </a>
+              <a class="btn" href="#features" aria-label="See features">ดูฟีเจอร์</a>
+              <span class="note">หมายเหตุ: ปุ่ม App Store ยังเป็นลิงก์ตัวอย่าง (ใส่ URL จริงได้ภายหลัง)</span>
+            </div>
+          </div>
+
+          <div class="phone" aria-label="App preview mockup">
+            <div class="screen">
+              <div class="mockTop">
+                <span>BuddyCal</span>
+                <span>Today</span>
+              </div>
+              <div class="mockCardGrid">
+                <div class="mockCard">
+                  <div class="kpi">1,820</div>
+                  <div class="kpiLabel">kcal (ประมาณการ)</div>
+                  <div class="mockBar"><i></i></div>
+                </div>
+                <div class="mockCard">
+                  <div class="kpi">7,460</div>
+                  <div class="kpiLabel">steps</div>
+                  <div class="mockBar"><i style="width: 74%"></i></div>
+                </div>
+                <div class="mockCard" style="grid-column: 1 / -1">
+                  <div class="kpi" style="font-size: 16px; margin-bottom: 8px">ถ่ายรูปมื้ออาหาร → ประเมินแคลอรี่</div>
+                  <div class="kpiLabel">อัปโหลดรูปอาหารเพื่อดูค่าประมาณและบันทึกไว้ในไทม์ไลน์</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="features" aria-label="Features">
+          <div class="sectionTitle">
+            <div>
+              <h2>Features</h2>
+              <p class="sectionDesc">ฟีเจอร์หลักที่ทำให้ติดตามสุขภาพได้ง่ายและต่อเนื่อง</p>
+            </div>
+          </div>
+
+          <div class="grid3">
+            <article class="feature">
+              <div class="icon" aria-hidden="true">📷</div>
+              <h3>ถ่ายรูปคำนวณแคลอรี่</h3>
+              <p>ถ่ายรูปอาหารเพื่อประเมินแคลอรี่แบบรวดเร็ว บันทึกเป็นมื้อเช้า/กลางวัน/เย็นได้ทันที</p>
+            </article>
+            <article class="feature">
+              <div class="icon" aria-hidden="true">🚶</div>
+              <h3>นับก้าวและสรุปรายวัน</h3>
+              <p>ติดตามจำนวนก้าวและเป้าหมายในแต่ละวัน พร้อมภาพรวมที่อ่านง่าย เพื่อช่วยสร้างวินัย</p>
+            </article>
+            <article class="feature">
+              <div class="icon" aria-hidden="true">📈</div>
+              <h3>ดูความคืบหน้า</h3>
+              <p>สรุปแนวโน้มพฤติกรรมการกินและการเคลื่อนไหว ช่วยให้ปรับแผนได้แบบเป็นรูปธรรม</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="support" aria-label="Support">
+          <div class="sectionTitle">
+            <div>
+              <h2>Support / Contact</h2>
+              <p class="sectionDesc">ติดต่อทีมงานเพื่อขอความช่วยเหลือ แจ้งปัญหา หรือเสนอแนะฟีเจอร์</p>
+            </div>
+          </div>
+
+          <div class="supportCard">
+            <div class="left">
+              <strong>อีเมลสำหรับติดต่อ</strong>
+              <div class="note"><a href="mailto:support@buddycal.app">support@buddycal.app</a></div>
+            </div>
+            <div class="links" aria-label="Support links">
+              <a class="linkBtn" href="mailto:support@buddycal.app">ส่งอีเมล</a>
+              <a class="linkBtn" href="#" aria-label="Line OA link (placeholder)">Line OA (ใส่ลิงก์)</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footerRow">
+          <div>© <span id="y"></span> BuddyCal</div>
+          <div class="footerLinks" aria-label="Legal links">
+            <a href="terms/">Terms of Service</a>
+            <a href="privacy/">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
