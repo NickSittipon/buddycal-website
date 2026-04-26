@@ -4,60 +4,71 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="BuddyCal — ถ่ายรูปคำนวณแคลอรี่, นับก้าว, ติดตามสุขภาพแบบง่ายๆ" />
+    <meta name="color-scheme" content="light dark" />
     <title>BuddyCal</title>
 
     <style>
       :root {
-        --bg: #0b1220;
+        --bg: #0b1020;
+        --fg: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.72);
+        --muted2: rgba(255, 255, 255, 0.56);
         --card: rgba(255, 255, 255, 0.06);
-        --border: rgba(255, 255, 255, 0.14);
-        --text: rgba(255, 255, 255, 0.92);
-        --muted: rgba(255, 255, 255, 0.7);
-        --muted2: rgba(255, 255, 255, 0.55);
-        --accent: #8b5cf6;
-        --accent2: #22c55e;
-        --shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
-        --radius: 18px;
+        --border: rgba(255, 255, 255, 0.12);
+        --accent: #60a5fa;
+        --accent2: #a78bfa;
+        --shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
+        --radius: 16px;
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #f7f8ff;
+          --fg: rgba(15, 23, 42, 0.92);
+          --muted: rgba(15, 23, 42, 0.68);
+          --muted2: rgba(15, 23, 42, 0.54);
+          --card: rgba(15, 23, 42, 0.04);
+          --border: rgba(15, 23, 42, 0.12);
+          --accent: #2563eb;
+          --accent2: #7c3aed;
+          --shadow: 0 10px 26px rgba(15, 23, 42, 0.10);
+        }
       }
 
       * { box-sizing: border-box; }
       html { scroll-behavior: smooth; }
       body {
         margin: 0;
-        color: var(--text);
+        color: var(--fg);
         font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji",
           "Segoe UI Emoji";
-        background:
-          radial-gradient(1200px 600px at 70% 0%, rgba(139, 92, 246, 0.35), transparent 60%),
-          radial-gradient(900px 550px at 20% 20%, rgba(34, 197, 94, 0.20), transparent 60%),
-          radial-gradient(900px 650px at 80% 80%, rgba(59, 130, 246, 0.22), transparent 60%),
-          var(--bg);
+        line-height: 1.65;
+        background: var(--bg);
       }
 
       a { color: inherit; text-decoration: none; }
       a:hover { text-decoration: underline; }
 
-      .container { width: min(1100px, calc(100% - 40px)); margin: 0 auto; }
+      .container { width: min(1040px, calc(100% - 40px)); margin: 0 auto; }
       .pill {
         display: inline-flex;
         align-items: center;
         gap: 8px;
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.04);
+        background: var(--card);
         padding: 8px 12px;
         border-radius: 999px;
         color: var(--muted);
         font-size: 13px;
         letter-spacing: 0.2px;
-        backdrop-filter: blur(10px);
       }
 
       header {
         position: sticky;
         top: 0;
         z-index: 50;
-        background: rgba(11, 18, 32, 0.6);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: color-mix(in srgb, var(--bg) 92%, transparent);
+        border-bottom: 1px solid var(--border);
         backdrop-filter: blur(10px);
       }
       .nav {
@@ -78,8 +89,8 @@
         width: 34px;
         height: 34px;
         border-radius: 12px;
-        background: linear-gradient(135deg, var(--accent), #3b82f6);
-        box-shadow: 0 10px 25px rgba(139, 92, 246, 0.35);
+        background: linear-gradient(135deg, var(--accent2), var(--accent));
+        box-shadow: var(--shadow);
       }
       .menu {
         display: flex;
@@ -95,13 +106,13 @@
         border-radius: 999px;
       }
       .menu a:hover {
-        background: rgba(255, 255, 255, 0.06);
+        background: var(--card);
         text-decoration: none;
-        color: var(--text);
+        color: var(--fg);
       }
 
-      main { padding: 56px 0 40px; }
-      section { padding: 52px 0; }
+      main { padding: 44px 0 34px; }
+      section { padding: 44px 0; }
 
       .hero {
         display: grid;
@@ -130,43 +141,43 @@
         padding: 12px 16px;
         border-radius: 14px;
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.06);
-        color: var(--text);
+        background: var(--card);
+        color: var(--fg);
         font-weight: 650;
-        box-shadow: var(--shadow);
+        box-shadow: none;
         text-decoration: none !important;
       }
       .btnPrimary {
-        border: 1px solid rgba(139, 92, 246, 0.55);
-        background: linear-gradient(135deg, rgba(139, 92, 246, 0.95), rgba(59, 130, 246, 0.9));
+        border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border));
+        background: linear-gradient(135deg, color-mix(in srgb, var(--accent2) 30%, var(--card)), color-mix(in srgb, var(--accent) 26%, var(--card)));
       }
       .btn small { display: block; font-weight: 550; opacity: 0.9; }
       .btn span { display: block; line-height: 1.1; }
-      .btn:hover { transform: translateY(-1px); }
+      .btn:hover { text-decoration: none; border-color: color-mix(in srgb, var(--border) 60%, var(--fg)); }
       .note { color: var(--muted2); font-size: 13px; }
 
       .phone {
         position: relative;
         border-radius: 34px;
         padding: 16px;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+        background: var(--card);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
         overflow: hidden;
       }
       .phone::before {
         content: "";
         position: absolute;
         inset: -60px;
-        background: radial-gradient(circle at 30% 20%, rgba(34, 197, 94, 0.26), transparent 45%),
-          radial-gradient(circle at 70% 70%, rgba(139, 92, 246, 0.30), transparent 55%);
+        background: radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 55%),
+          radial-gradient(circle at 70% 70%, color-mix(in srgb, var(--accent2) 18%, transparent), transparent 60%);
         filter: blur(6px);
       }
       .screen {
         position: relative;
         border-radius: 26px;
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+        border: 1px solid var(--border);
+        background: color-mix(in srgb, var(--card) 75%, transparent);
         padding: 18px;
       }
       .mockTop {
@@ -181,8 +192,8 @@
       .mockCard {
         border-radius: 16px;
         padding: 14px 14px 12px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        background: rgba(0, 0, 0, 0.18);
+        border: 1px solid var(--border);
+        background: color-mix(in srgb, var(--bg) 70%, var(--card));
       }
       .kpi { font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-bottom: 6px; }
       .kpiLabel { color: rgba(255, 255, 255, 0.68); font-size: 12px; }
@@ -190,15 +201,15 @@
         margin-top: 12px;
         height: 10px;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.08);
+        background: color-mix(in srgb, var(--bg) 75%, var(--card));
         overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.10);
+        border: 1px solid var(--border);
       }
       .mockBar > i {
         display: block;
         height: 100%;
         width: 62%;
-        background: linear-gradient(90deg, rgba(34, 197, 94, 0.9), rgba(139, 92, 246, 0.9));
+        background: linear-gradient(90deg, var(--accent), var(--accent2));
       }
 
       .sectionTitle {
@@ -214,10 +225,10 @@
       .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
       .feature {
         border-radius: var(--radius);
-        border: 1px solid rgba(255, 255, 255, 0.12);
+        border: 1px solid var(--border);
         background: var(--card);
         padding: 18px;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        box-shadow: none;
       }
       .icon {
         width: 40px;
@@ -225,8 +236,8 @@
         border-radius: 14px;
         display: grid;
         place-items: center;
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: color-mix(in srgb, var(--card) 85%, transparent);
+        border: 1px solid var(--border);
         margin-bottom: 12px;
       }
       .feature h3 { margin: 0 0 8px; font-size: 16px; }
@@ -234,8 +245,8 @@
 
       .supportCard {
         border-radius: var(--radius);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+        border: 1px solid var(--border);
+        background: var(--card);
         padding: 18px;
         display: flex;
         align-items: center;
@@ -250,19 +261,19 @@
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        background: rgba(0, 0, 0, 0.18);
+        border: 1px solid var(--border);
+        background: color-mix(in srgb, var(--bg) 70%, var(--card));
         padding: 10px 12px;
         border-radius: 12px;
         text-decoration: none !important;
-        color: var(--text);
+        color: var(--fg);
         font-weight: 650;
       }
-      .linkBtn:hover { transform: translateY(-1px); }
+      .linkBtn:hover { text-decoration: none; border-color: color-mix(in srgb, var(--border) 60%, var(--fg)); }
 
       footer {
         padding: 28px 0 42px;
-        border-top: 1px solid rgba(255, 255, 255, 0.10);
+        border-top: 1px solid var(--border);
         color: var(--muted2);
         font-size: 13px;
       }
@@ -273,9 +284,16 @@
         gap: 12px;
         flex-wrap: wrap;
       }
-      .footerLinks { display: flex; gap: 14px; flex-wrap: wrap; }
-      .footerLinks a { color: var(--muted); }
-      .footerLinks a:hover { color: var(--text); }
+      .footerLinks {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        align-items: center;
+        color: var(--muted);
+      }
+      .footerLinks a { color: inherit; }
+      .footerLinks a:hover { color: var(--fg); }
+      .footerSep { opacity: 0.55; user-select: none; }
 
       @media (max-width: 920px) {
         .hero { grid-template-columns: 1fr; }
@@ -408,10 +426,15 @@
     <footer>
       <div class="container">
         <div class="footerRow">
-          <div>© <span id="y"></span> BuddyCal</div>
+          <div>© <span id="y"></span> BuddyCal All rights reserved.</div>
           <div class="footerLinks" aria-label="Legal links">
             <a href="terms/">Terms of Service</a>
+            <span class="footerSep" aria-hidden="true">–</span>
             <a href="privacy/">Privacy Policy</a>
+            <span class="footerSep" aria-hidden="true">–</span>
+            <a href="cookie/">Cookie Policy</a>
+            <span class="footerSep" aria-hidden="true">–</span>
+            <a href="subscription-terms/">Subscription Terms</a>
           </div>
         </div>
       </div>
