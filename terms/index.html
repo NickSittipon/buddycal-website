@@ -161,7 +161,7 @@
             </button>
             <a class="brand" href="../">BuddyCal</a>
           </div>
-          <a class="chip" href="../privacy/">Privacy Policy</a>
+          <a class="chip" href="../privacy/" data-i18n="legal_privacy">Privacy Policy</a>
         </div>
       </div>
     </header>
@@ -319,11 +319,11 @@
     <footer>
       <div class="container">
         <div class="footerRow">
-          <div>© <span id="y"></span> BuddyCal All rights reserved.</div>
+          <div data-i18n="footer_copyright">© <span id="y"></span> BuddyCal All rights reserved.</div>
           <div class="footerLinks" aria-label="Legal links">
-            <a href="./">Terms of Service</a>
+            <a href="./" data-i18n="legal_terms">Terms of Service</a>
             <span class="footerSep" aria-hidden="true">–</span>
-            <a href="../privacy/">Privacy Policy</a>
+            <a href="../privacy/" data-i18n="legal_privacy">Privacy Policy</a>
           </div>
         </div>
       </div>
@@ -340,8 +340,24 @@
 
       const STORAGE_KEY = "buddycal_site_lang";
       const STRINGS = {
-        th: { home: "หน้าแรก", usage: "การใช้งาน", contact: "ติดต่อเรา", language: "เปลี่ยนภาษา" },
-        en: { home: "Home", usage: "How to use", contact: "Contact", language: "Language" },
+        th: {
+          home: "หน้าแรก",
+          usage: "การใช้งาน",
+          contact: "ติดต่อเรา",
+          language: "เปลี่ยนภาษา",
+          footer_copyright: "© <span id=\"y\"></span> BuddyCal All rights reserved.",
+          legal_terms: "Terms of Service",
+          legal_privacy: "Privacy Policy",
+        },
+        en: {
+          home: "Home",
+          usage: "How to use",
+          contact: "Contact",
+          language: "Language",
+          footer_copyright: "© <span id=\"y\"></span> BuddyCal. All rights reserved.",
+          legal_terms: "Terms of Service",
+          legal_privacy: "Privacy Policy",
+        },
       };
 
       const openBtn = document.getElementById("openMenu");
@@ -356,7 +372,9 @@
         document.documentElement.lang = lang;
         document.querySelectorAll("[data-i18n]").forEach((el) => {
           const key = el.getAttribute("data-i18n");
-          if (key && s[key]) el.textContent = s[key];
+          if (!key || !s[key]) return;
+          if (String(s[key]).includes("<")) el.innerHTML = s[key];
+          else el.textContent = s[key];
         });
         langTH.setAttribute("aria-pressed", String(lang === "th"));
         langEN.setAttribute("aria-pressed", String(lang === "en"));
