@@ -52,6 +52,20 @@
         display: flex; align-items: center; justify-content: space-between;
         padding: 14px 0; gap: 12px;
       }
+      .navLeft { display: inline-flex; align-items: center; gap: 10px; min-width: 200px; }
+      .iconBtn {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        color: var(--fg);
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+      }
+      .iconBtn:hover { border-color: color-mix(in srgb, var(--border) 60%, var(--fg)); }
+      .iconBtn:focus { outline: 2px solid color-mix(in srgb, var(--accent) 55%, transparent); outline-offset: 2px; }
       .brand { font-weight: 800; letter-spacing: 0.2px; text-decoration: none; }
       .chip {
         border: 1px solid var(--border);
@@ -86,17 +100,96 @@
       .footerLinks a { color: inherit; }
       .footerLinks a:hover { color: var(--fg); }
       .footerSep { opacity: 0.55; user-select: none; }
+
+      .drawerBackdrop[aria-hidden="true"] { display: none; }
+      .drawerBackdrop { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.45); z-index: 80; }
+      .drawer {
+        position: fixed; top: 0; left: 0; height: 100%; width: min(320px, 86vw);
+        background: color-mix(in srgb, var(--bg) 92%, transparent);
+        border-right: 1px solid var(--border);
+        backdrop-filter: blur(12px);
+        transform: translateX(-105%);
+        transition: transform 180ms ease;
+        z-index: 90;
+        display: flex;
+        flex-direction: column;
+      }
+      .drawer[aria-hidden="false"] { transform: translateX(0); }
+      .drawerHeader { display: flex; align-items: center; justify-content: space-between; padding: 14px 14px 10px; border-bottom: 1px solid var(--border); }
+      .drawerTitle { font-weight: 800; letter-spacing: 0.2px; }
+      .drawerBody { padding: 12px 14px 18px; }
+      .drawerList { margin: 0; padding: 0; list-style: none; }
+      .drawerList a, .drawerList button {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 12px 10px;
+        border-radius: 12px;
+        border: 1px solid transparent;
+        background: transparent;
+        color: var(--fg);
+        font: inherit;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .drawerList a:hover, .drawerList button:hover { background: var(--card); border-color: var(--border); text-decoration: none; }
+      .drawerSectionLabel { margin: 14px 6px 8px; color: var(--muted2); font-size: 12px; }
+      .drawerLangRow { display: flex; gap: 10px; flex-wrap: wrap; }
+      .segBtn {
+        border: 1px solid var(--border);
+        background: var(--card);
+        color: var(--muted);
+        padding: 10px 12px;
+        border-radius: 999px;
+        cursor: pointer;
+        font: inherit;
+      }
+      .segBtn[aria-pressed="true"] { color: var(--fg); border-color: color-mix(in srgb, var(--border) 60%, var(--fg)); }
     </style>
   </head>
   <body>
     <header>
       <div class="container">
         <div class="nav">
-          <a class="brand" href="../">BuddyCal</a>
+          <div class="navLeft">
+            <button class="iconBtn" type="button" id="openMenu" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <a class="brand" href="../">BuddyCal</a>
+          </div>
           <a class="chip" href="../terms/">Terms of Service</a>
         </div>
       </div>
     </header>
+
+    <div class="drawerBackdrop" id="backdrop" aria-hidden="true"></div>
+    <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Menu">
+      <div class="drawerHeader">
+        <div class="drawerTitle">BuddyCal</div>
+        <button class="iconBtn" type="button" id="closeMenu" aria-label="Close menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="drawerBody">
+        <ul class="drawerList">
+          <li><a href="../" data-i18n="home">หน้าแรก</a></li>
+          <li><a href="../#features" data-i18n="usage">การใช้งาน</a></li>
+          <li><a href="../#support" data-i18n="contact">ติดต่อเรา</a></li>
+        </ul>
+
+        <div class="drawerSectionLabel" data-i18n="language">เปลี่ยนภาษา</div>
+        <div class="drawerLangRow" role="group" aria-label="Language">
+          <button class="segBtn" type="button" id="langTH" aria-pressed="true">ไทย</button>
+          <button class="segBtn" type="button" id="langEN" aria-pressed="false">English</button>
+        </div>
+      </div>
+    </aside>
 
     <main>
       <div class="container">
@@ -348,6 +441,61 @@
         month: "long",
         day: "numeric",
       });
+
+      const STORAGE_KEY = "buddycal_site_lang";
+      const STRINGS = {
+        th: { home: "หน้าแรก", usage: "การใช้งาน", contact: "ติดต่อเรา", language: "เปลี่ยนภาษา" },
+        en: { home: "Home", usage: "How to use", contact: "Contact", language: "Language" },
+      };
+
+      const openBtn = document.getElementById("openMenu");
+      const closeBtn = document.getElementById("closeMenu");
+      const backdrop = document.getElementById("backdrop");
+      const drawer = document.getElementById("drawer");
+      const langTH = document.getElementById("langTH");
+      const langEN = document.getElementById("langEN");
+
+      function setLang(lang) {
+        const s = STRINGS[lang] || STRINGS.th;
+        document.documentElement.lang = lang;
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (key && s[key]) el.textContent = s[key];
+        });
+        langTH.setAttribute("aria-pressed", String(lang === "th"));
+        langEN.setAttribute("aria-pressed", String(lang === "en"));
+        localStorage.setItem(STORAGE_KEY, lang);
+      }
+
+      function getLang() {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved === "th" || saved === "en") return saved;
+        const pref = String((navigator.language || "").toLowerCase());
+        return pref.startsWith("th") ? "th" : "en";
+      }
+
+      function openDrawer() {
+        drawer.setAttribute("aria-hidden", "false");
+        backdrop.setAttribute("aria-hidden", "false");
+        openBtn.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+      function closeDrawer() {
+        drawer.setAttribute("aria-hidden", "true");
+        backdrop.setAttribute("aria-hidden", "true");
+        openBtn.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+
+      openBtn.addEventListener("click", openDrawer);
+      closeBtn.addEventListener("click", closeDrawer);
+      backdrop.addEventListener("click", closeDrawer);
+      window.addEventListener("keydown", (e) => { if (e.key === "Escape") closeDrawer(); });
+      drawer.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeDrawer));
+      langTH.addEventListener("click", () => setLang("th"));
+      langEN.addEventListener("click", () => setLang("en"));
+
+      setLang(getLang());
     </script>
   </body>
 </html>
