@@ -7,15 +7,6 @@
     <meta name="color-scheme" content="light dark" />
     <title>Cookie Policy — BuddyCal</title>
     <link rel="stylesheet" href="../assets/theme.css" />
-    <style>
-      main { padding: 32px 0 56px; }
-      .doc-card h1 {
-        background: var(--gradient-brand);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -57,7 +48,6 @@
           <li><a href="../#features" data-i18n="usage">การใช้งาน</a></li>
           <li><a href="../#support" data-i18n="contact">ติดต่อเรา</a></li>
         </ul>
-
         <div class="drawerSectionLabel" data-i18n="language">เปลี่ยนภาษา</div>
         <div class="drawerLangRow" role="group" aria-label="Language">
           <button class="segBtn" type="button" id="langTH" aria-pressed="true">ไทย</button>
@@ -66,54 +56,163 @@
       </div>
     </aside>
 
-    <main>
+    <main class="doc-main">
       <div class="container container--narrow">
         <article class="doc-card">
-          <h1>Cookie Policy</h1>
+          <h1 data-i18n="doc_title">นโยบายคุกกี้</h1>
           <p class="doc-meta"><span data-i18n="meta_effective">วันที่มีผลบังคับใช้:</span> <span id="d"></span></p>
+          <p class="doc-meta" style="border-bottom: none; padding-bottom: 0;">
+            <strong data-i18n="meta_contact">ติดต่อ:</strong> <a href="mailto:support@calbuddy.live">support@calbuddy.live</a>
+          </p>
 
           <section class="langBlock lang-th is-active">
             <p class="doc-intro">
-              เอกสารนี้อธิบายการใช้คุกกี้และเทคโนโลยีที่คล้ายกันบนเว็บไซต์ BuddyCal (ถ้ามี) เพื่อช่วยให้เว็บไซต์ทำงานได้ถูกต้อง วิเคราะห์การใช้งาน และปรับปรุงประสบการณ์ผู้ใช้
+              นโยบายคุกกี้ (“นโยบาย”) ฉบับนี้อธิบายการใช้คุกกี้ เทคโนโลยีที่คล้ายกัน และการจัดเก็บข้อมูลในเบราว์เซอร์
+              บนเว็บไซต์ BuddyCal (“เว็บไซต์”) นโยบายนี้เป็นส่วนเสริมของ <a href="../privacy/">นโยบายความเป็นส่วนตัว</a> ของเรา
             </p>
 
-            <section class="doc-section">
-            <h2>คุกกี้คืออะไร</h2>
-            <p>คุกกี้คือไฟล์ข้อความขนาดเล็กที่ถูกเก็บไว้ในเบราว์เซอร์/อุปกรณ์ของคุณเมื่อคุณเข้าชมเว็บไซต์</p>
+            <nav class="doc-toc" aria-label="สารบัญ">
+              <h2>สารบัญ</h2>
+              <ol>
+                <li><a href="#th-1">คุกกี้คืออะไร</a></li>
+                <li><a href="#th-2">ประเภทคุกกี้ที่เราใช้</a></li>
+                <li><a href="#th-3">การจัดเก็บในเบราว์เซอร์ (localStorage)</a></li>
+                <li><a href="#th-4">คุกกี้ของบุคคลที่สาม</a></li>
+                <li><a href="#th-5">การจัดการคุกกี้</a></li>
+                <li><a href="#th-6">การเปลี่ยนแปลงนโยบาย</a></li>
+                <li><a href="#th-7">ติดต่อเรา</a></li>
+              </ol>
+            </nav>
 
-            <h2>เราใช้คุกกี้เพื่ออะไร</h2>
-            <ul>
-              <li>เพื่อการทำงานพื้นฐานของเว็บไซต์ (เช่น ความปลอดภัย/การตั้งค่าบางอย่าง)</li>
-              <li>เพื่อวิเคราะห์การใช้งาน (เช่น จำนวนผู้เข้าชม หน้าเพจที่ถูกดู) เพื่อปรับปรุงเว็บไซต์</li>
-            </ul>
+            <section class="doc-section" id="th-1">
+              <h2>1. คุกกี้คืออะไร</h2>
+              <p>คุกกี้ (Cookies) คือไฟล์ข้อความขนาดเล็กที่เว็บไซต์จัดเก็บไว้ในเบราว์เซอร์หรืออุปกรณ์ของคุณเมื่อคุณเข้าชมเว็บไซต์ คุกกี้ช่วยให้เว็บไซต์จดจำการตั้งค่า วิเคราะห์การใช้งาน หรือทำงานได้อย่างถูกต้อง</p>
+              <p>เทคโนโลยีที่คล้ายกัน เช่น พิกเซลติดตาม (tracking pixels) หรือ localStorage อาจถูกใช้เพื่อวัตถุประสงค์ที่คล้ายคลึงกัน โดยอธิบายเพิ่มเติมในส่วนที่ 3</p>
+            </section>
 
-            <h2>การจัดการคุกกี้</h2>
-            <p>คุณสามารถตั้งค่าหรือปิดการทำงานคุกกี้ได้จากการตั้งค่าเบราว์เซอร์ของคุณ แต่อาจส่งผลให้บางส่วนของเว็บไซต์ทำงานได้ไม่สมบูรณ์</p>
+            <section class="doc-section" id="th-2">
+              <h2>2. ประเภทคุกกี้ที่เราใช้</h2>
+              <p>เว็บไซต์ของเราใช้คุกกี้และเทคโนโลยีที่เกี่ยวข้องในประเภทต่อไปนี้:</p>
+              <ul>
+                <li><strong>คุกกี้ที่จำเป็น (Strictly Necessary)</strong> — จำเป็นต่อการทำงานพื้นฐานของเว็บไซต์ เช่น ความปลอดภัย การโหลดหน้าเว็บ และการรักษาเซสชัน (ถ้ามี)</li>
+                <li><strong>คุกกี้เพื่อการทำงาน (Functional)</strong> — จดจำการตั้งค่าของคุณ เช่น ภาษาที่เลือก เพื่อให้ประสบการณ์การใช้งานสะดวกขึ้น</li>
+                <li><strong>คุกกี้เพื่อการวิเคราะห์ (Analytics)</strong> — ช่วยให้เราเข้าใจว่าผู้เข้าชมใช้งานเว็บไซต์อย่างไร เช่น หน้าที่ถูกเปิดดู ระยะเวลาการเข้าชม และแหล่งที่มาของ traffic เพื่อปรับปรุงเว็บไซต์</li>
+              </ul>
+              <p>เราไม่ใช้คุกกี้เพื่อการโฆษณาที่กำหนดเป้าหมาย (targeted advertising) บนเว็บไซต์นี้</p>
+            </section>
 
-            <h2>ติดต่อเรา</h2>
-            <p>หากมีคำถาม โปรดติดต่อ <a href="mailto:support@calbuddy.live">support@calbuddy.live</a></p>
+            <section class="doc-section" id="th-3">
+              <h2>3. การจัดเก็บในเบราว์เซอร์ (localStorage)</h2>
+              <p>นอกจากคุกกี้ เว็บไซต์ของเราอาจใช้ localStorage ของเบราว์เซอร์เพื่อ:</p>
+              <ul>
+                <li>จดจำภาษาที่คุณเลือก (<code>buddycal_site_lang</code>) เพื่อแสดงเนื้อหาเป็นภาษาไทยหรืออังกฤษ</li>
+              </ul>
+              <p>ข้อมูลนี้จัดเก็บในอุปกรณ์ของคุณเท่านั้น และไม่ถูกส่งไปยังเซิร์ฟเวอร์ของเราโดยตรง</p>
+            </section>
+
+            <section class="doc-section" id="th-4">
+              <h2>4. คุกกี้ของบุคคลที่สาม</h2>
+              <p>หากเราใช้บริการวิเคราะห์หรือเครื่องมือของบุคคลที่สามบนเว็บไซต์ บุคคลที่สามเหล่านั้นอาจวางคุกกี้ของตนเองผ่านเว็บไซต์ของเรา การใช้งานของคุณอาจอยู่ภายใต้นโยบายความเป็นส่วนตัวของบุคคลที่สามนั้น ๆ ด้วย</p>
+              <p>เราจะอัปเดตรายชื่อผู้ให้บริการที่เกี่ยวข้องในนโยบายนี้เมื่อมีการใช้งานจริง</p>
+            </section>
+
+            <section class="doc-section" id="th-5">
+              <h2>5. การจัดการคุกกี้</h2>
+              <p>คุณสามารถควบคุมหรือลบคุกกี้ได้ผ่านการตั้งค่าเบราว์เซอร์ของคุณ ตัวอย่างเช่น:</p>
+              <ul>
+                <li>ปฏิเสธคุกกี้ทั้งหมดหรือบางประเภท</li>
+                <li>ลบคุกกี้ที่มีอยู่แล้ว</li>
+                <li>ตั้งค่าให้เบราว์เซอร์แจ้งเตือนก่อนวางคุกกี้</li>
+              </ul>
+              <p>หากคุณปิดการใช้งานคุกกี้ที่จำเป็น บางส่วนของเว็บไซต์อาจทำงานได้ไม่สมบูรณ์ เช่น การจดจำภาษาที่เลือก</p>
+              <p>วิธีจัดการคุกกี้แตกต่างกันไปตามเบราว์เซอร์ — โปรดดูคู่มือของ Chrome, Safari, Firefox หรือ Edge ที่คุณใช้งาน</p>
+            </section>
+
+            <section class="doc-section" id="th-6">
+              <h2>6. การเปลี่ยนแปลงนโยบายนี้</h2>
+              <p>เราอาจปรับปรุงนโยบายคุกกี้นี้เป็นครั้งคราว โดยจะอัปเดตวันที่มีผลบังคับใช้ด้านบน การใช้งานเว็บไซต์ต่อหลังการเปลี่ยนแปลง ถือว่าคุณรับทราบนโยบายที่แก้ไขแล้ว</p>
+              <p>สำหรับข้อมูลส่วนบุคคลโดยรวม โปรดดู <a href="../privacy/">นโยบายความเป็นส่วนตัว</a></p>
+            </section>
+
+            <section class="doc-section" id="th-7">
+              <h2>7. ติดต่อเรา</h2>
+              <p>หากมีคำถามเกี่ยวกับนโยบายคุกกี้นี้ กรุณาติดต่อ <a href="mailto:support@calbuddy.live">support@calbuddy.live</a></p>
             </section>
           </section>
 
           <section class="langBlock lang-en" lang="en">
-            <p>
-              This Cookie Policy explains how BuddyCal uses cookies and similar technologies on our website (if applicable) to help the site work properly, analyze usage, and improve the user experience.
+            <p class="doc-intro">
+              This Cookie Policy (“Policy”) explains how BuddyCal uses cookies, similar technologies, and browser storage
+              on the BuddyCal website (“Website”). This Policy supplements our <a href="../privacy/">Privacy Policy</a>.
             </p>
 
-            <h2>What are cookies?</h2>
-            <p>Cookies are small text files stored in your browser/device when you visit a website.</p>
+            <nav class="doc-toc" aria-label="Table of contents">
+              <h2>Contents</h2>
+              <ol>
+                <li><a href="#en-1">What Are Cookies</a></li>
+                <li><a href="#en-2">Types of Cookies We Use</a></li>
+                <li><a href="#en-3">Browser Storage (localStorage)</a></li>
+                <li><a href="#en-4">Third-Party Cookies</a></li>
+                <li><a href="#en-5">Managing Cookies</a></li>
+                <li><a href="#en-6">Policy Updates</a></li>
+                <li><a href="#en-7">Contact Us</a></li>
+              </ol>
+            </nav>
 
-            <h2>How we use cookies</h2>
-            <ul>
-              <li>To enable essential website functionality (e.g., security and basic settings)</li>
-              <li>To understand usage (e.g., page views) and improve the website</li>
-            </ul>
+            <section class="doc-section" id="en-1">
+              <h2>1. What Are Cookies</h2>
+              <p>Cookies are small text files stored in your browser or device when you visit a website. They help websites remember settings, analyze usage, or function properly.</p>
+              <p>Similar technologies such as tracking pixels or localStorage may be used for comparable purposes, as described in section 3.</p>
+            </section>
 
-            <h2>Managing cookies</h2>
-            <p>You can manage or disable cookies in your browser settings. Some parts of the website may not function properly if cookies are disabled.</p>
+            <section class="doc-section" id="en-2">
+              <h2>2. Types of Cookies We Use</h2>
+              <p>Our Website may use cookies and related technologies in the following categories:</p>
+              <ul>
+                <li><strong>Strictly Necessary</strong> — Required for basic website operation, such as security, page loading, and session maintenance (if applicable).</li>
+                <li><strong>Functional</strong> — Remember your preferences, such as selected language, for a better experience.</li>
+                <li><strong>Analytics</strong> — Help us understand how visitors use the Website, such as pages viewed, visit duration, and traffic sources, to improve the site.</li>
+              </ul>
+              <p>We do not use cookies for targeted advertising on this Website.</p>
+            </section>
 
-            <h2>Contact</h2>
-            <p>If you have questions, contact <a href="mailto:support@calbuddy.live">support@calbuddy.live</a></p>
+            <section class="doc-section" id="en-3">
+              <h2>3. Browser Storage (localStorage)</h2>
+              <p>In addition to cookies, our Website may use browser localStorage to:</p>
+              <ul>
+                <li>Remember your selected language (<code>buddycal_site_lang</code>) to display content in Thai or English.</li>
+              </ul>
+              <p>This data is stored on your device only and is not sent directly to our servers.</p>
+            </section>
+
+            <section class="doc-section" id="en-4">
+              <h2>4. Third-Party Cookies</h2>
+              <p>If we use third-party analytics or tools on the Website, those providers may place their own cookies. Your use may also be subject to their privacy policies.</p>
+              <p>We will update this Policy with relevant provider names when such services are in use.</p>
+            </section>
+
+            <section class="doc-section" id="en-5">
+              <h2>5. Managing Cookies</h2>
+              <p>You can control or delete cookies through your browser settings, for example:</p>
+              <ul>
+                <li>Refuse all or some cookies</li>
+                <li>Delete existing cookies</li>
+                <li>Set your browser to notify you before cookies are placed</li>
+              </ul>
+              <p>If you disable necessary cookies, some parts of the Website may not function properly, such as remembering your language preference.</p>
+              <p>Cookie management varies by browser — please refer to the help documentation for Chrome, Safari, Firefox, or Edge.</p>
+            </section>
+
+            <section class="doc-section" id="en-6">
+              <h2>6. Updates to This Policy</h2>
+              <p>We may update this Cookie Policy from time to time and will update the effective date above. Continued use of the Website after changes constitutes acknowledgment of the updated Policy.</p>
+              <p>For overall personal data practices, see our <a href="../privacy/">Privacy Policy</a>.</p>
+            </section>
+
+            <section class="doc-section" id="en-7">
+              <h2>7. Contact Us</h2>
+              <p>If you have questions about this Cookie Policy, contact <a href="mailto:support@calbuddy.live">support@calbuddy.live</a>.</p>
+            </section>
           </section>
         </article>
       </div>
@@ -127,6 +226,8 @@
             <a href="../terms/" data-i18n="legal_terms">Terms of Service</a>
             <span class="footerSep" aria-hidden="true">–</span>
             <a href="../privacy/" data-i18n="legal_privacy">Privacy Policy</a>
+            <span class="footerSep" aria-hidden="true">–</span>
+            <a href="./" data-i18n="legal_cookie">Cookie Policy</a>
           </div>
         </div>
       </div>
@@ -135,44 +236,27 @@
     <script>
       const now = new Date();
       document.getElementById("y").textContent = now.getFullYear();
-      const currentLang = (localStorage.getItem("buddycal_site_lang") || "").toLowerCase() === "en" ? "en" : "th";
-      document.getElementById("d").textContent = now.toLocaleDateString(currentLang === "th" ? "th-TH" : "en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      });
-
       const STORAGE_KEY = "buddycal_site_lang";
       const STRINGS = {
         th: {
-          home: "หน้าแรก",
-          usage: "การใช้งาน",
-          contact: "ติดต่อเรา",
-          language: "เปลี่ยนภาษา",
+          home: "หน้าแรก", usage: "การใช้งาน", contact: "ติดต่อเรา", language: "เปลี่ยนภาษา",
           footer_copyright: "© <span id=\"y\"></span> BuddyCal All rights reserved.",
-          legal_terms: "Terms of Service",
-          legal_privacy: "Privacy Policy",
-          meta_effective: "วันที่มีผลบังคับใช้ (Effective Date):",
+          legal_terms: "Terms of Service", legal_privacy: "Privacy Policy", legal_cookie: "Cookie Policy",
+          doc_title: "นโยบายคุกกี้", meta_effective: "วันที่มีผลบังคับใช้:", meta_contact: "ติดต่อ:",
         },
         en: {
-          home: "Home",
-          usage: "How to use",
-          contact: "Contact",
-          language: "Language",
+          home: "Home", usage: "How to use", contact: "Contact", language: "Language",
           footer_copyright: "© <span id=\"y\"></span> BuddyCal. All rights reserved.",
-          legal_terms: "Terms of Service",
-          legal_privacy: "Privacy Policy",
-          meta_effective: "Effective Date:",
+          legal_terms: "Terms of Service", legal_privacy: "Privacy Policy", legal_cookie: "Cookie Policy",
+          doc_title: "Cookie Policy", meta_effective: "Effective Date:", meta_contact: "Contact:",
         },
       };
-
       const openBtn = document.getElementById("openMenu");
       const closeBtn = document.getElementById("closeMenu");
       const backdrop = document.getElementById("backdrop");
       const drawer = document.getElementById("drawer");
       const langTH = document.getElementById("langTH");
       const langEN = document.getElementById("langEN");
-
       function setLang(lang) {
         const s = STRINGS[lang] || STRINGS.th;
         document.documentElement.lang = lang;
@@ -190,38 +274,18 @@
           block.style.display = show ? "block" : "none";
         });
         const dateEl = document.getElementById("d");
-        if (dateEl) {
-          dateEl.textContent = now.toLocaleDateString(lang === "th" ? "th-TH" : "en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          });
-        }
+        if (dateEl) dateEl.textContent = now.toLocaleDateString(lang === "th" ? "th-TH" : "en-US", { year: "numeric", month: "long", day: "numeric" });
         langTH.setAttribute("aria-pressed", String(lang === "th"));
         langEN.setAttribute("aria-pressed", String(lang === "en"));
         localStorage.setItem(STORAGE_KEY, lang);
       }
-
       function getLang() {
         const saved = localStorage.getItem(STORAGE_KEY);
         if (saved === "th" || saved === "en") return saved;
-        const pref = String((navigator.language || "").toLowerCase());
-        return pref.startsWith("th") ? "th" : "en";
+        return String(navigator.language || "").toLowerCase().startsWith("th") ? "th" : "en";
       }
-
-      function openDrawer() {
-        drawer.setAttribute("aria-hidden", "false");
-        backdrop.setAttribute("aria-hidden", "false");
-        openBtn.setAttribute("aria-expanded", "true");
-        document.body.style.overflow = "hidden";
-      }
-      function closeDrawer() {
-        drawer.setAttribute("aria-hidden", "true");
-        backdrop.setAttribute("aria-hidden", "true");
-        openBtn.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
-      }
-
+      function openDrawer() { drawer.setAttribute("aria-hidden", "false"); backdrop.setAttribute("aria-hidden", "false"); openBtn.setAttribute("aria-expanded", "true"); document.body.style.overflow = "hidden"; }
+      function closeDrawer() { drawer.setAttribute("aria-hidden", "true"); backdrop.setAttribute("aria-hidden", "true"); openBtn.setAttribute("aria-expanded", "false"); document.body.style.overflow = ""; }
       openBtn.addEventListener("click", openDrawer);
       closeBtn.addEventListener("click", closeDrawer);
       backdrop.addEventListener("click", closeDrawer);
@@ -229,7 +293,6 @@
       drawer.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeDrawer));
       langTH.addEventListener("click", () => setLang("th"));
       langEN.addEventListener("click", () => setLang("en"));
-
       setLang(getLang());
     </script>
   </body>

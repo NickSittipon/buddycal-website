@@ -7,15 +7,6 @@
     <meta name="color-scheme" content="light dark" />
     <title>Subscription Terms — BuddyCal</title>
     <link rel="stylesheet" href="../assets/theme.css" />
-    <style>
-      main { padding: 32px 0 56px; }
-      .doc-card h1 {
-        background: var(--gradient-brand);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -57,7 +48,6 @@
           <li><a href="../#features" data-i18n="usage">การใช้งาน</a></li>
           <li><a href="../#support" data-i18n="contact">ติดต่อเรา</a></li>
         </ul>
-
         <div class="drawerSectionLabel" data-i18n="language">เปลี่ยนภาษา</div>
         <div class="drawerLangRow" role="group" aria-label="Language">
           <button class="segBtn" type="button" id="langTH" aria-pressed="true">ไทย</button>
@@ -66,47 +56,185 @@
       </div>
     </aside>
 
-    <main>
+    <main class="doc-main">
       <div class="container container--narrow">
         <article class="doc-card">
-          <h1>Subscription Terms</h1>
+          <h1 data-i18n="doc_title">ข้อกำหนดการสมัครสมาชิก</h1>
           <p class="doc-meta"><span data-i18n="meta_effective">วันที่มีผลบังคับใช้:</span> <span id="d"></span></p>
+          <p class="doc-meta" style="border-bottom: none; padding-bottom: 0;">
+            <strong data-i18n="meta_contact">ติดต่อ:</strong> <a href="mailto:support@calbuddy.live">support@calbuddy.live</a>
+          </p>
 
           <section class="langBlock lang-th is-active">
-            <p>
-              หน้านี้ใช้สำหรับข้อกำหนดการสมัครสมาชิก/การชำระเงิน (ถ้ามี) ของ BuddyCal.
-              หากแอปของคุณยังไม่มีระบบสมัครสมาชิก คุณสามารถคงหน้านี้ไว้เป็น “เผื่ออนาคต” ได้
+            <p class="doc-intro">
+              ข้อกำหนดการสมัครสมาชิก (“ข้อกำหนด”) ฉบับนี้อธิบายเงื่อนไขการสมัครสมาชิกแบบชำระเงิน การเรียกเก็บเงิน การต่ออายุ และการยกเลิก
+              สำหรับฟีเจอร์พรีเมียมของแอป BuddyCal (“บริการ”) ข้อกำหนดนี้เป็นส่วนเสริมของ <a href="../terms/">ข้อกำหนดและเงื่อนไขการใช้งาน</a>
+              และ <a href="../privacy/">นโยบายความเป็นส่วนตัว</a> หากมีข้อขัดแย้ง ข้อกำหนดการสมัครสมาชิกนี้จะใช้กับเรื่องการชำระเงินโดยเฉพาะ
             </p>
 
-            <h2>การชำระเงินและการต่ออายุ</h2>
-            <ul>
-              <li>การชำระเงินจะถูกเรียกเก็บผ่าน App Store ตามเงื่อนไขของ Apple</li>
-              <li>การสมัครสมาชิกอาจต่ออายุอัตโนมัติหากไม่ได้ยกเลิกก่อนวันตัดรอบ</li>
-            </ul>
+            <nav class="doc-toc" aria-label="สารบัญ">
+              <h2>สารบัญ</h2>
+              <ol>
+                <li><a href="#th-1">ขอบเขตและแผนบริการ</a></li>
+                <li><a href="#th-2">การชำระเงิน</a></li>
+                <li><a href="#th-3">การต่ออายุอัตโนมัติ</a></li>
+                <li><a href="#th-4">การยกเลิก</a></li>
+                <li><a href="#th-5">การคืนเงิน</a></li>
+                <li><a href="#th-6">การเปลี่ยนแปลงราคา</a></li>
+                <li><a href="#th-7">ฟีเจอร์พรีเมียม</a></li>
+                <li><a href="#th-8">การเปลี่ยนแปลงข้อกำหนด</a></li>
+                <li><a href="#th-9">ติดต่อเรา</a></li>
+              </ol>
+            </nav>
 
-            <h2>การยกเลิก</h2>
-            <p>คุณสามารถยกเลิกการสมัครสมาชิกได้จากการตั้งค่าบัญชี App Store ของคุณ</p>
+            <section class="doc-section" id="th-1">
+              <h2>1. ขอบเขตและแผนบริการ</h2>
+              <p>BuddyCal อาจเสนอฟีเจอร์พื้นฐานให้ใช้งานได้ฟรี และฟีเจอร์พรีเมียมผ่านการสมัครสมาชิกแบบชำระเงิน (เช่น รายเดือน หรือรายปี)</p>
+              <p>รายละเอียดแผน ราคา ระยะเวลา และฟีเจอร์ที่รวมอยู่จะแสดงในหน้าจอสมัครสมาชิกภายในแอปก่อนที่คุณจะยืนยันการชำระเงิน</p>
+              <p>เราอาจเพิ่ม เปลี่ยน หรือยุติแผนบริการได้ โดยจะแจ้งให้ทราบตามสมควร</p>
+            </section>
 
-            <h2>ติดต่อเรา</h2>
-            <p>หากมีคำถาม โปรดติดต่อ <a href="mailto:support@calbuddy.live">support@calbuddy.live</a></p>
+            <section class="doc-section" id="th-2">
+              <h2>2. การชำระเงิน</h2>
+              <p>การชำระเงินสำหรับการสมัครสมาชิกจะดำเนินการผ่าน Apple App Store ตามเงื่อนไขและนโยบายของ Apple</p>
+              <ul>
+                <li>การเรียกเก็บเงินจะใช้บัญชี Apple ID ที่เชื่อมกับ App Store ของคุณ</li>
+                <li>ราคาที่แสดงอาจรวมภาษีหรือค่าธรรมเนียมตามที่ Apple หรือกฎหมายท้องถิ่นกำหนด</li>
+                <li>เราไม่เก็บข้อมูลบัตรเครดิตหรือข้อมูลการชำระเงินโดยตรง — การชำระเงินทั้งหมดดำเนินการโดย Apple</li>
+              </ul>
+            </section>
+
+            <section class="doc-section" id="th-3">
+              <h2>3. การต่ออายุอัตโนมัติ</h2>
+              <p>การสมัครสมาชิกแบบรายเดือนหรือรายปีจะต่ออายุอัตโนมัติ เว้นแต่คุณจะยกเลิกก่อนสิ้นสุดรอบบิลปัจจุบัน</p>
+              <p>Apple จะเรียกเก็บเงินภายใน 24 ชั่วโมงก่อนสิ้นสุดรอบบิลปัจจุบัน จำนวนเงินจะเท่ากับแผนที่คุณสมัครไว้ (หรือราคาที่อัปเดตแล้วหากมีการแจ้งเปลี่ยนแปลงราคา)</p>
+            </section>
+
+            <section class="doc-section" id="th-4">
+              <h2>4. การยกเลิก</h2>
+              <p>คุณสามารถยกเลิกการสมัครสมาชิกได้ตลอดเวลา โดย:</p>
+              <ul>
+                <li>เปิด <strong>Settings</strong> บน iPhone/iPad → <strong>Apple ID</strong> → <strong>Subscriptions</strong></li>
+                <li>เลือก BuddyCal แล้วกด <strong>Cancel Subscription</strong></li>
+              </ul>
+              <p>หลังยกเลิก คุณยังสามารถใช้งานฟีเจอร์พรีเมียมได้จนสิ้นสุดรอบบิลที่ชำระแล้ว จากนั้นบัญชีจะกลับไปใช้ฟีเจอร์ฟรี (ตามที่เรากำหนด)</p>
+            </section>
+
+            <section class="doc-section" id="th-5">
+              <h2>5. การคืนเงิน</h2>
+              <p>การคืนเงินสำหรับการสมัครสมาชิกดำเนินการตามนโยบายของ Apple คุณสามารถขอคืนเงินผ่าน <a href="https://reportaproblem.apple.com" rel="noopener noreferrer" target="_blank">reportaproblem.apple.com</a> หรือติดต่อฝ่ายสนับสนุนของ Apple</p>
+              <p>เราไม่สามารถออกคืนเงินโดยตรงได้ เนื่องจากการชำระเงินทั้งหมดดำเนินการผ่าน App Store</p>
+            </section>
+
+            <section class="doc-section" id="th-6">
+              <h2>6. การเปลี่ยนแปลงราคา</h2>
+              <p>เราอาจปรับราคาการสมัครสมาชิกได้ โดยจะแจ้งให้ทราบล่วงหน้าผ่านแอปหรือ App Store ตามที่ Apple กำหนด</p>
+              <p>หากคุณไม่ยอมรับราคาใหม่ คุณสามารถยกเลิกการสมัครสมาชิกก่อนรอบบิลถัดไปได้</p>
+            </section>
+
+            <section class="doc-section" id="th-7">
+              <h2>7. ฟีเจอร์พรีเมียม</h2>
+              <p>ฟีเจอร์ที่รวมอยู่ในแผนพรีเมียมอาจเปลี่ยนแปลงได้ตามการพัฒนาของบริการ เราจะพยายามแจ้งการเปลี่ยนแปลงที่มีผลกระทบสำคัญล่วงหน้า</p>
+              <p>การสมัครสมาชิกเป็นส่วนบุคคล ไม่สามารถโอนให้บุคคลอื่นได้ และผูกกับ Apple ID ที่ใช้ชำระเงิน</p>
+            </section>
+
+            <section class="doc-section" id="th-8">
+              <h2>8. การเปลี่ยนแปลงข้อกำหนด</h2>
+              <p>เราอาจปรับปรุงข้อกำหนดการสมัครสมาชิกนี้เป็นครั้งคราว โดยจะอัปเดตวันที่มีผลบังคับใช้ด้านบน และแจ้งผ่านแอปหรือช่องทางที่เหมาะสม</p>
+              <p>การใช้งานต่อหลังวันที่มีผลบังคับใช้ของฉบับแก้ไข ถือว่าคุณยอมรับข้อกำหนดที่แก้ไขแล้ว</p>
+            </section>
+
+            <section class="doc-section" id="th-9">
+              <h2>9. ติดต่อเรา</h2>
+              <p>หากมีคำถามเกี่ยวกับการสมัครสมาชิกหรือการเรียกเก็บเงิน กรุณาติดต่อ <a href="mailto:support@calbuddy.live">support@calbuddy.live</a></p>
+              <p>ดูเพิ่มเติม: <a href="../terms/">ข้อกำหนดการใช้งาน</a> · <a href="../privacy/">นโยบายความเป็นส่วนตัว</a></p>
+            </section>
           </section>
 
           <section class="langBlock lang-en" lang="en">
-            <p>
-              This page describes subscription and payment terms (if applicable) for BuddyCal. If your app does not offer subscriptions yet, you can keep this page as a placeholder for future use.
+            <p class="doc-intro">
+              These Subscription Terms (“Terms”) describe billing, renewal, and cancellation for paid premium features
+              of the BuddyCal app (“Service”). These Terms supplement our <a href="../terms/">Terms of Service</a>
+              and <a href="../privacy/">Privacy Policy</a>. For payment matters, these Subscription Terms prevail.
             </p>
 
-            <h2>Billing and renewal</h2>
-            <ul>
-              <li>Payments are billed through the App Store, subject to Apple’s terms.</li>
-              <li>Subscriptions may auto-renew unless cancelled before the end of the current period.</li>
-            </ul>
+            <nav class="doc-toc" aria-label="Table of contents">
+              <h2>Contents</h2>
+              <ol>
+                <li><a href="#en-1">Scope &amp; Plans</a></li>
+                <li><a href="#en-2">Payment</a></li>
+                <li><a href="#en-3">Auto-Renewal</a></li>
+                <li><a href="#en-4">Cancellation</a></li>
+                <li><a href="#en-5">Refunds</a></li>
+                <li><a href="#en-6">Price Changes</a></li>
+                <li><a href="#en-7">Premium Features</a></li>
+                <li><a href="#en-8">Changes to Terms</a></li>
+                <li><a href="#en-9">Contact Us</a></li>
+              </ol>
+            </nav>
 
-            <h2>Cancellation</h2>
-            <p>You can cancel your subscription in your App Store account settings.</p>
+            <section class="doc-section" id="en-1">
+              <h2>1. Scope and Plans</h2>
+              <p>BuddyCal may offer free core features and premium features through paid subscriptions (e.g., monthly or annual).</p>
+              <p>Plan details, pricing, duration, and included features are shown in the in-app subscription screen before you confirm payment.</p>
+              <p>We may add, change, or discontinue plans with appropriate notice.</p>
+            </section>
 
-            <h2>Contact</h2>
-            <p>If you have questions, contact <a href="mailto:support@calbuddy.live">support@calbuddy.live</a></p>
+            <section class="doc-section" id="en-2">
+              <h2>2. Payment</h2>
+              <p>Subscription payments are processed through the Apple App Store, subject to Apple’s terms and policies.</p>
+              <ul>
+                <li>Charges are billed to the Apple ID linked to your App Store account.</li>
+                <li>Displayed prices may include taxes or fees as required by Apple or local law.</li>
+                <li>We do not collect credit card or payment details directly — all payments are handled by Apple.</li>
+              </ul>
+            </section>
+
+            <section class="doc-section" id="en-3">
+              <h2>3. Auto-Renewal</h2>
+              <p>Monthly or annual subscriptions automatically renew unless you cancel before the end of the current billing period.</p>
+              <p>Apple charges within 24 hours before the current period ends, at the subscribed plan rate (or updated price if notified).</p>
+            </section>
+
+            <section class="doc-section" id="en-4">
+              <h2>4. Cancellation</h2>
+              <p>You may cancel your subscription at any time:</p>
+              <ul>
+                <li>Open <strong>Settings</strong> on your iPhone/iPad → <strong>Apple ID</strong> → <strong>Subscriptions</strong></li>
+                <li>Select BuddyCal and tap <strong>Cancel Subscription</strong></li>
+              </ul>
+              <p>After cancellation, you retain premium access until the end of the paid period, then revert to free features (as we define).</p>
+            </section>
+
+            <section class="doc-section" id="en-5">
+              <h2>5. Refunds</h2>
+              <p>Refunds are handled under Apple’s policies. You may request a refund via <a href="https://reportaproblem.apple.com" rel="noopener noreferrer" target="_blank">reportaproblem.apple.com</a> or Apple Support.</p>
+              <p>We cannot issue refunds directly, as all payments are processed through the App Store.</p>
+            </section>
+
+            <section class="doc-section" id="en-6">
+              <h2>6. Price Changes</h2>
+              <p>We may adjust subscription prices with advance notice through the app or App Store as required by Apple.</p>
+              <p>If you do not accept a new price, you may cancel before the next billing cycle.</p>
+            </section>
+
+            <section class="doc-section" id="en-7">
+              <h2>7. Premium Features</h2>
+              <p>Premium features included in a plan may change as the Service evolves. We will try to provide advance notice of material changes.</p>
+              <p>Subscriptions are personal, non-transferable, and tied to the Apple ID used for payment.</p>
+            </section>
+
+            <section class="doc-section" id="en-8">
+              <h2>8. Changes to These Terms</h2>
+              <p>We may update these Subscription Terms from time to time and will update the effective date above, with notice via the app or other appropriate means.</p>
+              <p>Continued use after the effective date constitutes acceptance of the updated Terms.</p>
+            </section>
+
+            <section class="doc-section" id="en-9">
+              <h2>9. Contact Us</h2>
+              <p>For subscription or billing questions, contact <a href="mailto:support@calbuddy.live">support@calbuddy.live</a>.</p>
+              <p>See also: <a href="../terms/">Terms of Service</a> · <a href="../privacy/">Privacy Policy</a></p>
+            </section>
           </section>
         </article>
       </div>
@@ -120,6 +248,8 @@
             <a href="../terms/" data-i18n="legal_terms">Terms of Service</a>
             <span class="footerSep" aria-hidden="true">–</span>
             <a href="../privacy/" data-i18n="legal_privacy">Privacy Policy</a>
+            <span class="footerSep" aria-hidden="true">–</span>
+            <a href="../cookie/" data-i18n="legal_cookie">Cookie Policy</a>
           </div>
         </div>
       </div>
@@ -128,44 +258,27 @@
     <script>
       const now = new Date();
       document.getElementById("y").textContent = now.getFullYear();
-      const currentLang = (localStorage.getItem("buddycal_site_lang") || "").toLowerCase() === "en" ? "en" : "th";
-      document.getElementById("d").textContent = now.toLocaleDateString(currentLang === "th" ? "th-TH" : "en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      });
-
       const STORAGE_KEY = "buddycal_site_lang";
       const STRINGS = {
         th: {
-          home: "หน้าแรก",
-          usage: "การใช้งาน",
-          contact: "ติดต่อเรา",
-          language: "เปลี่ยนภาษา",
+          home: "หน้าแรก", usage: "การใช้งาน", contact: "ติดต่อเรา", language: "เปลี่ยนภาษา",
           footer_copyright: "© <span id=\"y\"></span> BuddyCal All rights reserved.",
-          legal_terms: "Terms of Service",
-          legal_privacy: "Privacy Policy",
-          meta_effective: "วันที่มีผลบังคับใช้ (Effective Date):",
+          legal_terms: "Terms of Service", legal_privacy: "Privacy Policy", legal_cookie: "Cookie Policy",
+          doc_title: "ข้อกำหนดการสมัครสมาชิก", meta_effective: "วันที่มีผลบังคับใช้:", meta_contact: "ติดต่อ:",
         },
         en: {
-          home: "Home",
-          usage: "How to use",
-          contact: "Contact",
-          language: "Language",
+          home: "Home", usage: "How to use", contact: "Contact", language: "Language",
           footer_copyright: "© <span id=\"y\"></span> BuddyCal. All rights reserved.",
-          legal_terms: "Terms of Service",
-          legal_privacy: "Privacy Policy",
-          meta_effective: "Effective Date:",
+          legal_terms: "Terms of Service", legal_privacy: "Privacy Policy", legal_cookie: "Cookie Policy",
+          doc_title: "Subscription Terms", meta_effective: "Effective Date:", meta_contact: "Contact:",
         },
       };
-
       const openBtn = document.getElementById("openMenu");
       const closeBtn = document.getElementById("closeMenu");
       const backdrop = document.getElementById("backdrop");
       const drawer = document.getElementById("drawer");
       const langTH = document.getElementById("langTH");
       const langEN = document.getElementById("langEN");
-
       function setLang(lang) {
         const s = STRINGS[lang] || STRINGS.th;
         document.documentElement.lang = lang;
@@ -183,38 +296,18 @@
           block.style.display = show ? "block" : "none";
         });
         const dateEl = document.getElementById("d");
-        if (dateEl) {
-          dateEl.textContent = now.toLocaleDateString(lang === "th" ? "th-TH" : "en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          });
-        }
+        if (dateEl) dateEl.textContent = now.toLocaleDateString(lang === "th" ? "th-TH" : "en-US", { year: "numeric", month: "long", day: "numeric" });
         langTH.setAttribute("aria-pressed", String(lang === "th"));
         langEN.setAttribute("aria-pressed", String(lang === "en"));
         localStorage.setItem(STORAGE_KEY, lang);
       }
-
       function getLang() {
         const saved = localStorage.getItem(STORAGE_KEY);
         if (saved === "th" || saved === "en") return saved;
-        const pref = String((navigator.language || "").toLowerCase());
-        return pref.startsWith("th") ? "th" : "en";
+        return String(navigator.language || "").toLowerCase().startsWith("th") ? "th" : "en";
       }
-
-      function openDrawer() {
-        drawer.setAttribute("aria-hidden", "false");
-        backdrop.setAttribute("aria-hidden", "false");
-        openBtn.setAttribute("aria-expanded", "true");
-        document.body.style.overflow = "hidden";
-      }
-      function closeDrawer() {
-        drawer.setAttribute("aria-hidden", "true");
-        backdrop.setAttribute("aria-hidden", "true");
-        openBtn.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
-      }
-
+      function openDrawer() { drawer.setAttribute("aria-hidden", "false"); backdrop.setAttribute("aria-hidden", "false"); openBtn.setAttribute("aria-expanded", "true"); document.body.style.overflow = "hidden"; }
+      function closeDrawer() { drawer.setAttribute("aria-hidden", "true"); backdrop.setAttribute("aria-hidden", "true"); openBtn.setAttribute("aria-expanded", "false"); document.body.style.overflow = ""; }
       openBtn.addEventListener("click", openDrawer);
       closeBtn.addEventListener("click", closeDrawer);
       backdrop.addEventListener("click", closeDrawer);
@@ -222,7 +315,6 @@
       drawer.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeDrawer));
       langTH.addEventListener("click", () => setLang("th"));
       langEN.addEventListener("click", () => setLang("en"));
-
       setLang(getLang());
     </script>
   </body>

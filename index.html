@@ -114,7 +114,6 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 14px;
-        color: rgba(255, 255, 255, 0.75);
         font-size: 12px;
       }
       .mockCardGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -125,7 +124,7 @@
         background: color-mix(in srgb, var(--bg) 70%, var(--card));
       }
       .kpi { font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-bottom: 6px; }
-      .kpiLabel { color: rgba(255, 255, 255, 0.68); font-size: 12px; }
+      .kpiLabel { font-size: 12px; }
       .mockBar {
         margin-top: 12px;
         height: 10px;
@@ -174,6 +173,10 @@
         background: color-mix(in srgb, var(--green) 10%, var(--card));
         border-color: color-mix(in srgb, var(--green) 22%, var(--border));
       }
+      .feature:nth-child(3) .icon {
+        background: color-mix(in srgb, var(--blue) 8%, var(--card));
+        border-color: color-mix(in srgb, var(--green) 30%, var(--blue) 20%, var(--border));
+      }
       .feature h3 { margin: 0 0 8px; font-size: 16px; }
       .feature p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
 
@@ -218,7 +221,7 @@
     </style>
   </head>
 
-  <body>
+  <body class="page-home">
     <header>
       <div class="container">
         <nav class="nav" aria-label="Primary">
@@ -242,6 +245,7 @@
             <a href="#features" data-i18n="top_features">Features</a>
             <a href="#support" data-i18n="top_support">Support</a>
             <a href="privacy/" data-i18n="top_privacy">Privacy</a>
+            <a href="cookie/" data-i18n="top_cookie">Cookie</a>
           </div>
         </nav>
       </div>
@@ -277,7 +281,7 @@
         <section class="hero" aria-label="Hero">
           <div>
             <span class="pill">🌿 Health • 🍽️ Calories • 🚶 Steps</span>
-            <h1 data-i18n="hero_title">กินพอดี เดินพอดี<br />ดูแลตัวเองให้ชัดเจน</h1>
+            <h1 class="hero-title" data-i18n="hero_title">กินพอดี เดินพอดี<br />ดูแลตัวเองให้ชัดเจน</h1>
             <p class="lead" data-i18n="hero_lead">
               BuddyCal ช่วยคุณ “ถ่ายรูปแล้วประเมินแคลอรี่” พร้อมติดตาม “จำนวนก้าว” และสรุปความคืบหน้าในแต่ละวันแบบเข้าใจง่าย
               เพื่อให้การดูแลสุขภาพเป็นเรื่องที่ทำต่อเนื่องได้จริง
@@ -393,6 +397,8 @@
             <a href="terms/" data-i18n="legal_terms">Terms of Service</a>
             <span class="footerSep" aria-hidden="true">–</span>
             <a href="privacy/" data-i18n="legal_privacy">Privacy Policy</a>
+            <span class="footerSep" aria-hidden="true">–</span>
+            <a href="cookie/" data-i18n="legal_cookie">Cookie Policy</a>
           </div>
         </div>
       </div>
@@ -411,6 +417,7 @@
           top_features: "Features",
           top_support: "Support",
           top_privacy: "Privacy",
+          top_cookie: "คุกกี้",
           hero_title: "กินพอดี เดินพอดี<br />ดูแลตัวเองให้ชัดเจน",
           hero_lead:
             'BuddyCal ช่วยคุณ “ถ่ายรูปแล้วประเมินแคลอรี่” พร้อมติดตาม “จำนวนก้าว” และสรุปความคืบหน้าในแต่ละวันแบบเข้าใจง่าย เพื่อให้การดูแลสุขภาพเป็นเรื่องที่ทำต่อเนื่องได้จริง',
@@ -432,6 +439,7 @@
           footer_copyright: "© <span id=\"y\"></span> BuddyCal All rights reserved.",
           legal_terms: "Terms of Service",
           legal_privacy: "Privacy Policy",
+          legal_cookie: "นโยบายคุกกี้",
           mock_kcal_label: "kcal (ประมาณการ)",
           mock_photo_title: "ถ่ายรูปมื้ออาหาร → ประเมินแคลอรี่",
           mock_photo_desc: "อัปโหลดรูปอาหารเพื่อดูค่าประมาณและบันทึกไว้ในไทม์ไลน์",
@@ -444,6 +452,7 @@
           top_features: "Features",
           top_support: "Support",
           top_privacy: "Privacy Policy",
+          top_cookie: "Cookie Policy",
           hero_title: "Track smarter,<br />feel better every day",
           hero_lead:
             "BuddyCal helps you estimate calories from food photos, track steps, and see simple daily progress—so healthy habits are easier to stick with.",
@@ -465,6 +474,7 @@
           footer_copyright: "© <span id=\"y\"></span> BuddyCal. All rights reserved.",
           legal_terms: "Terms of Service",
           legal_privacy: "Privacy Policy",
+          legal_cookie: "Cookie Policy",
           mock_kcal_label: "kcal (estimate)",
           mock_photo_title: "Photo meal → calorie estimate",
           mock_photo_desc: "Upload a meal photo to estimate calories and save it to your timeline.",
