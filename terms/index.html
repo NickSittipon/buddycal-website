@@ -6,155 +6,14 @@
     <meta name="description" content="BuddyCal Terms of Service" />
     <meta name="color-scheme" content="light dark" />
     <title>Terms of Service — BuddyCal</title>
+    <link rel="stylesheet" href="../assets/theme.css" />
     <style>
-      :root {
-        --bg: #0b1020;
-        --fg: rgba(255, 255, 255, 0.92);
-        --muted: rgba(255, 255, 255, 0.72);
-        --muted2: rgba(255, 255, 255, 0.56);
-        --card: rgba(255, 255, 255, 0.06);
-        --border: rgba(255, 255, 255, 0.12);
-        --accent: #60a5fa;
-        --accent2: #a78bfa;
-        --shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
-        --radius: 16px;
-      }
-      @media (prefers-color-scheme: light) {
-        :root {
-          --bg: #f7f8ff;
-          --fg: rgba(15, 23, 42, 0.92);
-          --muted: rgba(15, 23, 42, 0.68);
-          --muted2: rgba(15, 23, 42, 0.54);
-          --card: rgba(15, 23, 42, 0.04);
-          --border: rgba(15, 23, 42, 0.12);
-          --accent: #2563eb;
-          --accent2: #7c3aed;
-          --shadow: 0 10px 26px rgba(15, 23, 42, 0.10);
-        }
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        color: var(--fg);
-        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
-        line-height: 1.7;
-        background: var(--bg);
-      }
-      a { color: var(--accent); }
-      .container { width: min(900px, calc(100% - 40px)); margin: 0 auto; }
-      header {
-        position: sticky; top: 0; z-index: 10;
-        background: color-mix(in srgb, var(--bg) 92%, transparent);
-        border-bottom: 1px solid var(--border);
-        backdrop-filter: blur(10px);
-      }
-      .nav {
-        display: flex; align-items: center; justify-content: space-between;
-        padding: 14px 0; gap: 12px;
-      }
-      .navLeft { display: inline-flex; align-items: center; gap: 10px; min-width: 200px; }
-      .iconBtn {
-        width: 40px;
-        height: 40px;
-        border-radius: 12px;
-        border: 1px solid var(--border);
-        background: var(--card);
-        color: var(--fg);
-        display: grid;
-        place-items: center;
-        cursor: pointer;
-      }
-      .iconBtn:hover { border-color: color-mix(in srgb, var(--border) 60%, var(--fg)); }
-      .iconBtn:focus { outline: 2px solid color-mix(in srgb, var(--accent) 55%, transparent); outline-offset: 2px; }
-      .brand { font-weight: 800; letter-spacing: 0.2px; text-decoration: none; }
-      .chip {
-        border: 1px solid var(--border);
-        background: var(--card);
-        border-radius: 999px;
-        padding: 8px 12px;
-        color: var(--muted);
-        font-size: 13px;
-        text-decoration: none;
-      }
       main { padding: 32px 0 56px; }
-      .card {
-        border: 1px solid var(--border);
-        background: var(--card);
-        border-radius: var(--radius);
-        box-shadow: none;
-        padding: 22px;
-      }
-      h1 { margin: 0 0 8px; font-size: 30px; letter-spacing: -0.02em; }
-      .meta { color: var(--muted2); font-size: 13px; margin: 0 0 18px; }
-      h2 { margin: 22px 0 8px; font-size: 18px; }
-      p, li { color: var(--muted); line-height: 1.75; font-size: 14px; }
-      ul { margin: 10px 0 0 18px; }
-      footer {
-        border-top: 1px solid var(--border);
-        padding: 18px 0 28px;
-        color: var(--muted2);
-        font-size: 13px;
-      }
-      .footerRow { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: center; }
-      .footerLinks { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; color: var(--muted); }
-      .footerLinks a { color: inherit; }
-      .footerLinks a:hover { color: var(--fg); }
-      .footerSep { opacity: 0.55; user-select: none; }
-
-      .drawerBackdrop[aria-hidden="true"] { display: none; }
-      .drawerBackdrop { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.45); z-index: 80; }
-      .drawer {
-        position: fixed; top: 0; left: 0; height: 100%; width: min(320px, 86vw);
-        background: color-mix(in srgb, var(--bg) 92%, transparent);
-        border-right: 1px solid var(--border);
-        backdrop-filter: blur(12px);
-        transform: translateX(-105%);
-        transition: transform 180ms ease;
-        z-index: 90;
-        display: flex;
-        flex-direction: column;
-      }
-      .drawer[aria-hidden="false"] { transform: translateX(0); }
-      .drawerHeader { display: flex; align-items: center; justify-content: space-between; padding: 14px 14px 10px; border-bottom: 1px solid var(--border); }
-      .drawerTitle { font-weight: 800; letter-spacing: 0.2px; }
-      .drawerBody { padding: 12px 14px 18px; }
-      .drawerList { margin: 0; padding: 0; list-style: none; }
-      .drawerList a, .drawerList button {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        padding: 12px 10px;
-        border-radius: 12px;
-        border: 1px solid transparent;
-        background: transparent;
-        color: var(--fg);
-        font: inherit;
-        cursor: pointer;
-        text-decoration: none;
-      }
-      .drawerList a:hover, .drawerList button:hover { background: var(--card); border-color: var(--border); text-decoration: none; }
-      .drawerSectionLabel { margin: 14px 6px 8px; color: var(--muted2); font-size: 12px; }
-      .drawerLangRow { display: flex; gap: 10px; flex-wrap: wrap; }
-      .segBtn {
-        border: 1px solid var(--border);
-        background: var(--card);
-        color: var(--muted);
-        padding: 10px 12px;
-        border-radius: 999px;
-        cursor: pointer;
-        font: inherit;
-      }
-      .segBtn[aria-pressed="true"] { color: var(--fg); border-color: color-mix(in srgb, var(--border) 60%, var(--fg)); }
-
-      .langBlock { display: none; }
-      .langBlock.is-active { display: block; }
     </style>
   </head>
   <body>
     <header>
-      <div class="container">
+      <div class="container container--narrow">
         <div class="nav">
           <div class="navLeft">
             <button class="iconBtn" type="button" id="openMenu" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
@@ -162,7 +21,14 @@
                 <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               </svg>
             </button>
-            <a class="brand" href="../">BuddyCal</a>
+            <a class="brand" href="../">
+              <span class="logo" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3c-1.5 2.5-4 4.5-4 8a4 4 0 108 0c0-3.5-2.5-5.5-4-8z" fill="#fff" opacity="0.95"/>
+                </svg>
+              </span>
+              <span>BuddyCal</span>
+            </a>
           </div>
           <a class="chip" href="../privacy/" data-i18n="legal_privacy">Privacy Policy</a>
         </div>
@@ -185,7 +51,6 @@
           <li><a href="../#features" data-i18n="usage">การใช้งาน</a></li>
           <li><a href="../#support" data-i18n="contact">ติดต่อเรา</a></li>
         </ul>
-
         <div class="drawerSectionLabel" data-i18n="language">เปลี่ยนภาษา</div>
         <div class="drawerLangRow" role="group" aria-label="Language">
           <button class="segBtn" type="button" id="langTH" aria-pressed="true">ไทย</button>
@@ -195,215 +60,278 @@
     </aside>
 
     <main>
-      <div class="container">
-        <article class="card">
-          <h1 data-i18n="doc_title">ข้อกำหนดและเงื่อนไขการใช้งาน (Terms &amp; Conditions)</h1>
-          <p class="meta"><span data-i18n="meta_effective">วันที่มีผลบังคับใช้:</span> <span id="d"></span></p>
-          <p class="meta">
-            <strong data-i18n="meta_provider">ผู้ให้บริการ (Provider):</strong>
+      <div class="container container--narrow">
+        <article class="doc-card">
+          <h1 data-i18n="doc_title">ข้อกำหนดและเงื่อนไขการใช้งาน</h1>
+          <p class="doc-meta"><span data-i18n="meta_effective">วันที่มีผลบังคับใช้:</span> <span id="d"></span></p>
+          <p class="doc-meta">
+            <strong data-i18n="meta_provider">ผู้ให้บริการ:</strong>
             <span data-i18n="provider_value">BuddyCal (“เรา”, “ของเรา”)</span>
           </p>
-          <p class="meta">
-            <strong data-i18n="meta_contact">ติดต่อ (Contact):</strong> <a href="mailto:support@calbuddy.live">support@calbuddy.live</a>
+          <p class="doc-meta" style="border-bottom: none; padding-bottom: 0;">
+            <strong data-i18n="meta_contact">ติดต่อ:</strong> <a href="mailto:support@calbuddy.live">support@calbuddy.live</a>
           </p>
 
           <section class="langBlock lang-th is-active">
-            <ol>
-              <li>
-                <h2>การยอมรับข้อกำหนด</h2>
-                <p>
-                  การดาวน์โหลด เข้าถึง หรือใช้งานแอป BuddyCal (“แอป” หรือ “บริการ”) ถือว่าคุณยอมรับข้อกำหนดและเงื่อนไขนี้
-                  หากคุณไม่ยอมรับ กรุณาหยุดใช้งานแอป
-                </p>
-              </li>
-              <li>
-                <h2>คุณสมบัติผู้ใช้และอายุขั้นต่ำ</h2>
-                <p>คุณต้องมีอายุอย่างน้อย 13 ปี จึงจะใช้บริการได้</p>
-                <p>
-                  หากคุณอายุระหว่าง 13–17 ปี คุณรับรองว่ามีความยินยอมจากผู้ปกครอง/ผู้แทนโดยชอบธรรมตามที่กฎหมายที่เกี่ยวข้องกำหนด
-                </p>
-                <p>เราอาจระงับ/ยุติการให้บริการหากพบว่ามีการใช้งานโดยผู้ที่ไม่ผ่านเกณฑ์อายุ</p>
-              </li>
-              <li>
-                <h2>ขอบเขตบริการและคำเตือนด้านสุขภาพ (ไม่ใช่คำแนะนำทางการแพทย์)</h2>
-                <p>
-                  BuddyCal ให้บริการเกี่ยวกับการนับแคลอรี แผนอาหาร และข้อมูลด้านโภชนาการ เพื่อวัตถุประสงค์ด้านข้อมูลทั่วไปเท่านั้น
-                </p>
-                <p>บริการไม่ใช่การวินิจฉัย การรักษา คำแนะนำทางการแพทย์ หรือการดูแลโดยผู้ประกอบวิชาชีพ</p>
-                <p>
-                  คุณควรปรึกษาแพทย์/ผู้เชี่ยวชาญก่อนเริ่มเปลี่ยนแปลงอาหาร/การออกกำลังกาย โดยเฉพาะหากคุณมีโรคประจำตัว ตั้งครรภ์ ให้นมบุตร
-                  หรือมีภาวะสุขภาพที่ต้องเฝ้าระวัง
-                </p>
-                <p>หากมีเหตุฉุกเฉินด้านสุขภาพ ให้ติดต่อหน่วยแพทย์ฉุกเฉินทันที</p>
-              </li>
-              <li>
-                <h2>บัญชีผู้ใช้และความปลอดภัย</h2>
-                <p>คุณอาจต้องสร้างบัญชีเพื่อใช้งานบางส่วนของบริการ</p>
-                <p>คุณรับผิดชอบต่อความถูกต้องของข้อมูลบัญชี และการรักษาความลับของข้อมูลเข้าสู่ระบบ</p>
-                <p>คุณต้องแจ้งเราทันทีหากสงสัยว่าบัญชีถูกเข้าถึงโดยไม่ได้รับอนุญาต</p>
-              </li>
-              <li>
-                <h2>ข้อมูลส่วนบุคคลและความเป็นส่วนตัว</h2>
-                <p>การประมวลผลข้อมูลส่วนบุคคลของคุณอยู่ภายใต้นโยบายความเป็นส่วนตัวของเรา (“Privacy Policy”)</p>
-                <p>
-                  โดยทั่วไป เราอาจเก็บและประมวลผลข้อมูล เช่น อีเมล รูปภาพ อายุ น้ำหนัก และข้อมูลด้านสุขภาพ/โภชนาการ เพื่อให้บริการและปรับปรุงบริการ
-                </p>
-                <p>เราใช้ผู้ให้บริการโครงสร้างพื้นฐาน/ฐานข้อมูล และเครื่องมือ analytics เพื่อวิเคราะห์การใช้งานและปรับปรุงประสบการณ์ผู้ใช้</p>
-              </li>
-              <li>
-                <h2>พฤติกรรมต้องห้าม</h2>
-                <p>คุณตกลงว่าจะไม่:</p>
-                <ul>
-                  <li>ใช้งานบริการเพื่อวัตถุประสงค์ที่ผิดกฎหมาย หรือฝ่าฝืนข้อกำหนดนี้</li>
-                  <li>พยายามเจาะระบบ รบกวนบริการ ทำ reverse engineering หรือหลีกเลี่ยงมาตรการความปลอดภัย</li>
-                  <li>ใช้งานในลักษณะที่ก่อให้เกิดความเสียหายต่อเรา ผู้ใช้รายอื่น หรือบุคคลภายนอก</li>
-                </ul>
-              </li>
-              <li>
-                <h2>ค่าบริการ</h2>
-                <p>ปัจจุบันบริการไม่มีค่าใช้จ่าย อย่างไรก็ตาม เราอาจเพิ่มฟีเจอร์แบบคิดค่าบริการในอนาคต โดยจะแจ้งให้ทราบตามสมควร</p>
-              </li>
-              <li>
-                <h2>ทรัพย์สินทางปัญญา</h2>
-                <p>
-                  แอป ซอฟต์แวร์ เนื้อหา การออกแบบ เครื่องหมายการค้า และองค์ประกอบต่าง ๆ ของบริการเป็นทรัพย์สินของเรา (หรือผู้อนุญาตให้เราใช้)
-                  คุณได้รับสิทธิใช้งานแบบส่วนบุคคล จำกัด เพิกถอนได้ และไม่โอนสิทธิ เพื่อใช้บริการตามข้อกำหนดนี้เท่านั้น
-                </p>
-              </li>
-              <li>
-                <h2>บริการของบุคคลที่สาม</h2>
-                <p>
-                  บริการอาจพึ่งพาหรือเชื่อมโยงกับบริการของบุคคลที่สาม การใช้งานของคุณอาจอยู่ภายใต้เงื่อนไข/นโยบายของบุคคลที่สามนั้น ๆ ด้วย
-                  เราไม่รับผิดชอบต่อบริการของบุคคลที่สามในส่วนที่อยู่นอกเหนือการควบคุมของเรา
-                </p>
-              </li>
-              <li>
-                <h2>การปฏิเสธความรับผิด (Disclaimer)</h2>
-                <p>
-                  บริการจัดให้ “ตามสภาพ” และ “ตามที่มี” เราไม่รับประกันว่าบริการจะถูกต้องสมบูรณ์ ปลอดข้อผิดพลาด หรือพร้อมใช้งานตลอดเวลา
-                </p>
-                <p>ผลลัพธ์จากการนับแคลอรี/แผนอาหาร/ข้อมูลโภชนาการอาจแตกต่างกันตามแต่ละบุคคล และขึ้นกับข้อมูลที่คุณให้</p>
-              </li>
-              <li>
-                <h2>การจำกัดความรับผิด (Limitation of Liability)</h2>
-                <p>ในขอบเขตสูงสุดที่กฎหมายอนุญาต:</p>
-                <ul>
-                  <li>
-                    เราจะไม่รับผิดต่อความเสียหายทางอ้อม พิเศษ เป็นผลสืบเนื่อง หรือความเสียหายเชิงลงโทษ รวมถึงการสูญเสียกำไร ข้อมูล หรือชื่อเสียงทางธุรกิจ
-                    อันเกิดจากหรือเกี่ยวข้องกับการใช้บริการ
-                  </li>
-                  <li>
-                    ความรับผิดรวมทั้งหมดของเราที่เกิดจากหรือเกี่ยวข้องกับบริการ จะไม่เกินจำนวนที่คุณชำระให้เราในช่วง 12 เดือนก่อนเกิดเหตุ หรือ 100 ดอลลาร์สหรัฐ (USD 100)
-                    แล้วแต่จำนวนใดจะน้อยกว่า
-                  </li>
-                  <li>ข้อยกเว้น: ไม่มีส่วนใดในข้อกำหนดนี้ที่มีเจตนาจำกัดความรับผิดในกรณีที่กฎหมายห้ามจำกัด</li>
-                </ul>
-              </li>
-              <li>
-                <h2>การระงับและการยุติ</h2>
-                <p>
-                  เราอาจระงับหรือยุติการเข้าถึงบริการของคุณ หากเราพิจารณาอย่างสมเหตุสมผลว่าคุณฝ่าฝืนข้อกำหนดนี้ หรือมีความเสี่ยงต่อความปลอดภัยของบริการ
-                </p>
-              </li>
-              <li>
-                <h2>การเปลี่ยนแปลงข้อกำหนด</h2>
-                <p>
-                  เราอาจปรับปรุงข้อกำหนดนี้เป็นครั้งคราว โดยจะแจ้งให้ทราบผ่านแอปหรือช่องทางที่เหมาะสม การใช้งานต่อหลังวันที่มีผลบังคับใช้ของฉบับแก้ไข
-                  ถือว่าคุณยอมรับข้อกำหนดที่แก้ไขแล้ว
-                </p>
-              </li>
-              <li>
-                <h2>กฎหมายที่ใช้บังคับและเขตอำนาจ</h2>
-                <p>ข้อกำหนดนี้อยู่ภายใต้กฎหมายของประเทศไทย และให้ศาลไทยมีเขตอำนาจ เว้นแต่กฎหมายที่ใช้บังคับกำหนดเป็นอย่างอื่น</p>
-              </li>
-            </ol>
+            <p class="doc-intro">
+              ข้อกำหนดและเงื่อนไขการใช้งาน (“ข้อกำหนด”) ฉบับนี้ควบคุมการเข้าถึงและการใช้งานแอปพลิเคชัน BuddyCal และเว็บไซต์ที่เกี่ยวข้อง (“บริการ”)
+              โปรดอ่านข้อกำหนดนี้อย่างละเอียดก่อนใช้งาน หากคุณไม่ยอมรับข้อกำหนด กรุณาหยุดใช้งานบริการทันที
+            </p>
+
+            <nav class="doc-toc" aria-label="สารบัญ">
+              <h2>สารบัญ</h2>
+              <ol>
+                <li><a href="#th-1">การยอมรับข้อกำหนด</a></li>
+                <li><a href="#th-2">คุณสมบัติผู้ใช้</a></li>
+                <li><a href="#th-3">ขอบเขตบริการและคำเตือนด้านสุขภาพ</a></li>
+                <li><a href="#th-4">บัญชีผู้ใช้</a></li>
+                <li><a href="#th-5">ข้อมูลส่วนบุคคล</a></li>
+                <li><a href="#th-6">เนื้อหาของผู้ใช้</a></li>
+                <li><a href="#th-7">พฤติกรรมต้องห้าม</a></li>
+                <li><a href="#th-8">ค่าบริการและการสมัครสมาชิก</a></li>
+                <li><a href="#th-9">ทรัพย์สินทางปัญญา</a></li>
+                <li><a href="#th-10">บริการของบุคคลที่สาม</a></li>
+                <li><a href="#th-11">การปฏิเสธความรับผิด</a></li>
+                <li><a href="#th-12">การจำกัดความรับผิด</a></li>
+                <li><a href="#th-13">การระงับและการยุติ</a></li>
+                <li><a href="#th-14">การเปลี่ยนแปลงข้อกำหนด</a></li>
+                <li><a href="#th-15">กฎหมายที่ใช้บังคับ</a></li>
+              </ol>
+            </nav>
+
+            <section class="doc-section" id="th-1">
+              <h2>1. การยอมรับข้อกำหนด</h2>
+              <p>การดาวน์โหลด ติดตั้ง เข้าถึง หรือใช้งานบริการ ถือว่าคุณได้อ่าน เข้าใจ และยอมรับข้อกำหนดนี้ รวมถึง <a href="../privacy/">นโยบายความเป็นส่วนตัว</a> ของเรา ซึ่งเป็นส่วนหนึ่งของข้อกำหนดนี้โดยอ้างอิง</p>
+            </section>
+
+            <section class="doc-section" id="th-2">
+              <h2>2. คุณสมบัติผู้ใช้และอายุขั้นต่ำ</h2>
+              <p>คุณต้องมีอายุอย่างน้อย 13 ปี จึงจะใช้บริการได้ หากคุณอายุระหว่าง 13–17 ปี คุณรับรองว่ามีความยินยอมจากผู้ปกครองหรือผู้แทนโดยชอบธรรมตามที่กฎหมายกำหนด</p>
+              <p>เราอาจระงับหรือยุติการให้บริการหากพบว่ามีการใช้งานโดยผู้ที่ไม่ผ่านเกณฑ์อายุ</p>
+            </section>
+
+            <section class="doc-section" id="th-3">
+              <h2>3. ขอบเขตบริการและคำเตือนด้านสุขภาพ</h2>
+              <p>BuddyCal ให้บริการเกี่ยวกับการประเมินแคลอรี่จากรูปภาพอาหาร การนับก้าว การติดตามเป้าหมายด้านสุขภาพ และข้อมูลโภชนาการทั่วไป เพื่อวัตถุประสงค์ด้านข้อมูลและการจัดการสุขภาพส่วนบุคคลเท่านั้น</p>
+              <p><strong>บริการไม่ใช่คำแนะนำทางการแพทย์</strong> ไม่ใช่การวินิจฉัย การรักษา หรือการดูแลโดยผู้ประกอบวิชาชีพ ผลการประเมินแคลอรี่จากรูปภาพเป็นเพียงการประมาณการ และอาจมีความคลาดเคลื่อน</p>
+              <p>คุณควรปรึกษาแพทย์หรือผู้เชี่ยวชาญด้านโภชนาการก่อนเปลี่ยนแปลงอาหารหรือการออกกำลังกาย โดยเฉพาะหากมีโรคประจำตัว ตั้งครรภ์ ให้นมบุตร หรือมีภาวะสุขภาพที่ต้องเฝ้าระวัง</p>
+              <p>หากมีเหตุฉุกเฉินด้านสุขภาพ ให้ติดต่อหน่วยแพทย์ฉุกเฉินทันที</p>
+            </section>
+
+            <section class="doc-section" id="th-4">
+              <h2>4. บัญชีผู้ใช้และความปลอดภัย</h2>
+              <p>คุณอาจต้องสร้างบัญชีเพื่อใช้งานบางส่วนของบริการ คุณรับผิดชอบต่อความถูกต้องของข้อมูลบัญชี และการรักษาความลับของข้อมูลเข้าสู่ระบบ</p>
+              <p>คุณต้องแจ้งเราทันทีที่ <a href="mailto:support@calbuddy.live">support@calbuddy.live</a> หากสงสัยว่าบัญชีถูกเข้าถึงโดยไม่ได้รับอนุญาต</p>
+            </section>
+
+            <section class="doc-section" id="th-5">
+              <h2>5. ข้อมูลส่วนบุคคลและความเป็นส่วนตัว</h2>
+              <p>การเก็บรวบรวม ใช้ และเปิดเผยข้อมูลส่วนบุคคลของคุณอยู่ภายใต้ <a href="../privacy/">นโยบายความเป็นส่วนตัว</a> ของเรา ซึ่งอธิบายรายละเอียดประเภทข้อมูลที่เราเก็บ วัตถุประสงค์ สิทธิของคุณ และมาตรการรักษาความปลอดภัย</p>
+            </section>
+
+            <section class="doc-section" id="th-6">
+              <h2>6. เนื้อหาของผู้ใช้</h2>
+              <p>เมื่อคุณอัปโหลดรูปภาพอาหาร รูปโปรไฟล์ หรือข้อมูลอื่น ๆ ผ่านบริการ (“เนื้อหาของผู้ใช้”) คุณยังคงเป็นเจ้าของเนื้อหานั้น</p>
+              <p>คุณให้สิทธิแก่เราในการใช้ จัดเก็บ ประมวลผล และแสดงเนื้อหาของผู้ใช้เท่าที่จำเป็นเพื่อให้บริการ ปรับปรุงความแม่นยำของระบบประเมินแคลอรี่ และปฏิบัติตามกฎหมาย</p>
+              <p>คุณรับรองว่าเนื้อหาของผู้ใช้ไม่ละเมิดสิทธิของบุคคลที่สาม ไม่ผิดกฎหมาย และไม่มีเนื้อหาที่ไม่เหมาะสม</p>
+            </section>
+
+            <section class="doc-section" id="th-7">
+              <h2>7. พฤติกรรมต้องห้าม</h2>
+              <p>คุณตกลงว่าจะไม่:</p>
+              <ul>
+                <li>ใช้งานบริการเพื่อวัตถุประสงค์ที่ผิดกฎหมาย หรือฝ่าฝืนข้อกำหนดนี้</li>
+                <li>พยายามเจาะระบบ รบกวนบริการ ทำ reverse engineering หรือหลีกเลี่ยงมาตรการความปลอดภัย</li>
+                <li>ใช้บอท สคริปต์ หรือเครื่องมืออัตโนมัติเพื่อเข้าถึงบริการโดยไม่ได้รับอนุญาต</li>
+                <li>อัปโหลดเนื้อหาที่เป็นอันตราย ลามก หรือละเมิดสิทธิของผู้อื่น</li>
+                <li>ใช้งานในลักษณะที่ก่อให้เกิดความเสียหายต่อเรา ผู้ใช้รายอื่น หรือบุคคลภายนอก</li>
+              </ul>
+            </section>
+
+            <section class="doc-section" id="th-8">
+              <h2>8. ค่าบริการและการสมัครสมาชิก</h2>
+              <p>ฟีเจอร์พื้นฐานของบริการอาจให้ใช้งานได้ฟรี เราอาจเสนอฟีเจอร์พรีเมียมหรือการสมัครสมาชิกแบบชำระเงินในอนาคต</p>
+              <p>หากมีการสมัครสมาชิก เงื่อนไขการชำระเงิน การต่ออายุ และการยกเลิกจะอยู่ภายใต้ <a href="../subscription-terms/">ข้อกำหนดการสมัครสมาชิก</a> และเงื่อนไขของ App Store ที่เกี่ยวข้อง</p>
+            </section>
+
+            <section class="doc-section" id="th-9">
+              <h2>9. ทรัพย์สินทางปัญญา</h2>
+              <p>แอป ซอฟต์แวร์ เนื้อหา การออกแบบ เครื่องหมายการค้า และองค์ประกอบต่าง ๆ ของบริการเป็นทรัพย์สินของเราหรือผู้อนุญาตให้เราใช้</p>
+              <p>คุณได้รับสิทธิใช้งานแบบส่วนบุคคล จำกัด เพิกถอนได้ และไม่โอนสิทธิ เพื่อใช้บริการตามข้อกำหนดนี้เท่านั้น</p>
+            </section>
+
+            <section class="doc-section" id="th-10">
+              <h2>10. บริการของบุคคลที่สาม</h2>
+              <p>บริการอาจเชื่อมโยงกับบริการของบุคคลที่สาม เช่น Apple App Store, Supabase, หรือผู้ให้บริการ analytics การใช้งานของคุณอาจอยู่ภายใต้เงื่อนไขและนโยบายของบุคคลที่สามเหล่านั้นด้วย</p>
+              <p>เราไม่รับผิดชอบต่อบริการ เนื้อหา หรือนโยบายของบุคคลที่สามในส่วนที่อยู่นอกเหนือการควบคุมของเรา</p>
+            </section>
+
+            <section class="doc-section" id="th-11">
+              <h2>11. การปฏิเสธความรับผิด (Disclaimer)</h2>
+              <p>บริการจัดให้ “ตามสภาพ” (as is) และ “ตามที่มี” (as available) เราไม่รับประกันว่าบริการจะถูกต้องสมบูรณ์ ปลอดข้อผิดพลาด หรือพร้อมใช้งานตลอดเวลา</p>
+              <p>ผลลัพธ์จากการประเมินแคลอรี่ การนับก้าว หรือข้อมูลโภชนาการอาจแตกต่างกันตามแต่ละบุคคล และขึ้นกับข้อมูลที่คุณให้และสภาพแวดล้อมการใช้งาน</p>
+            </section>
+
+            <section class="doc-section" id="th-12">
+              <h2>12. การจำกัดความรับผิด (Limitation of Liability)</h2>
+              <p>ในขอบเขตสูงสุดที่กฎหมายอนุญาต:</p>
+              <ul>
+                <li>เราจะไม่รับผิดต่อความเสียหายทางอ้อม พิเศษ เป็นผลสืบเนื่อง หรือความเสียหายเชิงลงโทษ รวมถึงการสูญเสียกำไร ข้อมูล หรือชื่อเสียง อันเกิดจากหรือเกี่ยวข้องกับการใช้บริการ</li>
+                <li>ความรับผิดรวมทั้งหมดของเราที่เกิดจากหรือเกี่ยวข้องกับบริการ จะไม่เกินจำนวนที่คุณชำระให้เราในช่วง 12 เดือนก่อนเกิดเหตุ หรือ 100 ดอลลาร์สหรัฐ (USD 100) แล้วแต่จำนวนใดจะน้อยกว่า</li>
+                <li>ไม่มีส่วนใดในข้อกำหนดนี้ที่มีเจตนาจำกัดความรับผิดในกรณีที่กฎหมายห้ามจำกัด</li>
+              </ul>
+            </section>
+
+            <section class="doc-section" id="th-13">
+              <h2>13. การระงับและการยุติ</h2>
+              <p>เราอาจระงับหรือยุติการเข้าถึงบริการของคุณ หากเราพิจารณาอย่างสมเหตุสมผลว่าคุณฝ่าฝืนข้อกำหนดนี้ หรือมีความเสี่ยงต่อความปลอดภัยของบริการ</p>
+              <p>คุณสามารถหยุดใช้งานบริการได้ตลอดเวลา โดยการลบแอปและ/หรือขอลบบัญชีตามที่ระบุในนโยบายความเป็นส่วนตัว</p>
+            </section>
+
+            <section class="doc-section" id="th-14">
+              <h2>14. การเปลี่ยนแปลงข้อกำหนด</h2>
+              <p>เราอาจปรับปรุงข้อกำหนดนี้เป็นครั้งคราว โดยจะแจ้งให้ทราบผ่านแอป เว็บไซต์ หรือช่องทางที่เหมาะสม การใช้งานต่อหลังวันที่มีผลบังคับใช้ของฉบับแก้ไข ถือว่าคุณยอมรับข้อกำหนดที่แก้ไขแล้ว</p>
+            </section>
+
+            <section class="doc-section" id="th-15">
+              <h2>15. กฎหมายที่ใช้บังคับและเขตอำนาจ</h2>
+              <p>ข้อกำหนดนี้อยู่ภายใต้กฎหมายของประเทศไทย และให้ศาลไทยมีเขตอำนาจ เว้นแต่กฎหมายที่ใช้บังคับกำหนดเป็นอย่างอื่น</p>
+              <p>หากมีข้อสงสัยเกี่ยวกับข้อกำหนดนี้ กรุณาติดต่อ <a href="mailto:support@calbuddy.live">support@calbuddy.live</a></p>
+            </section>
           </section>
 
           <section class="langBlock lang-en" lang="en">
-            <h2>Terms &amp; Conditions – BuddyCal (EN)</h2>
-            <p>
-              By downloading, accessing, or using the BuddyCal app (the “App” or “Service”), you agree to these Terms &amp; Conditions. If you do not agree, please stop using the App.
+            <p class="doc-intro">
+              These Terms of Service (“Terms”) govern your access to and use of the BuddyCal mobile application and related website (“Service”).
+              Please read these Terms carefully before using the Service. If you do not agree, please stop using the Service immediately.
             </p>
 
-            <ol>
-              <li>
-                <h2>Acceptance of Terms</h2>
-                <p>
-                  By using the Service, you agree to these Terms. If you do not agree, do not use the Service.
-                </p>
-              </li>
-              <li>
-                <h2>Eligibility and Minimum Age</h2>
-                <p>You must be at least 13 years old to use the Service.</p>
-                <p>If you are between 13–17 years old, you represent that you have consent from a parent/legal guardian as required by applicable law.</p>
-                <p>We may suspend or terminate access if we learn that a user does not meet the age requirement.</p>
-              </li>
-              <li>
-                <h2>Scope of Service and Health Disclaimer (Not Medical Advice)</h2>
-                <p>BuddyCal provides calorie tracking, meal planning, and nutrition-related information for general informational purposes only.</p>
-                <p>The Service is not medical diagnosis, treatment, or professional medical advice.</p>
-                <p>Consult a qualified professional before changing diet/exercise plans, especially with underlying conditions, pregnancy, or other risk factors.</p>
-              </li>
-              <li>
-                <h2>Account and Security</h2>
-                <p>You may need to create an account to access parts of the Service.</p>
-                <p>You are responsible for keeping your account information accurate and maintaining the confidentiality of your login credentials.</p>
-                <p>Notify us promptly if you suspect unauthorized access to your account.</p>
-              </li>
-              <li>
-                <h2>Personal Data and Privacy</h2>
-                <p>Our processing of your personal data is governed by our Privacy Policy.</p>
-                <p>We may collect and process data such as email, photos, age, weight, and health/nutrition-related information to provide and improve the Service.</p>
-              </li>
-              <li>
-                <h2>Prohibited Conduct</h2>
-                <p>You agree not to:</p>
-                <ul>
-                  <li>Use the Service for unlawful purposes or in violation of these Terms.</li>
-                  <li>Attempt to hack, disrupt, reverse engineer, or bypass security measures.</li>
-                  <li>Use the Service in a way that harms us, other users, or third parties.</li>
-                </ul>
-              </li>
-              <li>
-                <h2>Fees</h2>
-                <p>The Service is currently free of charge. We may introduce paid features in the future and will provide notice as appropriate.</p>
-              </li>
-              <li>
-                <h2>Intellectual Property</h2>
-                <p>The App, software, content, design, trademarks, and all elements of the Service are owned by us (or our licensors). You are granted a limited, revocable, non-transferable license to use the Service in accordance with these Terms.</p>
-              </li>
-              <li>
-                <h2>Third-Party Services</h2>
-                <p>The Service may rely on or link to third-party services. Your use may also be subject to those third parties’ terms/policies. We are not responsible for third-party services outside our control.</p>
-              </li>
-              <li>
-                <h2>Disclaimer</h2>
-                <p>The Service is provided “as is” and “as available”. We do not warrant that the Service will be accurate, complete, error-free, or uninterrupted.</p>
-              </li>
-              <li>
-                <h2>Limitation of Liability</h2>
-                <p>To the maximum extent permitted by law, we will not be liable for indirect, special, consequential, or punitive damages arising out of or related to your use of the Service.</p>
-              </li>
-              <li>
-                <h2>Suspension and Termination</h2>
-                <p>We may suspend or terminate your access if we reasonably determine that you violated these Terms or your use poses a risk to the security of the Service.</p>
-              </li>
-              <li>
-                <h2>Changes to These Terms</h2>
-                <p>We may update these Terms from time to time. Continued use after the effective date constitutes acceptance of the updated Terms.</p>
-              </li>
-              <li>
-                <h2>Governing Law and Jurisdiction</h2>
-                <p>These Terms are governed by the laws of Thailand, and Thai courts will have jurisdiction unless applicable law provides otherwise.</p>
-              </li>
-            </ol>
+            <nav class="doc-toc" aria-label="Table of contents">
+              <h2>Contents</h2>
+              <ol>
+                <li><a href="#en-1">Acceptance of Terms</a></li>
+                <li><a href="#en-2">Eligibility</a></li>
+                <li><a href="#en-3">Health Disclaimer</a></li>
+                <li><a href="#en-4">Account &amp; Security</a></li>
+                <li><a href="#en-5">Privacy</a></li>
+                <li><a href="#en-6">User Content</a></li>
+                <li><a href="#en-7">Prohibited Conduct</a></li>
+                <li><a href="#en-8">Fees &amp; Subscriptions</a></li>
+                <li><a href="#en-9">Intellectual Property</a></li>
+                <li><a href="#en-10">Third-Party Services</a></li>
+                <li><a href="#en-11">Disclaimer</a></li>
+                <li><a href="#en-12">Limitation of Liability</a></li>
+                <li><a href="#en-13">Suspension &amp; Termination</a></li>
+                <li><a href="#en-14">Changes to Terms</a></li>
+                <li><a href="#en-15">Governing Law</a></li>
+              </ol>
+            </nav>
+
+            <section class="doc-section" id="en-1">
+              <h2>1. Acceptance of Terms</h2>
+              <p>By downloading, installing, accessing, or using the Service, you agree to these Terms and our <a href="../privacy/">Privacy Policy</a>, which is incorporated by reference.</p>
+            </section>
+
+            <section class="doc-section" id="en-2">
+              <h2>2. Eligibility and Minimum Age</h2>
+              <p>You must be at least 13 years old to use the Service. If you are between 13–17, you represent that you have parental or guardian consent as required by applicable law.</p>
+              <p>We may suspend or terminate access if we learn that a user does not meet the age requirement.</p>
+            </section>
+
+            <section class="doc-section" id="en-3">
+              <h2>3. Scope of Service and Health Disclaimer</h2>
+              <p>BuddyCal provides calorie estimation from food photos, step tracking, health goal monitoring, and general nutrition information for personal wellness purposes only.</p>
+              <p><strong>The Service is not medical advice.</strong> It is not a diagnosis, treatment, or substitute for professional care. Calorie estimates from photos are approximations and may contain errors.</p>
+              <p>Consult a qualified professional before changing your diet or exercise plan, especially if you have underlying conditions, are pregnant, nursing, or have other health risks.</p>
+              <p>In a medical emergency, contact emergency services immediately.</p>
+            </section>
+
+            <section class="doc-section" id="en-4">
+              <h2>4. Account and Security</h2>
+              <p>You may need to create an account to access certain features. You are responsible for keeping your account information accurate and your login credentials confidential.</p>
+              <p>Notify us promptly at <a href="mailto:support@calbuddy.live">support@calbuddy.live</a> if you suspect unauthorized access to your account.</p>
+            </section>
+
+            <section class="doc-section" id="en-5">
+              <h2>5. Personal Data and Privacy</h2>
+              <p>Our collection, use, and disclosure of your personal data is governed by our <a href="../privacy/">Privacy Policy</a>, which describes the types of data we collect, purposes, your rights, and security measures.</p>
+            </section>
+
+            <section class="doc-section" id="en-6">
+              <h2>6. User Content</h2>
+              <p>When you upload meal photos, profile images, or other data through the Service (“User Content”), you retain ownership of that content.</p>
+              <p>You grant us a license to use, store, process, and display User Content as necessary to provide the Service, improve calorie estimation accuracy, and comply with law.</p>
+              <p>You represent that your User Content does not infringe third-party rights, is not unlawful, and does not contain inappropriate material.</p>
+            </section>
+
+            <section class="doc-section" id="en-7">
+              <h2>7. Prohibited Conduct</h2>
+              <p>You agree not to:</p>
+              <ul>
+                <li>Use the Service for unlawful purposes or in violation of these Terms.</li>
+                <li>Attempt to hack, disrupt, reverse engineer, or bypass security measures.</li>
+                <li>Use bots, scripts, or automated tools to access the Service without authorization.</li>
+                <li>Upload harmful, obscene, or rights-infringing content.</li>
+                <li>Use the Service in a way that harms us, other users, or third parties.</li>
+              </ul>
+            </section>
+
+            <section class="doc-section" id="en-8">
+              <h2>8. Fees and Subscriptions</h2>
+              <p>Core features of the Service may be available free of charge. We may offer premium features or paid subscriptions in the future.</p>
+              <p>If subscriptions are offered, billing, renewal, and cancellation terms are governed by our <a href="../subscription-terms/">Subscription Terms</a> and applicable App Store terms.</p>
+            </section>
+
+            <section class="doc-section" id="en-9">
+              <h2>9. Intellectual Property</h2>
+              <p>The app, software, content, design, trademarks, and all elements of the Service are owned by us or our licensors. You are granted a limited, revocable, non-transferable license to use the Service in accordance with these Terms.</p>
+            </section>
+
+            <section class="doc-section" id="en-10">
+              <h2>10. Third-Party Services</h2>
+              <p>The Service may integrate with third-party services such as the Apple App Store, Supabase, or analytics providers. Your use may also be subject to those third parties’ terms and policies.</p>
+              <p>We are not responsible for third-party services, content, or policies outside our control.</p>
+            </section>
+
+            <section class="doc-section" id="en-11">
+              <h2>11. Disclaimer</h2>
+              <p>The Service is provided “as is” and “as available.” We do not warrant that the Service will be accurate, complete, error-free, or uninterrupted.</p>
+              <p>Results from calorie estimation, step tracking, or nutrition data may vary by individual and depend on the information you provide and your usage environment.</p>
+            </section>
+
+            <section class="doc-section" id="en-12">
+              <h2>12. Limitation of Liability</h2>
+              <p>To the maximum extent permitted by law:</p>
+              <ul>
+                <li>We will not be liable for indirect, special, consequential, or punitive damages arising from or related to your use of the Service.</li>
+                <li>Our total liability will not exceed the amount you paid us in the 12 months before the event, or USD 100, whichever is less.</li>
+                <li>Nothing in these Terms limits liability where prohibited by applicable law.</li>
+              </ul>
+            </section>
+
+            <section class="doc-section" id="en-13">
+              <h2>13. Suspension and Termination</h2>
+              <p>We may suspend or terminate your access if we reasonably determine that you violated these Terms or your use poses a security risk.</p>
+              <p>You may stop using the Service at any time by deleting the app and/or requesting account deletion as described in our Privacy Policy.</p>
+            </section>
+
+            <section class="doc-section" id="en-14">
+              <h2>14. Changes to These Terms</h2>
+              <p>We may update these Terms from time to time. We will notify you via the app, website, or other appropriate means. Continued use after the effective date constitutes acceptance of the updated Terms.</p>
+            </section>
+
+            <section class="doc-section" id="en-15">
+              <h2>15. Governing Law and Jurisdiction</h2>
+              <p>These Terms are governed by the laws of Thailand, and Thai courts will have jurisdiction unless applicable law provides otherwise.</p>
+              <p>For questions about these Terms, contact <a href="mailto:support@calbuddy.live">support@calbuddy.live</a>.</p>
+            </section>
           </section>
         </article>
       </div>
     </main>
 
     <footer>
-      <div class="container">
+      <div class="container container--narrow">
         <div class="footerRow">
           <div data-i18n="footer_copyright">© <span id="y"></span> BuddyCal All rights reserved.</div>
           <div class="footerLinks" aria-label="Legal links">
@@ -418,52 +346,31 @@
     <script>
       const now = new Date();
       document.getElementById("y").textContent = now.getFullYear();
-      const currentLang = (localStorage.getItem("buddycal_site_lang") || "").toLowerCase() === "en" ? "en" : "th";
-      document.getElementById("d").textContent = now.toLocaleDateString(currentLang === "th" ? "th-TH" : "en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      });
-
       const STORAGE_KEY = "buddycal_site_lang";
       const STRINGS = {
         th: {
-          home: "หน้าแรก",
-          usage: "การใช้งาน",
-          contact: "ติดต่อเรา",
-          language: "เปลี่ยนภาษา",
+          home: "หน้าแรก", usage: "การใช้งาน", contact: "ติดต่อเรา", language: "เปลี่ยนภาษา",
           footer_copyright: "© <span id=\"y\"></span> BuddyCal All rights reserved.",
-          legal_terms: "Terms of Service",
-          legal_privacy: "Privacy Policy",
-          doc_title: "ข้อกำหนดและเงื่อนไขการใช้งาน (Terms &amp; Conditions)",
-          meta_effective: "วันที่มีผลบังคับใช้:",
-          meta_provider: "ผู้ให้บริการ (Provider):",
-          meta_contact: "ติดต่อ (Contact):",
-          provider_value: "BuddyCal (“เรา”, “ของเรา”)",
+          legal_terms: "Terms of Service", legal_privacy: "Privacy Policy",
+          doc_title: "ข้อกำหนดและเงื่อนไขการใช้งาน",
+          meta_effective: "วันที่มีผลบังคับใช้:", meta_provider: "ผู้ให้บริการ:",
+          meta_contact: "ติดต่อ:", provider_value: "BuddyCal (“เรา”, “ของเรา”)",
         },
         en: {
-          home: "Home",
-          usage: "How to use",
-          contact: "Contact",
-          language: "Language",
+          home: "Home", usage: "How to use", contact: "Contact", language: "Language",
           footer_copyright: "© <span id=\"y\"></span> BuddyCal. All rights reserved.",
-          legal_terms: "Terms of Service",
-          legal_privacy: "Privacy Policy",
-          doc_title: "Terms &amp; Conditions",
-          meta_effective: "Effective Date:",
-          meta_provider: "Provider:",
-          meta_contact: "Contact:",
-          provider_value: "BuddyCal (\"we\", \"us\", \"our\")",
+          legal_terms: "Terms of Service", legal_privacy: "Privacy Policy",
+          doc_title: "Terms of Service",
+          meta_effective: "Effective Date:", meta_provider: "Provider:",
+          meta_contact: "Contact:", provider_value: "BuddyCal (\"we\", \"us\", \"our\")",
         },
       };
-
       const openBtn = document.getElementById("openMenu");
       const closeBtn = document.getElementById("closeMenu");
       const backdrop = document.getElementById("backdrop");
       const drawer = document.getElementById("drawer");
       const langTH = document.getElementById("langTH");
       const langEN = document.getElementById("langEN");
-
       function setLang(lang) {
         const s = STRINGS[lang] || STRINGS.th;
         document.documentElement.lang = lang;
@@ -481,38 +388,18 @@
           block.style.display = show ? "block" : "none";
         });
         const dateEl = document.getElementById("d");
-        if (dateEl) {
-          dateEl.textContent = now.toLocaleDateString(lang === "th" ? "th-TH" : "en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          });
-        }
+        if (dateEl) dateEl.textContent = now.toLocaleDateString(lang === "th" ? "th-TH" : "en-US", { year: "numeric", month: "long", day: "numeric" });
         langTH.setAttribute("aria-pressed", String(lang === "th"));
         langEN.setAttribute("aria-pressed", String(lang === "en"));
         localStorage.setItem(STORAGE_KEY, lang);
       }
-
       function getLang() {
         const saved = localStorage.getItem(STORAGE_KEY);
         if (saved === "th" || saved === "en") return saved;
-        const pref = String((navigator.language || "").toLowerCase());
-        return pref.startsWith("th") ? "th" : "en";
+        return String(navigator.language || "").toLowerCase().startsWith("th") ? "th" : "en";
       }
-
-      function openDrawer() {
-        drawer.setAttribute("aria-hidden", "false");
-        backdrop.setAttribute("aria-hidden", "false");
-        openBtn.setAttribute("aria-expanded", "true");
-        document.body.style.overflow = "hidden";
-      }
-      function closeDrawer() {
-        drawer.setAttribute("aria-hidden", "true");
-        backdrop.setAttribute("aria-hidden", "true");
-        openBtn.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
-      }
-
+      function openDrawer() { drawer.setAttribute("aria-hidden", "false"); backdrop.setAttribute("aria-hidden", "false"); openBtn.setAttribute("aria-expanded", "true"); document.body.style.overflow = "hidden"; }
+      function closeDrawer() { drawer.setAttribute("aria-hidden", "true"); backdrop.setAttribute("aria-hidden", "true"); openBtn.setAttribute("aria-expanded", "false"); document.body.style.overflow = ""; }
       openBtn.addEventListener("click", openDrawer);
       closeBtn.addEventListener("click", closeDrawer);
       backdrop.addEventListener("click", closeDrawer);
@@ -520,7 +407,6 @@
       drawer.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeDrawer));
       langTH.addEventListener("click", () => setLang("th"));
       langEN.addEventListener("click", () => setLang("en"));
-
       setLang(getLang());
     </script>
   </body>

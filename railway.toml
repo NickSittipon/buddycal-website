@@ -1,0 +1,7 @@
+[build]
+builder = "RAILPACK"
+
+[deploy]
+healthcheckPath = "/"
+healthcheckTimeout = 60
+restartPolicyType = "ON_FAILURE"

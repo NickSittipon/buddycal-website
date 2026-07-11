@@ -6,155 +6,14 @@
     <meta name="description" content="BuddyCal Privacy Policy" />
     <meta name="color-scheme" content="light dark" />
     <title>Privacy Policy — BuddyCal</title>
+    <link rel="stylesheet" href="../assets/theme.css" />
     <style>
-      :root {
-        --bg: #0b1020;
-        --fg: rgba(255, 255, 255, 0.92);
-        --muted: rgba(255, 255, 255, 0.72);
-        --muted2: rgba(255, 255, 255, 0.56);
-        --card: rgba(255, 255, 255, 0.06);
-        --border: rgba(255, 255, 255, 0.12);
-        --accent: #60a5fa;
-        --accent2: #a78bfa;
-        --shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
-        --radius: 16px;
-      }
-      @media (prefers-color-scheme: light) {
-        :root {
-          --bg: #f7f8ff;
-          --fg: rgba(15, 23, 42, 0.92);
-          --muted: rgba(15, 23, 42, 0.68);
-          --muted2: rgba(15, 23, 42, 0.54);
-          --card: rgba(15, 23, 42, 0.04);
-          --border: rgba(15, 23, 42, 0.12);
-          --accent: #2563eb;
-          --accent2: #7c3aed;
-          --shadow: 0 10px 26px rgba(15, 23, 42, 0.10);
-        }
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        color: var(--fg);
-        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
-        line-height: 1.7;
-        background: var(--bg);
-      }
-      a { color: var(--accent); }
-      .container { width: min(900px, calc(100% - 40px)); margin: 0 auto; }
-      header {
-        position: sticky; top: 0; z-index: 10;
-        background: color-mix(in srgb, var(--bg) 92%, transparent);
-        border-bottom: 1px solid var(--border);
-        backdrop-filter: blur(10px);
-      }
-      .nav {
-        display: flex; align-items: center; justify-content: space-between;
-        padding: 14px 0; gap: 12px;
-      }
-      .navLeft { display: inline-flex; align-items: center; gap: 10px; min-width: 200px; }
-      .iconBtn {
-        width: 40px;
-        height: 40px;
-        border-radius: 12px;
-        border: 1px solid var(--border);
-        background: var(--card);
-        color: var(--fg);
-        display: grid;
-        place-items: center;
-        cursor: pointer;
-      }
-      .iconBtn:hover { border-color: color-mix(in srgb, var(--border) 60%, var(--fg)); }
-      .iconBtn:focus { outline: 2px solid color-mix(in srgb, var(--accent) 55%, transparent); outline-offset: 2px; }
-      .brand { font-weight: 800; letter-spacing: 0.2px; text-decoration: none; }
-      .chip {
-        border: 1px solid var(--border);
-        background: var(--card);
-        border-radius: 999px;
-        padding: 8px 12px;
-        color: var(--muted);
-        font-size: 13px;
-        text-decoration: none;
-      }
       main { padding: 32px 0 56px; }
-      .card {
-        border: 1px solid var(--border);
-        background: var(--card);
-        border-radius: var(--radius);
-        box-shadow: none;
-        padding: 22px;
-      }
-      h1 { margin: 0 0 8px; font-size: 30px; letter-spacing: -0.02em; }
-      .meta { color: var(--muted2); font-size: 13px; margin: 0 0 18px; }
-      h2 { margin: 22px 0 8px; font-size: 18px; }
-      p, li { color: var(--muted); line-height: 1.75; font-size: 14px; }
-      ul { margin: 10px 0 0 18px; }
-      footer {
-        border-top: 1px solid var(--border);
-        padding: 18px 0 28px;
-        color: var(--muted2);
-        font-size: 13px;
-      }
-      .footerRow { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: center; }
-      .footerLinks { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; color: var(--muted); }
-      .footerLinks a { color: inherit; }
-      .footerLinks a:hover { color: var(--fg); }
-      .footerSep { opacity: 0.55; user-select: none; }
-
-      .drawerBackdrop[aria-hidden="true"] { display: none; }
-      .drawerBackdrop { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.45); z-index: 80; }
-      .drawer {
-        position: fixed; top: 0; left: 0; height: 100%; width: min(320px, 86vw);
-        background: color-mix(in srgb, var(--bg) 92%, transparent);
-        border-right: 1px solid var(--border);
-        backdrop-filter: blur(12px);
-        transform: translateX(-105%);
-        transition: transform 180ms ease;
-        z-index: 90;
-        display: flex;
-        flex-direction: column;
-      }
-      .drawer[aria-hidden="false"] { transform: translateX(0); }
-      .drawerHeader { display: flex; align-items: center; justify-content: space-between; padding: 14px 14px 10px; border-bottom: 1px solid var(--border); }
-      .drawerTitle { font-weight: 800; letter-spacing: 0.2px; }
-      .drawerBody { padding: 12px 14px 18px; }
-      .drawerList { margin: 0; padding: 0; list-style: none; }
-      .drawerList a, .drawerList button {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        padding: 12px 10px;
-        border-radius: 12px;
-        border: 1px solid transparent;
-        background: transparent;
-        color: var(--fg);
-        font: inherit;
-        cursor: pointer;
-        text-decoration: none;
-      }
-      .drawerList a:hover, .drawerList button:hover { background: var(--card); border-color: var(--border); text-decoration: none; }
-      .drawerSectionLabel { margin: 14px 6px 8px; color: var(--muted2); font-size: 12px; }
-      .drawerLangRow { display: flex; gap: 10px; flex-wrap: wrap; }
-      .segBtn {
-        border: 1px solid var(--border);
-        background: var(--card);
-        color: var(--muted);
-        padding: 10px 12px;
-        border-radius: 999px;
-        cursor: pointer;
-        font: inherit;
-      }
-      .segBtn[aria-pressed="true"] { color: var(--fg); border-color: color-mix(in srgb, var(--border) 60%, var(--fg)); }
-
-      .langBlock { display: none; }
-      .langBlock.is-active { display: block; }
     </style>
   </head>
   <body>
     <header>
-      <div class="container">
+      <div class="container container--narrow">
         <div class="nav">
           <div class="navLeft">
             <button class="iconBtn" type="button" id="openMenu" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
@@ -162,7 +21,14 @@
                 <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               </svg>
             </button>
-            <a class="brand" href="../">BuddyCal</a>
+            <a class="brand" href="../">
+              <span class="logo" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3c-1.5 2.5-4 4.5-4 8a4 4 0 108 0c0-3.5-2.5-5.5-4-8z" fill="#fff" opacity="0.95"/>
+                </svg>
+              </span>
+              <span>BuddyCal</span>
+            </a>
           </div>
           <a class="chip" href="../terms/" data-i18n="legal_terms">Terms of Service</a>
         </div>
@@ -185,7 +51,6 @@
           <li><a href="../#features" data-i18n="usage">การใช้งาน</a></li>
           <li><a href="../#support" data-i18n="contact">ติดต่อเรา</a></li>
         </ul>
-
         <div class="drawerSectionLabel" data-i18n="language">เปลี่ยนภาษา</div>
         <div class="drawerLangRow" role="group" aria-label="Language">
           <button class="segBtn" type="button" id="langTH" aria-pressed="true">ไทย</button>
@@ -195,236 +60,304 @@
     </aside>
 
     <main>
-      <div class="container">
-        <article class="card">
-          <h1 data-i18n="doc_title">Privacy Policy</h1>
-          <p class="meta"><span data-i18n="meta_effective">วันที่มีผลบังคับใช้ (Effective Date):</span> <span id="d"></span></p>
-          <p class="meta"><strong data-i18n="meta_controller">ผู้ควบคุมข้อมูล (Data Controller):</strong> BuddyCal</p>
-          <p class="meta">
-            <strong data-i18n="meta_contact">ติดต่อ (Contact):</strong> <a href="mailto:support@calbuddy.live">support@calbuddy.live</a>
+      <div class="container container--narrow">
+        <article class="doc-card">
+          <h1 data-i18n="doc_title">นโยบายความเป็นส่วนตัว</h1>
+          <p class="doc-meta"><span data-i18n="meta_effective">วันที่มีผลบังคับใช้:</span> <span id="d"></span></p>
+          <p class="doc-meta"><strong data-i18n="meta_controller">ผู้ควบคุมข้อมูล:</strong> BuddyCal</p>
+          <p class="doc-meta" style="border-bottom: none; padding-bottom: 0;">
+            <strong data-i18n="meta_contact">ติดต่อ:</strong> <a href="mailto:support@calbuddy.live">support@calbuddy.live</a>
           </p>
 
           <section class="langBlock lang-th is-active">
-            <h2>นโยบายความเป็นส่วนตัว (Privacy Policy) – BuddyCal (TH)</h2>
-            <p>
-              นโยบายนี้อธิบายวิธีที่ BuddyCal (“เรา”) เก็บ ใช้ เปิดเผย และคุ้มครองข้อมูลส่วนบุคคลของคุณเมื่อคุณใช้แอปและบริการของเรา (“บริการ”)
+            <p class="doc-intro">
+              นโยบายความเป็นส่วนตัว (“นโยบาย”) ฉบับนี้อธิบายวิธีที่ BuddyCal (“เรา”) เก็บรวบรวม ใช้ เปิดเผย โอน และคุ้มครองข้อมูลส่วนบุคคลของคุณ
+              เมื่อคุณใช้แอปพลิเคชัน BuddyCal และเว็บไซต์ที่เกี่ยวข้อง (“บริการ”) นโยบายนี้จัดทำให้สอดคล้องกับพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (PDPA) และกฎหมายที่เกี่ยวข้อง
             </p>
 
-            <h2>1) ข้อมูลที่เราเก็บรวบรวม</h2>
-            <p>เราอาจเก็บข้อมูลประเภทต่อไปนี้ (ขึ้นกับการใช้งานของคุณ):</p>
-            <ul>
-              <li>
-                <strong>ข้อมูลบัญชีและการติดต่อ</strong>
-                <ul>
-                  <li>อีเมล</li>
-                  <li>ข้อมูลยืนยันตัวตน/ตัวระบุผู้ใช้ (เช่น user ID)</li>
-                </ul>
-              </li>
-              <li>
-                <strong>ข้อมูลโปรไฟล์และเป้าหมายด้านสุขภาพ/โภชนาการ (อาจเป็นข้อมูลอ่อนไหว)</strong>
-                <ul>
-                  <li>อายุ/ช่วงอายุ (ตามที่คุณกรอก)</li>
-                  <li>น้ำหนัก และเป้าหมายด้านน้ำหนัก</li>
-                  <li>ข้อมูลด้านสุขภาพ/โภชนาการที่คุณกรอกหรือใช้ในการคำนวณ/แนะนำ (เช่น เป้าหมายแคลอรี)</li>
-                </ul>
-              </li>
-              <li>
-                <strong>รูปภาพ</strong>
-                <ul>
-                  <li>รูปโปรไฟล์ (หากคุณเลือกเพิ่ม)</li>
-                </ul>
-              </li>
-              <li>
-                <strong>ข้อมูลการใช้งานและข้อมูลอุปกรณ์ (ผ่าน analytics/ระบบปฏิบัติการ)</strong>
-                <ul>
-                  <li>เหตุการณ์การใช้งานในแอป (เช่น เปิดหน้าจอ/กดปุ่ม/ความถี่การใช้งาน)</li>
-                  <li>ข้อมูลอุปกรณ์โดยรวม (เช่น รุ่นอุปกรณ์ เวอร์ชันระบบปฏิบัติการ ภาษา แอปเวอร์ชัน)</li>
-                  <li>ที่อยู่ IP โดยทั่วไปอาจถูกบันทึกโดยผู้ให้บริการโครงสร้างพื้นฐานเพื่อความปลอดภัย/ป้องกันการฉ้อโกง</li>
-                </ul>
-              </li>
-            </ul>
-            <p>เราไม่เปิดให้ผู้ใช้โพสต์/อัปโหลดคอนเทนต์สาธารณะภายในแอป แต่ข้อมูลที่คุณกรอกเพื่อใช้งานฟีเจอร์ยังถือเป็นข้อมูลส่วนบุคคล</p>
+            <nav class="doc-toc" aria-label="สารบัญ">
+              <h2>สารบัญ</h2>
+              <ol>
+                <li><a href="#th-1">ข้อมูลที่เราเก็บรวบรวม</a></li>
+                <li><a href="#th-2">แหล่งที่มาของข้อมูล</a></li>
+                <li><a href="#th-3">วัตถุประสงค์และฐานทางกฎหมาย</a></li>
+                <li><a href="#th-4">ข้อมูลอ่อนไหว</a></li>
+                <li><a href="#th-5">การเปิดเผยและผู้ประมวลผลข้อมูล</a></li>
+                <li><a href="#th-6">การโอนข้อมูลไปต่างประเทศ</a></li>
+                <li><a href="#th-7">ระยะเวลาเก็บรักษา</a></li>
+                <li><a href="#th-8">สิทธิของเจ้าของข้อมูล</a></li>
+                <li><a href="#th-9">ความปลอดภัยของข้อมูล</a></li>
+                <li><a href="#th-10">คุกกี้และเทคโนโลยีติดตาม</a></li>
+                <li><a href="#th-11">ความเป็นส่วนตัวของเด็ก</a></li>
+                <li><a href="#th-12">การเปลี่ยนแปลงนโยบาย</a></li>
+              </ol>
+            </nav>
 
-            <h2>2) แหล่งที่มาของข้อมูล</h2>
-            <ul>
-              <li>จากคุณโดยตรง เมื่อสมัคร/กรอกข้อมูล/ใช้งานฟีเจอร์</li>
-              <li>จากอุปกรณ์/ระบบอัตโนมัติ ผ่าน analytics และบันทึกระบบเพื่อการทำงานของแอป</li>
-            </ul>
+            <section class="doc-section" id="th-1">
+              <h2>1. ข้อมูลที่เราเก็บรวบรวม</h2>
+              <p>เราอาจเก็บข้อมูลประเภทต่อไปนี้ ขึ้นกับฟีเจอร์ที่คุณใช้งาน:</p>
+              <ul>
+                <li><strong>ข้อมูลบัญชีและการติดต่อ</strong> — อีเมล รหัสผู้ใช้ (user ID) ข้อมูลการยืนยันตัวตน และข้อมูลที่ได้จากการเข้าสู่ระบบผ่านบุคคลที่สาม (เช่น Apple Sign In)</li>
+                <li><strong>ข้อมูลโปรไฟล์และเป้าหมายสุขภาพ</strong> — อายุ/ช่วงอายุ เพศ (หากระบุ) ส่วนสูง น้ำหนัก เป้าหมายน้ำหนัก เป้าหมายแคลอรีรายวัน และข้อมูลโภชนาการที่คุณกรอก</li>
+                <li><strong>รูปภาพ</strong> — รูปภาพอาหารที่คุณถ่ายหรืออัปโหลดเพื่อประเมินแคลอรี่ รูปโปรไฟล์ (หากเลือกเพิ่ม) และข้อมูลเมตาของรูปภาพ (เช่น วันที่ถ่าย)</li>
+                <li><strong>ข้อมูลกิจกรรมและการเคลื่อนไหว</strong> — จำนวนก้าว ระยะทาง (หากรองรับ) เป้าหมายก้าวรายวัน และข้อมูลกิจกรรมจากเซ็นเซอร์อุปกรณ์หรือ Apple Health (หากคุณอนุญาต)</li>
+                <li><strong>บันทึกการใช้งาน</strong> — ประวัติมื้ออาหาร แคลอรี่ที่บันทึก ไทม์ไลน์รายวัน และการตั้งค่าในแอป</li>
+                <li><strong>ข้อมูลการใช้งานและอุปกรณ์</strong> — เหตุการณ์การใช้งานในแอป (หน้าจอที่เปิด ปุ่มที่กด) รุ่นอุปกรณ์ เวอร์ชันระบบปฏิบัติการ ภาษา เวอร์ชันแอป และที่อยู่ IP (เพื่อความปลอดภัย)</li>
+              </ul>
+              <p>เราไม่เปิดให้ผู้ใช้โพสต์เนื้อหาสาธารณะภายในแอป ข้อมูลที่คุณกรอกหรืออัปโหลดเพื่อใช้งานฟีเจอร์ยังถือเป็นข้อมูลส่วนบุคคลของคุณ</p>
+            </section>
 
-            <h2>3) วัตถุประสงค์และฐานทางกฎหมายในการประมวลผลข้อมูล</h2>
-            <p>เราใช้ข้อมูลเพื่อ:</p>
-            <ul>
-              <li>ให้บริการหลักของแอป (เช่น สร้างบัญชี บันทึกโปรไฟล์ คำนวณ/แสดงผลข้อมูลโภชนาการ)</li>
-              <li>ปรับปรุงและพัฒนาบริการ (วิเคราะห์การใช้งาน แก้บั๊ก เพิ่มประสิทธิภาพ)</li>
-              <li>ความปลอดภัยของระบบ (ป้องกันการใช้งานผิดปกติ การโจมตี การฉ้อโกง)</li>
-              <li>การสื่อสารกับคุณ (ตอบคำถาม/การสนับสนุนผู้ใช้/แจ้งการเปลี่ยนแปลงสำคัญ)</li>
-            </ul>
-            <p>
-              ฐานทางกฎหมายอาจรวมถึง: การจำเป็นเพื่อให้บริการตามคำขอของคุณ, ประโยชน์โดยชอบด้วยกฎหมายของเรา (เช่น ความปลอดภัย/การปรับปรุงบริการ),
-              และ/หรือความยินยอม (ในกรณีที่กฎหมายกำหนด)
-            </p>
+            <section class="doc-section" id="th-2">
+              <h2>2. แหล่งที่มาของข้อมูล</h2>
+              <ul>
+                <li><strong>จากคุณโดยตรง</strong> — เมื่อสมัครบัญชี กรอกโปรไฟล์ ถ่ายรูปอาหาร หรือใช้งานฟีเจอร์ต่าง ๆ</li>
+                <li><strong>จากอุปกรณ์ของคุณ</strong> — เซ็นเซอร์นับก้าว Apple HealthKit (หากอนุญาต) และข้อมูลอุปกรณ์</li>
+                <li><strong>อัตโนมัติ</strong> — ผ่านระบบ analytics บันทึกระบบ และโครงสร้างพื้นฐานเพื่อการทำงานของแอป</li>
+              </ul>
+            </section>
 
-            <h2>4) ข้อมูลอ่อนไหว (เช่น ข้อมูลสุขภาพ)</h2>
-            <p>
-              ข้อมูลสุขภาพ/โภชนาการบางอย่างอาจถูกมองว่าเป็นข้อมูลอ่อนไหวตามกฎหมายคุ้มครองข้อมูลส่วนบุคคล เราใช้ข้อมูลดังกล่าวเพื่อให้บริการฟีเจอร์ด้านสุขภาพ/โภชนาการเท่านั้น
-              และใช้มาตรการรักษาความปลอดภัยที่เหมาะสม หากกฎหมายกำหนดให้ต้องขอความยินยอมเพิ่มเติม เราจะขอความยินยอมจากคุณผ่านหน้าจอ/ขั้นตอนที่เหมาะสม
-            </p>
+            <section class="doc-section" id="th-3">
+              <h2>3. วัตถุประสงค์และฐานทางกฎหมายในการประมวลผล</h2>
+              <p>เราใช้ข้อมูลเพื่อ:</p>
+              <ul>
+                <li>ให้บริการหลัก — สร้างบัญชี ประเมินแคลอรี่จากรูปภาพ นับก้าว บันทึกและแสดงผลข้อมูลสุขภาพ</li>
+                <li>ปรับปรุงบริการ — วิเคราะห์การใช้งาน แก้ไขข้อบกพร่อง พัฒนาความแม่นยำของระบบประเมินแคลอรี่</li>
+                <li>ความปลอดภัย — ป้องกันการใช้งานผิดปกติ การโจมตี และการฉ้อโกง</li>
+                <li>การสื่อสาร — ตอบคำถาม ให้การสนับสนุนผู้ใช้ และแจ้งการเปลี่ยนแปลงสำคัญของบริการ</li>
+                <li>ปฏิบัติตามกฎหมาย — ตามที่กฎหมายกำหนด</li>
+              </ul>
+              <p>ฐานทางกฎหมายอาจรวมถึง: การจำเป็นเพื่อให้บริการตามคำขอของคุณ (สัญญา) ประโยชน์โดยชอบด้วยกฎหมายของเรา (ความปลอดภัย/การปรับปรุงบริการ) และ/หรือความยินยอม (ในกรณีที่กฎหมายกำหนด เช่น ข้อมูลอ่อนไหวหรือการเชื่อมต่อ HealthKit)</p>
+            </section>
 
-            <h2>5) การเปิดเผยข้อมูลและผู้ประมวลผลข้อมูล (Third Parties/Processors)</h2>
-            <p>เราอาจเปิดเผยหรือให้ผู้ให้บริการประมวลผลข้อมูลแทนเรา เพื่อวัตถุประสงค์ในนโยบายนี้ เช่น:</p>
-            <ul>
-              <li>Supabase (โฮสต์ฐานข้อมูล/ยืนยันตัวตน/โครงสร้างพื้นฐานที่เกี่ยวข้อง)</li>
-              <li>ผู้ให้บริการ Analytics: [ใส่ชื่อ เช่น Firebase Analytics / PostHog ฯลฯ]</li>
-            </ul>
-            <p>เราไม่ขายข้อมูลส่วนบุคคลของคุณให้บุคคลที่สาม</p>
+            <section class="doc-section" id="th-4">
+              <h2>4. ข้อมูลอ่อนไหว (ข้อมูลสุขภาพ)</h2>
+              <p>ข้อมูลสุขภาพและโภชนาการบางอย่าง (เช่น น้ำหนัก เป้าหมายแคลอรี ข้อมูลจาก HealthKit) อาจถูกจัดเป็นข้อมูลอ่อนไหวตาม PDPA</p>
+              <p>เราใช้ข้อมูลดังกล่าวเพื่อให้บริการฟีเจอร์ด้านสุขภาพ/โภชนาการเท่านั้น ใช้มาตรการรักษาความปลอดภัยที่เหมาะสม และจะขอความยินยอมเพิ่มเติมผ่านหน้าจอในแอปเมื่อกฎหมายกำหนด</p>
+            </section>
 
-            <h2>6) การโอนข้อมูลไปต่างประเทศ</h2>
-            <p>
-              ข้อมูลอาจถูกจัดเก็บหรือประมวลผลบนเซิร์ฟเวอร์ที่อยู่นอกประเทศไทย ขึ้นกับผู้ให้บริการ (เช่น Supabase/analytics) เราจะใช้มาตรการที่เหมาะสมเพื่อให้การโอนข้อมูลเป็นไปตามกฎหมายที่เกี่ยวข้อง
-            </p>
+            <section class="doc-section" id="th-5">
+              <h2>5. การเปิดเผยข้อมูลและผู้ประมวลผลข้อมูล</h2>
+              <p>เราอาจเปิดเผยหรือให้ผู้ให้บริการประมวลผลข้อมูลแทนเรา เพื่อวัตถุประสงค์ในนโยบายนี้:</p>
+              <ul>
+                <li><strong>Supabase</strong> — ฐานข้อมูล การยืนยันตัวตน และโครงสร้างพื้นฐาน backend</li>
+                <li><strong>Apple</strong> — App Store การชำระเงิน (หากมีการสมัครสมาชิก) และ Apple Sign In</li>
+                <li><strong>ผู้ให้บริการ AI/ML</strong> — ประมวลผลรูปภาพอาหารเพื่อประเมินแคลอรี่ (ข้อมูลถูกส่งเฉพาะเท่าที่จำเป็น)</li>
+                <li><strong>ผู้ให้บริการ Analytics</strong> — วิเคราะห์การใช้งานแอปเพื่อปรับปรุงประสบการณ์ผู้ใช้</li>
+              </ul>
+              <p>เราไม่ขาย ให้เช่า หรือแลกเปลี่ยนข้อมูลส่วนบุคคลของคุณกับบุคคลที่สามเพื่อวัตถุประสงค์ทางการตลาด</p>
+              <p>เราอาจเปิดเผยข้อมูลเมื่อกฎหมายกำหนด หรือเพื่อปกป้องสิทธิ ความปลอดภัย และทรัพย์สินของเราและผู้ใช้</p>
+            </section>
 
-            <h2>7) ระยะเวลาในการเก็บรักษาข้อมูล</h2>
-            <p>เราจะเก็บข้อมูลเท่าที่จำเป็นต่อวัตถุประสงค์ที่ระบุไว้ รวมถึงการปฏิบัติตามกฎหมาย การระงับข้อพิพาท และการบังคับใช้ข้อตกลง โดยทั่วไป:</p>
-            <ul>
-              <li>ข้อมูลบัญชี/โปรไฟล์จะเก็บไว้ตราบเท่าที่คุณมีบัญชี หรือจนกว่าคุณจะขอลบ</li>
-              <li>ข้อมูลบันทึกระบบ/analytics อาจถูกเก็บตามรอบเวลามาตรฐานของผู้ให้บริการหรือเท่าที่จำเป็นเพื่อความปลอดภัยและการปรับปรุงบริการ</li>
-            </ul>
+            <section class="doc-section" id="th-6">
+              <h2>6. การโอนข้อมูลไปต่างประเทศ</h2>
+              <p>ข้อมูลอาจถูกจัดเก็บหรือประมวลผลบนเซิร์ฟเวอร์ที่อยู่นอกประเทศไทย ขึ้นกับผู้ให้บริการ (เช่น Supabase, Apple, ผู้ให้บริการ AI)</p>
+              <p>เราจะใช้มาตรการที่เหมาะสม เช่น ข้อตกลงมาตรฐานการคุ้มครองข้อมูล หรือมาตรการตามที่ PDPA กำหนด เพื่อให้การโอนข้อมูลเป็นไปตามกฎหมาย</p>
+            </section>
 
-            <h2>8) สิทธิของเจ้าของข้อมูล</h2>
-            <p>ภายใต้กฎหมายที่ใช้บังคับ คุณอาจมีสิทธิ เช่น:</p>
-            <ul>
-              <li>ขอเข้าถึง/รับสำเนาข้อมูล</li>
-              <li>ขอแก้ไขให้ถูกต้อง</li>
-              <li>ขอให้ลบหรือทำลาย</li>
-              <li>ขอให้ระงับการใช้</li>
-              <li>คัดค้านการประมวลผลในบางกรณี</li>
-              <li>ถอนความยินยอม (หากเราอาศัยความยินยอม)</li>
-            </ul>
-            <p>คุณสามารถติดต่อเราได้ที่ <a href="mailto:support@calbuddy.live">support@calbuddy.live</a></p>
+            <section class="doc-section" id="th-7">
+              <h2>7. ระยะเวลาในการเก็บรักษาข้อมูล</h2>
+              <ul>
+                <li><strong>ข้อมูลบัญชี/โปรไฟล์</strong> — เก็บไว้ตราบเท่าที่คุณมีบัญชี หรือจนกว่าคุณจะขอลบ</li>
+                <li><strong>รูปภาพอาหารและบันทึกมื้ออาหาร</strong> — เก็บไว้ตามระยะเวลาที่จำเป็นเพื่อให้บริการ หรือจนกว่าคุณจะลบ</li>
+                <li><strong>ข้อมูล analytics และบันทึกระบบ</strong> — เก็บตามรอบเวลามาตรฐานของผู้ให้บริการ หรือเท่าที่จำเป็นเพื่อความปลอดภัยและการปรับปรุงบริการ (โดยทั่วไปไม่เกิน 24 เดือน)</li>
+              </ul>
+              <p>เมื่อหมดความจำเป็น เราจะลบหรือทำให้ข้อมูลไม่สามารถระบุตัวบุคคลได้</p>
+            </section>
 
-            <h2>9) ความปลอดภัยของข้อมูล</h2>
-            <p>
-              เราใช้มาตรการรักษาความปลอดภัยที่เหมาะสมตามสมควร เช่น การควบคุมการเข้าถึง การเข้ารหัสระหว่างส่งข้อมูล (ตามที่แพลตฟอร์มรองรับ) และแนวทางปฏิบัติด้านความปลอดภัยของผู้ให้บริการโครงสร้างพื้นฐาน
-              อย่างไรก็ตาม ไม่มีระบบใดปลอดภัย 100% เราไม่สามารถรับประกันความปลอดภัยได้อย่างสมบูรณ์
-            </p>
+            <section class="doc-section" id="th-8">
+              <h2>8. สิทธิของเจ้าของข้อมูล</h2>
+              <p>ภายใต้ PDPA และกฎหมายที่ใช้บังคับ คุณมีสิทธิ:</p>
+              <ul>
+                <li>ขอเข้าถึงและรับสำเนาข้อมูลส่วนบุคคลของคุณ</li>
+                <li>ขอให้แก้ไขข้อมูลให้ถูกต้อง ครบถ้วน และเป็นปัจจุบัน</li>
+                <li>ขอให้ลบหรือทำลายข้อมูล เมื่อหมดความจำเป็น</li>
+                <li>ขอให้ระงับการใช้ข้อมูลในบางกรณี</li>
+                <li>คัดค้านการประมวลผลในบางกรณี</li>
+                <li>ขอให้โอนข้อมูล (data portability) ตามที่กฎหมายกำหนด</li>
+                <li>ถอนความยินยอม (หากเราอาศัยความยินยอม) โดยไม่กระทบการประมวลผลก่อนหน้า</li>
+              </ul>
+              <p>คุณสามารถใช้สิทธิได้โดยติดต่อ <a href="mailto:support@calbuddy.live">support@calbuddy.live</a> เราจะดำเนินการภายในระยะเวลาที่กฎหมายกำหนด (โดยทั่วไปไม่เกิน 30 วัน)</p>
+            </section>
 
-            <h2>10) ความเป็นส่วนตัวของเด็ก</h2>
-            <p>
-              บริการนี้กำหนดอายุขั้นต่ำ 13 ปี เราไม่ได้ตั้งใจเก็บข้อมูลจากเด็กอายุต่ำกว่า 13 ปี หากคุณเชื่อว่าเด็กอายุต่ำกว่า 13 ปีได้ให้ข้อมูลกับเรา กรุณาติดต่อเพื่อให้เราดำเนินการลบข้อมูล
-            </p>
+            <section class="doc-section" id="th-9">
+              <h2>9. ความปลอดภัยของข้อมูล</h2>
+              <p>เราใช้มาตรการรักษาความปลอดภัยที่เหมาะสม ได้แก่:</p>
+              <ul>
+                <li>การเข้ารหัสข้อมูลระหว่างส่ง (TLS/HTTPS)</li>
+                <li>การควบคุมการเข้าถึงและการแยกสิทธิภายในระบบ</li>
+                <li>แนวทางความปลอดภัยของผู้ให้บริการโครงสร้างพื้นฐาน (เช่น Supabase)</li>
+                <li>การตรวจสอบและอัปเดตระบบเป็นประจำ</li>
+              </ul>
+              <p>อย่างไรก็ตาม ไม่มีระบบใดปลอดภัย 100% เราไม่สามารถรับประกันความปลอดภัยอย่างสมบูรณ์ได้</p>
+            </section>
 
-            <h2>11) การเปลี่ยนแปลงนโยบายนี้</h2>
-            <p>เราอาจปรับปรุงนโยบายนี้เป็นครั้งคราว โดยจะแจ้งให้ทราบผ่านแอปหรือช่องทางที่เหมาะสม และจะอัปเดตวันที่มีผลบังคับใช้ด้านบน</p>
+            <section class="doc-section" id="th-10">
+              <h2>10. คุกกี้และเทคโนโลยีติดตาม</h2>
+              <p>เว็บไซต์ของเราอาจใช้คุกกี้และเทคโนโลยีที่คล้ายกันเพื่อการทำงานพื้นฐาน การจดจำการตั้งค่า และการวิเคราะห์การใช้งาน รายละเอียดเพิ่มเติมอยู่ใน <a href="../cookie/">นโยบายคุกกี้</a></p>
+              <p>แอปมือถืออาจใช้ตัวระบุอุปกรณ์และเครื่องมือ analytics ภายในแอปตามที่ระบุในส่วนที่ 1 และ 5 ของนโยบายนี้</p>
+            </section>
+
+            <section class="doc-section" id="th-11">
+              <h2>11. ความเป็นส่วนตัวของเด็ก</h2>
+              <p>บริการกำหนดอายุขั้นต่ำ 13 ปี เราไม่ได้ตั้งใจเก็บข้อมูลจากเด็กอายุต่ำกว่า 13 ปี</p>
+              <p>หากคุณเชื่อว่าเด็กอายุต่ำกว่า 13 ปีได้ให้ข้อมูลกับเรา กรุณาติดต่อ <a href="mailto:support@calbuddy.live">support@calbuddy.live</a> เพื่อให้เราดำเนินการลบข้อมูล</p>
+            </section>
+
+            <section class="doc-section" id="th-12">
+              <h2>12. การเปลี่ยนแปลงนโยบายนี้</h2>
+              <p>เราอาจปรับปรุงนโยบายนี้เป็นครั้งคราว โดยจะแจ้งให้ทราบผ่านแอป เว็บไซต์ หรือช่องทางที่เหมาะสม และจะอัปเดตวันที่มีผลบังคับใช้ด้านบน</p>
+              <p>การใช้งานต่อหลังวันที่มีผลบังคับใช้ของฉบับแก้ไข ถือว่าคุณรับทราบนโยบายที่แก้ไขแล้ว หากมีการเปลี่ยนแปลงที่มีผลกระทบสำคัญ เราจะแจ้งให้ทราบอย่างชัดเจน</p>
+              <p>สำหรับข้อกำหนดการใช้งาน โปรดดู <a href="../terms/">ข้อกำหนดและเงื่อนไขการใช้งาน</a></p>
+            </section>
           </section>
 
           <section class="langBlock lang-en" lang="en">
-            <h2>Privacy Policy – BuddyCal (EN)</h2>
-            <p>
-              This Privacy Policy explains how BuddyCal (“we”, “us”, “our”) collects, uses, discloses, and protects your personal data when you use our app and services (the “Services”).
+            <p class="doc-intro">
+              This Privacy Policy (“Policy”) explains how BuddyCal (“we”, “us”, “our”) collects, uses, discloses, transfers, and protects your personal data
+              when you use the BuddyCal mobile application and related website (“Services”). This Policy is designed to comply with Thailand’s Personal Data Protection Act B.E. 2562 (PDPA) and applicable laws.
             </p>
 
-            <h2>1) Data We Collect</h2>
-            <p>Depending on how you use the Services, we may collect:</p>
-            <ul>
-              <li>
-                <strong>Account &amp; contact data</strong>
-                <ul>
-                  <li>Email address</li>
-                  <li>Identifiers (e.g., user ID)</li>
-                </ul>
-              </li>
-              <li>
-                <strong>Profile and health/nutrition data (may be sensitive)</strong>
-                <ul>
-                  <li>Age / age range (as provided)</li>
-                  <li>Weight and weight goals</li>
-                  <li>Health and nutrition-related information you provide for calculations/recommendations (e.g., calorie targets)</li>
-                </ul>
-              </li>
-              <li>
-                <strong>Photos</strong>
-                <ul>
-                  <li>Profile photo (if you choose to add one)</li>
-                </ul>
-              </li>
-              <li>
-                <strong>Usage &amp; device data (via analytics and system logs)</strong>
-                <ul>
-                  <li>In-app events (e.g., screens viewed, button taps, frequency of use)</li>
-                  <li>Device-level data (e.g., device model, OS version, app version, language)</li>
-                  <li>IP address may be logged by infrastructure providers for security and abuse prevention</li>
-                </ul>
-              </li>
-            </ul>
-            <p>We do not provide a public user-generated content posting feature in the App.</p>
+            <nav class="doc-toc" aria-label="Table of contents">
+              <h2>Contents</h2>
+              <ol>
+                <li><a href="#en-1">Data We Collect</a></li>
+                <li><a href="#en-2">Sources of Data</a></li>
+                <li><a href="#en-3">Purposes &amp; Legal Bases</a></li>
+                <li><a href="#en-4">Sensitive Data</a></li>
+                <li><a href="#en-5">Sharing &amp; Processors</a></li>
+                <li><a href="#en-6">International Transfers</a></li>
+                <li><a href="#en-7">Data Retention</a></li>
+                <li><a href="#en-8">Your Rights</a></li>
+                <li><a href="#en-9">Security</a></li>
+                <li><a href="#en-10">Cookies &amp; Tracking</a></li>
+                <li><a href="#en-11">Children’s Privacy</a></li>
+                <li><a href="#en-12">Policy Updates</a></li>
+              </ol>
+            </nav>
 
-            <h2>2) Sources of Data</h2>
-            <ul>
-              <li>From you directly when you sign up, provide profile details, or use features</li>
-              <li>Automatically from your device and our analytics/infrastructure systems</li>
-            </ul>
+            <section class="doc-section" id="en-1">
+              <h2>1. Data We Collect</h2>
+              <p>Depending on the features you use, we may collect:</p>
+              <ul>
+                <li><strong>Account &amp; contact data</strong> — Email, user ID, authentication data, and information from third-party sign-in (e.g., Apple Sign In)</li>
+                <li><strong>Profile &amp; health goals</strong> — Age/age range, gender (if provided), height, weight, weight goals, daily calorie targets, and nutrition information you enter</li>
+                <li><strong>Photos</strong> — Meal photos you take or upload for calorie estimation, profile photos (if added), and image metadata (e.g., capture date)</li>
+                <li><strong>Activity &amp; movement data</strong> — Step count, distance (if supported), daily step goals, and activity data from device sensors or Apple Health (if you authorize)</li>
+                <li><strong>Usage logs</strong> — Meal history, logged calories, daily timeline, and in-app settings</li>
+                <li><strong>Usage &amp; device data</strong> — In-app events (screens viewed, buttons tapped), device model, OS version, language, app version, and IP address (for security)</li>
+              </ul>
+              <p>We do not provide a public user-generated content posting feature. Data you enter or upload to use features remains your personal data.</p>
+            </section>
 
-            <h2>3) How We Use Data (Purposes &amp; Legal Bases)</h2>
-            <p>We use your data to:</p>
-            <ul>
-              <li>Provide core functionality (account creation, saving profiles, nutrition calculations/displays)</li>
-              <li>Improve and maintain the Services (analytics, debugging, performance)</li>
-              <li>Protect security and prevent abuse/fraud</li>
-              <li>Communicate with you for support and important service notices</li>
-            </ul>
-            <p>Legal bases may include necessity to provide the Services you request, our legitimate interests (security/improvement), and/or consent where required.</p>
+            <section class="doc-section" id="en-2">
+              <h2>2. Sources of Data</h2>
+              <ul>
+                <li><strong>From you directly</strong> — When you sign up, complete your profile, take meal photos, or use features</li>
+                <li><strong>From your device</strong> — Step sensors, Apple HealthKit (if authorized), and device information</li>
+                <li><strong>Automatically</strong> — Through analytics, system logs, and infrastructure to operate the app</li>
+              </ul>
+            </section>
 
-            <h2>4) Sensitive Data</h2>
-            <p>
-              Some health/nutrition-related data may be considered sensitive under applicable laws. We process it only to provide the Services and apply appropriate safeguards.
-              Where consent or additional requirements apply, we will request it through appropriate in-app flows.
-            </p>
+            <section class="doc-section" id="en-3">
+              <h2>3. How We Use Data (Purposes &amp; Legal Bases)</h2>
+              <p>We use your data to:</p>
+              <ul>
+                <li>Provide core services — Account creation, calorie estimation from photos, step tracking, and health data display</li>
+                <li>Improve the Services — Usage analytics, bug fixes, and calorie estimation accuracy improvements</li>
+                <li>Security — Prevent abuse, attacks, and fraud</li>
+                <li>Communication — Support, user assistance, and important service notices</li>
+                <li>Legal compliance — As required by law</li>
+              </ul>
+              <p>Legal bases may include necessity to provide the Services you request (contract), our legitimate interests (security/improvement), and/or consent where required (e.g., sensitive data or HealthKit connections).</p>
+            </section>
 
-            <h2>5) Sharing &amp; Processors</h2>
-            <p>We may share data with service providers acting as processors to operate the Services, such as:</p>
-            <ul>
-              <li>Supabase (database, authentication, and related infrastructure)</li>
-              <li>Analytics provider(s): [Insert name, e.g., Firebase Analytics / PostHog]</li>
-            </ul>
-            <p>We do not sell your personal data.</p>
+            <section class="doc-section" id="en-4">
+              <h2>4. Sensitive Data (Health Information)</h2>
+              <p>Some health and nutrition data (e.g., weight, calorie targets, HealthKit data) may be considered sensitive under the PDPA.</p>
+              <p>We use such data only to provide health/nutrition features, apply appropriate safeguards, and request additional consent through in-app flows where required by law.</p>
+            </section>
 
-            <h2>6) International Data Transfers</h2>
-            <p>
-              Your data may be stored or processed outside Thailand depending on our providers (e.g., Supabase/analytics). We apply appropriate measures to comply with applicable transfer requirements.
-            </p>
+            <section class="doc-section" id="en-5">
+              <h2>5. Sharing &amp; Processors</h2>
+              <p>We may share data with service providers acting as processors, including:</p>
+              <ul>
+                <li><strong>Supabase</strong> — Database, authentication, and backend infrastructure</li>
+                <li><strong>Apple</strong> — App Store, payments (if subscriptions are offered), and Apple Sign In</li>
+                <li><strong>AI/ML providers</strong> — Processing meal photos for calorie estimation (only data necessary for the task)</li>
+                <li><strong>Analytics providers</strong> — App usage analysis to improve user experience</li>
+              </ul>
+              <p>We do not sell, rent, or trade your personal data to third parties for marketing purposes.</p>
+              <p>We may disclose data when required by law or to protect the rights, safety, and property of us and our users.</p>
+            </section>
 
-            <h2>7) Data Retention</h2>
-            <p>We retain data only as long as necessary for the purposes described, including legal compliance, dispute resolution, and enforcement.</p>
-            <ul>
-              <li>Account/profile data: generally retained while your account is active or until you request deletion</li>
-              <li>Logs/analytics: retained based on provider defaults or as needed for security and service improvement</li>
-            </ul>
+            <section class="doc-section" id="en-6">
+              <h2>6. International Data Transfers</h2>
+              <p>Your data may be stored or processed outside Thailand depending on our providers (e.g., Supabase, Apple, AI providers).</p>
+              <p>We apply appropriate measures, such as standard contractual clauses or measures required by the PDPA, to ensure lawful transfers.</p>
+            </section>
 
-            <h2>8) Your Rights</h2>
-            <p>
-              Subject to applicable law, you may have rights to access, correct, delete, restrict, object, and withdraw consent (where applicable). Contact us at
-              <a href="mailto:support@calbuddy.live">support@calbuddy.live</a>.
-            </p>
+            <section class="doc-section" id="en-7">
+              <h2>7. Data Retention</h2>
+              <ul>
+                <li><strong>Account/profile data</strong> — Retained while your account is active or until you request deletion</li>
+                <li><strong>Meal photos and food logs</strong> — Retained as needed to provide the Service or until you delete them</li>
+                <li><strong>Analytics and system logs</strong> — Retained per provider defaults or as needed for security and improvement (typically up to 24 months)</li>
+              </ul>
+              <p>When no longer necessary, we delete or anonymize the data.</p>
+            </section>
 
-            <h2>9) Security</h2>
-            <p>
-              We implement reasonable technical and organizational measures to protect data (e.g., access controls, encryption in transit where supported). No method of transmission or storage is 100% secure.
-            </p>
+            <section class="doc-section" id="en-8">
+              <h2>8. Your Rights</h2>
+              <p>Under the PDPA and applicable law, you may have the right to:</p>
+              <ul>
+                <li>Access and obtain a copy of your personal data</li>
+                <li>Request correction of inaccurate or incomplete data</li>
+                <li>Request deletion or destruction when no longer necessary</li>
+                <li>Request restriction of processing in certain cases</li>
+                <li>Object to processing in certain cases</li>
+                <li>Request data portability where applicable</li>
+                <li>Withdraw consent (where we rely on consent) without affecting prior processing</li>
+              </ul>
+              <p>Exercise your rights by contacting <a href="mailto:support@calbuddy.live">support@calbuddy.live</a>. We will respond within the timeframe required by law (typically within 30 days).</p>
+            </section>
 
-            <h2>10) Children’s Privacy</h2>
-            <p>
-              The Services are intended for users aged 13 and above. We do not knowingly collect data from children under 13. If you believe a child under 13 provided data to us, contact us to request deletion.
-            </p>
+            <section class="doc-section" id="en-9">
+              <h2>9. Security</h2>
+              <p>We implement appropriate safeguards, including:</p>
+              <ul>
+                <li>Encryption in transit (TLS/HTTPS)</li>
+                <li>Access controls and role-based permissions</li>
+                <li>Security practices of infrastructure providers (e.g., Supabase)</li>
+                <li>Regular system monitoring and updates</li>
+              </ul>
+              <p>No method of transmission or storage is 100% secure. We cannot guarantee absolute security.</p>
+            </section>
 
-            <h2>11) Updates to This Policy</h2>
-            <p>We may update this Privacy Policy from time to time. We will notify you via the App or other appropriate means and update the effective date above.</p>
+            <section class="doc-section" id="en-10">
+              <h2>10. Cookies &amp; Tracking Technologies</h2>
+              <p>Our website may use cookies and similar technologies for essential functionality, preference storage, and usage analytics. See our <a href="../cookie/">Cookie Policy</a> for details.</p>
+              <p>The mobile app may use device identifiers and in-app analytics as described in sections 1 and 5 of this Policy.</p>
+            </section>
+
+            <section class="doc-section" id="en-11">
+              <h2>11. Children’s Privacy</h2>
+              <p>The Services are intended for users aged 13 and above. We do not knowingly collect data from children under 13.</p>
+              <p>If you believe a child under 13 provided data to us, contact <a href="mailto:support@calbuddy.live">support@calbuddy.live</a> to request deletion.</p>
+            </section>
+
+            <section class="doc-section" id="en-12">
+              <h2>12. Updates to This Policy</h2>
+              <p>We may update this Policy from time to time. We will notify you via the app, website, or other appropriate means and update the effective date above.</p>
+              <p>Continued use after the effective date constitutes acknowledgment of the updated Policy. For material changes, we will provide clear notice.</p>
+              <p>For terms of use, see our <a href="../terms/">Terms of Service</a>.</p>
+            </section>
           </section>
         </article>
       </div>
     </main>
 
     <footer>
-      <div class="container">
+      <div class="container container--narrow">
         <div class="footerRow">
           <div data-i18n="footer_copyright">© <span id="y"></span> BuddyCal All rights reserved.</div>
           <div class="footerLinks" aria-label="Legal links">
@@ -439,50 +372,31 @@
     <script>
       const now = new Date();
       document.getElementById("y").textContent = now.getFullYear();
-      const currentLang = (localStorage.getItem("buddycal_site_lang") || "").toLowerCase() === "en" ? "en" : "th";
-      document.getElementById("d").textContent = now.toLocaleDateString(currentLang === "th" ? "th-TH" : "en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      });
-
       const STORAGE_KEY = "buddycal_site_lang";
       const STRINGS = {
         th: {
-          home: "หน้าแรก",
-          usage: "การใช้งาน",
-          contact: "ติดต่อเรา",
-          language: "เปลี่ยนภาษา",
+          home: "หน้าแรก", usage: "การใช้งาน", contact: "ติดต่อเรา", language: "เปลี่ยนภาษา",
           footer_copyright: "© <span id=\"y\"></span> BuddyCal All rights reserved.",
-          legal_terms: "Terms of Service",
-          legal_privacy: "Privacy Policy",
-          doc_title: "Privacy Policy",
-          meta_effective: "วันที่มีผลบังคับใช้ (Effective Date):",
-          meta_controller: "ผู้ควบคุมข้อมูล (Data Controller):",
-          meta_contact: "ติดต่อ (Contact):",
+          legal_terms: "Terms of Service", legal_privacy: "Privacy Policy",
+          doc_title: "นโยบายความเป็นส่วนตัว",
+          meta_effective: "วันที่มีผลบังคับใช้:", meta_controller: "ผู้ควบคุมข้อมูล:",
+          meta_contact: "ติดต่อ:",
         },
         en: {
-          home: "Home",
-          usage: "How to use",
-          contact: "Contact",
-          language: "Language",
+          home: "Home", usage: "How to use", contact: "Contact", language: "Language",
           footer_copyright: "© <span id=\"y\"></span> BuddyCal. All rights reserved.",
-          legal_terms: "Terms of Service",
-          legal_privacy: "Privacy Policy",
+          legal_terms: "Terms of Service", legal_privacy: "Privacy Policy",
           doc_title: "Privacy Policy",
-          meta_effective: "Effective Date:",
-          meta_controller: "Data Controller:",
+          meta_effective: "Effective Date:", meta_controller: "Data Controller:",
           meta_contact: "Contact:",
         },
       };
-
       const openBtn = document.getElementById("openMenu");
       const closeBtn = document.getElementById("closeMenu");
       const backdrop = document.getElementById("backdrop");
       const drawer = document.getElementById("drawer");
       const langTH = document.getElementById("langTH");
       const langEN = document.getElementById("langEN");
-
       function setLang(lang) {
         const s = STRINGS[lang] || STRINGS.th;
         document.documentElement.lang = lang;
@@ -500,38 +414,18 @@
           block.style.display = show ? "block" : "none";
         });
         const dateEl = document.getElementById("d");
-        if (dateEl) {
-          dateEl.textContent = now.toLocaleDateString(lang === "th" ? "th-TH" : "en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          });
-        }
+        if (dateEl) dateEl.textContent = now.toLocaleDateString(lang === "th" ? "th-TH" : "en-US", { year: "numeric", month: "long", day: "numeric" });
         langTH.setAttribute("aria-pressed", String(lang === "th"));
         langEN.setAttribute("aria-pressed", String(lang === "en"));
         localStorage.setItem(STORAGE_KEY, lang);
       }
-
       function getLang() {
         const saved = localStorage.getItem(STORAGE_KEY);
         if (saved === "th" || saved === "en") return saved;
-        const pref = String((navigator.language || "").toLowerCase());
-        return pref.startsWith("th") ? "th" : "en";
+        return String(navigator.language || "").toLowerCase().startsWith("th") ? "th" : "en";
       }
-
-      function openDrawer() {
-        drawer.setAttribute("aria-hidden", "false");
-        backdrop.setAttribute("aria-hidden", "false");
-        openBtn.setAttribute("aria-expanded", "true");
-        document.body.style.overflow = "hidden";
-      }
-      function closeDrawer() {
-        drawer.setAttribute("aria-hidden", "true");
-        backdrop.setAttribute("aria-hidden", "true");
-        openBtn.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
-      }
-
+      function openDrawer() { drawer.setAttribute("aria-hidden", "false"); backdrop.setAttribute("aria-hidden", "false"); openBtn.setAttribute("aria-expanded", "true"); document.body.style.overflow = "hidden"; }
+      function closeDrawer() { drawer.setAttribute("aria-hidden", "true"); backdrop.setAttribute("aria-hidden", "true"); openBtn.setAttribute("aria-expanded", "false"); document.body.style.overflow = ""; }
       openBtn.addEventListener("click", openDrawer);
       closeBtn.addEventListener("click", closeDrawer);
       backdrop.addEventListener("click", closeDrawer);
@@ -539,7 +433,6 @@
       drawer.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeDrawer));
       langTH.addEventListener("click", () => setLang("th"));
       langEN.addEventListener("click", () => setLang("en"));
-
       setLang(getLang());
     </script>
   </body>
