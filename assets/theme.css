@@ -98,13 +98,11 @@ header {
   width: 34px;
   height: 34px;
   border-radius: 12px;
-  background: var(--gradient-brand);
   box-shadow: var(--shadow);
-  display: grid;
-  place-items: center;
+  display: block;
   flex-shrink: 0;
+  object-fit: cover;
 }
-.logo svg { display: block; }
 
 .menu {
   display: flex;
